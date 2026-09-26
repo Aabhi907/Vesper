@@ -6,6 +6,7 @@ import { ChevronDown } from "lucide-react"
 import { EmberGrainField } from "../ember-grain-field"
 import { GoogleCalendarCard } from "../calendar-card"
 import { WinChrome } from "@/components/shared"
+import { TextThree } from "@/components/ui/text-three"
 
 /* ══════════════════════════════════════════════════
    Interactive 3D Tilt Card for Hero Windows
@@ -181,10 +182,10 @@ export function Hero() {
             <span>AI Booking Assistant · Any Service Business</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px] font-black text-ink mb-3.5 sm:mb-4 tracking-[-0.04em] leading-[0.93]">
-            your front desk,<br />
-            <span className="text-ink">still awake.</span>
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[96px] xl:text-[112px] font-black text-ink mb-3.5 sm:mb-4 tracking-[-0.04em] leading-[0.95]">
+            <TextThree text="Vesper" />
           </h1>
+
 
           {/* ── "sent at 2:47 AM" timestamp pill ── */}
           <div className="relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/75 dark:bg-white/[0.08] backdrop-blur-md border border-line shadow-xs text-ink text-[12px] sm:text-[13px] font-mono mb-6 sm:mb-7 -rotate-1 select-none pointer-events-none">
