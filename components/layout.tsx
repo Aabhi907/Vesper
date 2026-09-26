@@ -5,6 +5,7 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { ShieldCheck } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { ScrollProgress } from "@/components/interactive-utils"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 /* ── Navbar ── */
 export function Navbar() {
@@ -32,8 +33,8 @@ export function Navbar() {
         className={cn(
           "fixed top-0 z-50 w-full transition-all duration-ui",
           isScrolled
-            ? "h-[44px] bg-[hsl(0_0%_90%/0.85)] backdrop-blur-md border-b border-[hsl(0_0%_80%)] shadow-sm"
-            : "h-[44px] bg-[hsl(0_0%_90%/0.75)] backdrop-blur-md border-b border-[hsl(0_0%_80%)]"
+            ? "h-[44px] bg-[hsl(0_0%_90%/0.85)] dark:bg-[hsl(224_25%_7%/0.85)] backdrop-blur-md border-b border-[hsl(0_0%_80%)] dark:border-line shadow-sm"
+            : "h-[44px] bg-[hsl(0_0%_90%/0.75)] dark:bg-[hsl(224_25%_7%/0.75)] backdrop-blur-md border-b border-[hsl(0_0%_80%)] dark:border-line"
         )}
       >
         <div className="mx-auto flex h-full max-w-[1440px] items-center justify-between px-4">
@@ -60,19 +61,22 @@ export function Navbar() {
           </nav>
 
           {/* Right: status + CTA */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-3.5">
+            {/* Dark Mode Toggle */}
+            <ThemeToggle />
+
             {/* Battery */}
-            <svg className="hidden md:block" width="22" height="12" viewBox="0 0 22 12" fill="none" aria-hidden>
-              <rect x="0.5" y="0.5" width="18" height="11" rx="2.5" stroke="hsl(0,0%,55%)" strokeWidth="1"/>
-              <rect x="2" y="2" width="11" height="8" rx="1.5" fill="hsl(0,0%,55%)"/>
-              <path d="M20 4v4" stroke="hsl(0,0%,55%)" strokeWidth="1.5" strokeLinecap="round"/>
+            <svg className="hidden md:block" width="22" height="12" viewBox="0 0 22 12" fill="none" aria-hidden="true">
+              <rect x="0.5" y="0.5" width="18" height="11" rx="2.5" stroke="currentColor" className="text-muted" strokeWidth="1"/>
+              <rect x="2" y="2" width="11" height="8" rx="1.5" fill="currentColor" className="text-muted"/>
+              <path d="M20 4v4" stroke="currentColor" className="text-muted" strokeWidth="1.5" strokeLinecap="round"/>
             </svg>
             {/* Time */}
             <span className="hidden md:block text-[13px] text-ink/70 font-medium tabular-nums">{time}</span>
             {/* CTA */}
             <Link
               href="/#demo"
-              className="flex items-center gap-2 bg-ink text-canvas text-[13px] font-semibold px-4 py-1.5 rounded-full hover:bg-ink/80 transition-colors"
+              className="flex items-center gap-2 bg-ink text-canvas text-[13px] font-semibold px-4 py-1.5 rounded-full hover:bg-ink/80 transition-colors shadow-xs"
             >
               <span className="text-[11px]">🌙</span>
               <span>book a demo</span>

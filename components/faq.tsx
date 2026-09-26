@@ -49,19 +49,19 @@ export function FAQSection() {
   }
 
   return (
-    <section className="w-full py-24 sm:py-32 px-4 sm:px-6 bg-[#FBFBFA] border-t border-[#EAEAE7]" id="faq">
+    <section className="w-full py-24 sm:py-32 px-4 sm:px-6 bg-[#FBFBFA] dark:bg-[hsl(var(--canvas))] border-t border-[#EAEAE7] dark:border-line transition-colors duration-200" id="faq">
       <div className="mx-auto max-w-[720px] relative">
         {/* Top FAQ Pill */}
         <div className="flex flex-col items-center justify-center text-center mb-10 sm:mb-12">
-          <div className="inline-flex items-center px-3 py-0.5 rounded-full border border-[#D5D5D0] bg-white text-[11px] text-[#737373] font-medium tracking-wide uppercase mb-3 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+          <div className="inline-flex items-center px-3 py-0.5 rounded-full border border-[#D5D5D0] dark:border-line bg-white dark:bg-soft-canvas text-[11px] text-[#737373] dark:text-muted font-medium tracking-wide uppercase mb-3 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
             FAQ
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold tracking-tight text-[#111111] mb-2.5 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold tracking-tight text-[#111111] dark:text-ink mb-2.5 text-center">
             frequently asked questions
           </h2>
 
-          <p className="text-[#666666] text-[14px] sm:text-[15.5px] text-center">
+          <p className="text-[#666666] dark:text-muted text-[14px] sm:text-[15.5px] text-center">
             what to know about vesper, privacy, and getting started.
           </p>
         </div>
@@ -74,7 +74,7 @@ export function FAQSection() {
               initial={{ scale: 0.9, rotate: 0 }}
               animate={{ scale: 1, rotate: 6 }}
               transition={{ type: "spring", stiffness: 220, damping: 18 }}
-              className="w-28 h-28 rounded-2xl shadow-xl border border-black/15 overflow-hidden"
+              className="w-28 h-28 rounded-2xl shadow-xl border border-black/15 dark:border-white/15 overflow-hidden"
             >
               <img
                 src="/dwight-question.jpg"
@@ -92,8 +92,8 @@ export function FAQSection() {
                 key={faq.question}
                 className={
                   isOpen
-                    ? "bg-white rounded-xl border-2 border-[#3B82F6] transition-all duration-150 shadow-[0_2px_8px_rgba(59,130,246,0.08)] overflow-hidden"
-                    : "bg-white rounded-xl border border-[#E5E5E2] hover:border-[#D0D0CB] transition-all duration-150 cursor-pointer shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
+                    ? "bg-white dark:bg-[hsl(var(--soft-canvas))] rounded-xl border-2 border-[#3B82F6] transition-all duration-150 shadow-[0_2px_8px_rgba(59,130,246,0.12)] overflow-hidden"
+                    : "bg-white dark:bg-[hsl(var(--soft-canvas))] rounded-xl border border-[#E5E5E2] dark:border-line hover:border-[#D0D0CB] dark:hover:border-white/20 transition-all duration-150 cursor-pointer shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
                 }
               >
                 <button
@@ -105,8 +105,8 @@ export function FAQSection() {
                   <span
                     className={
                       isOpen
-                        ? "text-[14.5px] sm:text-[15px] font-bold text-[#111111]"
-                        : "text-[14.5px] sm:text-[15px] font-semibold text-[#111111]"
+                        ? "text-[14.5px] sm:text-[15px] font-bold text-[#111111] dark:text-ink"
+                        : "text-[14.5px] sm:text-[15px] font-semibold text-[#111111] dark:text-ink"
                     }
                   >
                     {faq.question}
@@ -115,8 +115,8 @@ export function FAQSection() {
                   <span
                     className={
                       isOpen
-                        ? "text-[18px] font-normal text-[#111111] leading-none shrink-0"
-                        : "text-[20px] font-light text-[#888888] leading-none shrink-0"
+                        ? "text-[18px] font-normal text-[#111111] dark:text-ink leading-none shrink-0"
+                        : "text-[20px] font-light text-[#888888] dark:text-muted leading-none shrink-0"
                     }
                   >
                     {isOpen ? "×" : "+"}
@@ -132,7 +132,7 @@ export function FAQSection() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.18, ease: "easeInOut" }}
                     >
-                      <div className="px-5 pb-5 pt-0 text-[13.5px] sm:text-[14px] text-[#666666] leading-relaxed">
+                      <div className="px-5 pb-5 pt-0 text-[13.5px] sm:text-[14px] text-[#666666] dark:text-muted leading-relaxed">
                         {faq.answer}
                       </div>
                     </motion.div>

@@ -41,7 +41,7 @@ export function ScrollToTop() {
           exit={{ opacity: 0, y: 16, scale: 0.8 }}
           onClick={scrollToTop}
           aria-label="Scroll back to top"
-          className="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-ink text-white flex items-center justify-center shadow-frame hover:bg-ink/80 transition-all focus:outline-none focus:ring-2 focus:ring-ink/20"
+          className="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-ink text-canvas dark:bg-white dark:text-black flex items-center justify-center shadow-frame hover:opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-ink/20"
         >
           <ArrowUp className="w-4 h-4 stroke-[2.5]" />
         </motion.button>
@@ -81,7 +81,7 @@ export function CookieBanner() {
         initial={{ opacity: 0, y: 30, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 20 }}
-        className="bg-white/95 backdrop-blur-md border border-line rounded-2xl p-4 sm:p-5 shadow-frame flex flex-col gap-3"
+        className="bg-white/95 dark:bg-[hsl(var(--soft-canvas))]/95 backdrop-blur-md border border-line rounded-2xl p-4 sm:p-5 shadow-frame flex flex-col gap-3"
       >
         <div className="flex items-start gap-3">
           <div className="w-8 h-8 rounded-full bg-soft-canvas flex items-center justify-center shrink-0 text-ink">
@@ -106,7 +106,7 @@ export function CookieBanner() {
           <button
             type="button"
             onClick={handleAccept}
-            className="text-[12px] font-semibold bg-ink text-white hover:bg-ink/90 px-4 py-1.5 rounded-lg transition-colors shadow-xs"
+            className="text-[12px] font-semibold bg-ink text-canvas dark:bg-white dark:text-black hover:opacity-90 px-4 py-1.5 rounded-lg transition-colors shadow-xs"
           >
             Accept
           </button>
@@ -181,7 +181,7 @@ export function BookDemoModal({
             initial={{ opacity: 0, scale: 0.95, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
-            className="relative z-10 w-full max-w-[480px] bg-white rounded-3xl border border-line shadow-frame p-6 sm:p-8 overflow-hidden"
+            className="relative z-10 w-full max-w-[480px] bg-white dark:bg-[hsl(var(--soft-canvas))] rounded-3xl border border-line shadow-frame p-6 sm:p-8 overflow-hidden"
           >
             {/* Close button */}
             <button
@@ -193,7 +193,7 @@ export function BookDemoModal({
 
             {isSuccess ? (
               <div className="py-6 flex flex-col items-center text-center">
-                <div className="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mb-4">
+                <div className="w-14 h-14 rounded-full bg-emerald-100 dark:bg-emerald-950/60 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-4">
                   <CheckCircle className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-black text-ink mb-2">You&apos;re on the calendar!</h3>
@@ -204,7 +204,7 @@ export function BookDemoModal({
                 <button
                   type="button"
                   onClick={resetAndClose}
-                  className="w-full py-3 rounded-xl bg-ink text-white font-semibold text-[14px] hover:bg-ink/90 transition-all shadow-sm"
+                  className="w-full py-3 rounded-xl bg-ink text-canvas dark:bg-white dark:text-black font-semibold text-[14px] hover:opacity-90 transition-all shadow-sm"
                 >
                   Done
                 </button>
@@ -212,7 +212,7 @@ export function BookDemoModal({
             ) : (
               <div>
                 <div className="mb-6">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-signal-blue bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200/50">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-signal-blue bg-blue-50 dark:bg-blue-950/50 px-2.5 py-1 rounded-full border border-blue-200/50 dark:border-blue-800/50">
                     Priority Access
                   </span>
                   <h3 className="text-2xl font-black text-ink mt-2">Book a 1-on-1 walkthrough</h3>
@@ -231,7 +231,7 @@ export function BookDemoModal({
                       placeholder="e.g. Maya Shrestha"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className={`w-full px-3.5 py-2.5 rounded-xl border text-[14px] focus:outline-none transition-all ${
+                      className={`w-full px-3.5 py-2.5 rounded-xl border bg-white dark:bg-[hsl(var(--canvas))] text-ink text-[14px] focus:outline-none transition-all ${
                         errors.name ? "border-danger focus:ring-1 focus:ring-danger" : "border-line focus:border-ink"
                       }`}
                     />
@@ -247,7 +247,7 @@ export function BookDemoModal({
                       placeholder="e.g. Glam Studio Salon"
                       value={formData.businessName}
                       onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
-                      className={`w-full px-3.5 py-2.5 rounded-xl border text-[14px] focus:outline-none transition-all ${
+                      className={`w-full px-3.5 py-2.5 rounded-xl border bg-white dark:bg-[hsl(var(--canvas))] text-ink text-[14px] focus:outline-none transition-all ${
                         errors.businessName ? "border-danger focus:ring-1 focus:ring-danger" : "border-line focus:border-ink"
                       }`}
                     />
@@ -265,7 +265,7 @@ export function BookDemoModal({
                       placeholder="e.g. 9801234567"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className={`w-full px-3.5 py-2.5 rounded-xl border text-[14px] focus:outline-none transition-all ${
+                      className={`w-full px-3.5 py-2.5 rounded-xl border bg-white dark:bg-[hsl(var(--canvas))] text-ink text-[14px] focus:outline-none transition-all ${
                         errors.phone ? "border-danger focus:ring-1 focus:ring-danger" : "border-line focus:border-ink"
                       }`}
                     />
@@ -279,7 +279,7 @@ export function BookDemoModal({
                     <select
                       value={formData.serviceType}
                       onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-line bg-white text-[14px] focus:outline-none focus:border-ink transition-all"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-line bg-white dark:bg-[hsl(var(--canvas))] text-ink text-[14px] focus:outline-none focus:border-ink transition-all"
                     >
                       <option value="Salon / Spa">Salon, Hair &amp; Spa</option>
                       <option value="Hotel / Resort">Hotel, Guesthouse &amp; Resort</option>
@@ -292,7 +292,7 @@ export function BookDemoModal({
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 rounded-xl bg-ink text-white font-semibold text-[14px] hover:bg-ink/90 transition-all shadow-sm flex items-center justify-center gap-2 mt-6 disabled:opacity-70"
+                    className="w-full py-3.5 rounded-xl bg-ink text-canvas dark:bg-white dark:text-black font-semibold text-[14px] hover:opacity-90 transition-all shadow-sm flex items-center justify-center gap-2 mt-6 disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <>
