@@ -1,6 +1,7 @@
 import { Hero, PlatformDemo, TrustStrip, Manifesto, ThreeJobs, TrustSection, FinalCTA } from "@/components/marketing"
 import { IntegrationsBeam } from "@/components/integrations-beam"
 import { TeamTooltips } from "@/components/team-tooltip"
+import { FAQSection } from "@/components/faq"
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <TrustSection />
       <TeamTooltips />
       <FinalCTA />
+      <FAQSection />
     </main>
   )
 }
