@@ -69,18 +69,17 @@ export function FAQSection() {
         {/* FAQ Accordion List */}
         <div className="flex flex-col gap-2.5 relative">
           {/* Floating Dwight Schrute "QUESTION!" Meme sticker on desktop */}
-          <div className="hidden lg:block absolute -right-24 xl:-right-28 top-3 pointer-events-none select-none z-10">
+          <div className="hidden lg:block absolute -right-24 xl:-right-32 top-1 pointer-events-none select-none z-10">
             <motion.div
               initial={{ scale: 0.9, rotate: 0 }}
               animate={{ scale: 1, rotate: 6 }}
-              whileHover={{ rotate: 10, scale: 1.05 }}
               transition={{ type: "spring", stiffness: 220, damping: 18 }}
-              className="w-24 h-24 rounded-2xl bg-white p-1 shadow-lg border border-black/10 overflow-hidden"
+              className="w-28 h-28 rounded-2xl shadow-xl border border-black/15 overflow-hidden"
             >
               <img
                 src="/dwight-question.jpg"
                 alt="Dwight Schrute Question Meme"
-                className="w-full h-full object-cover rounded-xl"
+                className="w-full h-full object-cover"
               />
             </motion.div>
           </div>
