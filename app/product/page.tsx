@@ -194,20 +194,28 @@ export default function ProductPage() {
 
         {/* ── Global Coordination & World Map (Foreign Client Ready) ── */}
         <ScrollReveal delay={0.18} className="mb-24">
-          <div className="mb-8">
+          <div className="mb-8 text-center flex flex-col items-center">
             <span className="text-[12px] font-mono tracking-widest uppercase text-muted block mb-2">
               global &middot; any timezone
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-3">
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-3 text-center">
               Awake for clients worldwide.
             </h2>
-            <p className="text-[15px] sm:text-[16px] text-muted max-w-[640px] leading-relaxed">
+            <p className="text-[15px] sm:text-[16px] text-muted max-w-[620px] leading-relaxed mx-auto text-center font-normal">
               When an international client or tourist in London, New York, or Sydney inquires during their afternoon, your local front desk is usually asleep. Vesper bridges every timezone with instant availability checks, multi-currency support, and live booking.
             </p>
           </div>
 
           <WinChrome title="vesper &middot; global live traffic">
             <div className="bg-[#fcfaf6] dark:bg-[#11161d] p-4 sm:p-8">
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-line/40 text-[11px] font-mono text-muted">
+                <span className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Live Inbound Routing
+                </span>
+                <span className="text-ink/60 dark:text-white/60">6 Global Hubs &middot; Real-Time Sync</span>
+              </div>
+
               <WorldMap
                 dots={[
                   {
@@ -235,25 +243,25 @@ export default function ProductPage() {
                     end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
                   },
                 ]}
-                lineColor="#3b82f6"
+                lineColor="#2563eb"
               />
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-6 mt-4 border-t border-line/60 text-left">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 mt-4 border-t border-line/40 text-left">
                 <div>
-                  <p className="text-[13.5px] font-bold text-ink">Automatic Timezone Sync</p>
-                  <p className="text-[12.5px] text-muted leading-relaxed mt-1">
+                  <p className="text-[13.5px] font-semibold text-ink">Automatic Timezone Sync</p>
+                  <p className="text-[12.5px] text-muted leading-relaxed mt-1 font-normal">
                     Recognizes international phone country codes (+1, +44, +971, +61) and schedules in your exact local time without confusion.
                   </p>
                 </div>
                 <div>
-                  <p className="text-[13.5px] font-bold text-ink">Multi-Currency &amp; Tourist Ready</p>
-                  <p className="text-[12.5px] text-muted leading-relaxed mt-1">
+                  <p className="text-[13.5px] font-semibold text-ink">Multi-Currency &amp; Tourist Ready</p>
+                  <p className="text-[12.5px] text-muted leading-relaxed mt-1 font-normal">
                     Quotes prices and packages in USD, EUR, GBP, or NPR effortlessly for international travelers, tour groups, and medical tourists.
                   </p>
                 </div>
                 <div>
-                  <p className="text-[13.5px] font-bold text-ink">Zero Midnight Drop-off</p>
-                  <p className="text-[12.5px] text-muted leading-relaxed mt-1">
+                  <p className="text-[13.5px] font-semibold text-ink">Zero Midnight Drop-off</p>
+                  <p className="text-[12.5px] text-muted leading-relaxed mt-1 font-normal">
                     Foreign travelers lock in their reservations before boarding their flights, instead of scrambling after landing at your shop.
                   </p>
                 </div>
