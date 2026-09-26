@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, HelpCircle } from "lucide-react"
 
 interface FAQItem {
   question: string
@@ -11,34 +10,34 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "How does Vesper prevent double-bookings?",
+    question: "what is vesper?",
     answer:
-      "Vesper connects directly to your Google Calendar or booking database via two-way synchronization. Before offering any slot to a customer on WhatsApp, Instagram, or Messenger, Vesper queries real-time availability in milliseconds. Once the customer confirms, the slot is instantly reserved and locked.",
+      "an ai front desk for your business. it answers calls and messages across whatsapp, instagram, and web. checks live calendar availability in real-time, takes bookings, and alerts your team if someone asks for a human.",
   },
   {
-    question: "Can I connect my existing WhatsApp Business number?",
+    question: "is my data private?",
     answer:
-      "Yes. Vesper integrates seamlessly with official Meta WhatsApp Business Cloud APIs without changing your phone number. You keep your existing chats, business profile, and contacts while Vesper handles automated replies and booking flows.",
+      "yes, 100%. your customer conversations, phone numbers, and booking data are encrypted at rest and in transit. we never use your proprietary client records to train public models.",
   },
   {
-    question: "What happens if a customer asks a complex question?",
+    question: "is vesper watching my screen all the time?",
     answer:
-      "Vesper answers strictly from your approved business knowledge base (services, pricing, policies, staff details). If a customer asks something unusual or requests a human, Vesper immediately alerts your staff and hands off the conversation with full context.",
+      "no. vesper only connects to your authorized business channels (whatsapp business api, instagram, or calendar). it never records your screen or accesses your private device.",
   },
   {
-    question: "Does Vesper work for my specific industry?",
+    question: "what can vesper actually do?",
     answer:
-      "Vesper is built for all appointment and reservation businesses — salons, hotels, boutique resorts, auto workshops, dental clinics, spas, and personal trainers. You simply define your service durations, buffer times, and pricing.",
+      "answer customer inquiries instantly 24/7, check calendar slots, book appointments, collect client phone numbers and notes, send automated reminders, and hand off tough inquiries directly to your staff on whatsapp.",
   },
   {
-    question: "How long does setup take?",
+    question: "what's the difference between simple auto-reply and vesper?",
     answer:
-      "Under 15 minutes. Connect your messaging channels, link your Google Calendar, and upload your service menu or FAQ document. Our onboarding team is also available to configure custom rules for your business.",
+      "auto-replies send dumb canned text. vesper understands intent, reads your real calendar in real-time, negotiates mutually available times with customers, and locks in appointments without human intervention.",
   },
   {
-    question: "What payment methods do you support in Nepal?",
+    question: "which apps does it work with?",
     answer:
-      "For subscriptions, we support direct Fonepay QR, eSewa, Khalti, and bank transfers, as well as international cards. For your customers, Vesper can also share your QR code or payment link to collect booking deposits automatically.",
+      "whatsapp business cloud api, instagram dms, facebook messenger, google calendar, and custom web chat widgets. we also support direct qr deposits via fonepay, esewa, and khalti.",
   },
 ]
 
@@ -50,61 +49,91 @@ export function FAQSection() {
   }
 
   return (
-    <section className="w-full py-24 sm:py-32 px-4 sm:px-6 bg-canvas border-t border-line" id="faq">
-      <div className="mx-auto max-w-[880px]">
-        {/* Header */}
-        <div className="flex flex-col items-center justify-center text-center mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-line text-muted text-[11px] font-bold tracking-wider uppercase mb-3 shadow-xs">
-            <HelpCircle className="w-3.5 h-3.5 text-ink" />
-            <span>Got Questions?</span>
+    <section className="w-full py-24 sm:py-32 px-4 sm:px-6 bg-[#FBFBFA] border-t border-[#EAEAE7]" id="faq">
+      <div className="mx-auto max-w-[720px] relative">
+        {/* Top FAQ Pill */}
+        <div className="flex flex-col items-center justify-center text-center mb-10 sm:mb-12">
+          <div className="inline-flex items-center px-3 py-0.5 rounded-full border border-[#D5D5D0] bg-white text-[11px] text-[#737373] font-medium tracking-wide uppercase mb-3 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+            FAQ
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-ink tracking-tight mb-4 text-center">
-            Frequently asked questions.
+          <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold tracking-tight text-[#111111] mb-2.5 text-center">
+            frequently asked questions
           </h2>
 
-          <p className="text-[15px] sm:text-[17px] text-muted max-w-[520px] mx-auto leading-relaxed text-center">
-            Everything you need to know about setting up Vesper, calendar synchronization, and automated messaging.
+          <p className="text-[#666666] text-[14px] sm:text-[15.5px] text-center">
+            what to know about vesper, privacy, and getting started.
           </p>
         </div>
 
         {/* FAQ Accordion List */}
-        <div className="space-y-3.5">
+        <div className="flex flex-col gap-2.5 relative">
+          {/* Floating Dwight Schrute "QUESTION!" Meme sticker on desktop */}
+          <div className="hidden lg:block absolute -right-24 xl:-right-28 top-3 pointer-events-none select-none z-10">
+            <motion.div
+              initial={{ scale: 0.9, rotate: 0 }}
+              animate={{ scale: 1, rotate: 6 }}
+              whileHover={{ rotate: 10, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 220, damping: 18 }}
+              className="w-24 h-24 rounded-2xl bg-white p-1 shadow-lg border border-black/10 overflow-hidden"
+            >
+              <img
+                src="/dwight-question.jpg"
+                alt="Dwight Schrute Question Meme"
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </motion.div>
+          </div>
+
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index
+
             return (
               <div
                 key={faq.question}
-                className="bg-white rounded-2xl border border-line transition-all duration-200 shadow-xs overflow-hidden"
+                className={
+                  isOpen
+                    ? "bg-white rounded-xl border-2 border-[#3B82F6] transition-all duration-150 shadow-[0_2px_8px_rgba(59,130,246,0.08)] overflow-hidden"
+                    : "bg-white rounded-xl border border-[#E5E5E2] hover:border-[#D0D0CB] transition-all duration-150 cursor-pointer shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
+                }
               >
                 <button
                   type="button"
                   onClick={() => toggle(index)}
-                  className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left transition-colors hover:bg-soft-canvas/40"
+                  className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left select-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-[15px] sm:text-[16.5px] font-bold text-ink leading-snug">
+                  <span
+                    className={
+                      isOpen
+                        ? "text-[14.5px] sm:text-[15px] font-bold text-[#111111]"
+                        : "text-[14.5px] sm:text-[15px] font-semibold text-[#111111]"
+                    }
+                  >
                     {faq.question}
                   </span>
-                  <motion.div
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="w-7 h-7 rounded-full bg-soft-canvas flex items-center justify-center shrink-0 border border-line text-ink"
+
+                  <span
+                    className={
+                      isOpen
+                        ? "text-[18px] font-normal text-[#111111] leading-none shrink-0"
+                        : "text-[20px] font-light text-[#888888] leading-none shrink-0"
+                    }
                   >
-                    <ChevronDown className="w-4 h-4" />
-                  </motion.div>
+                    {isOpen ? "×" : "+"}
+                  </span>
                 </button>
 
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
-                      key="content"
+                      key="answer"
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                      transition={{ duration: 0.18, ease: "easeInOut" }}
                     >
-                      <div className="px-5 sm:px-6 pb-6 pt-1 text-[14px] sm:text-[15px] text-muted leading-relaxed border-t border-line/40">
+                      <div className="px-5 pb-5 pt-0 text-[13.5px] sm:text-[14px] text-[#666666] leading-relaxed">
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -113,19 +142,6 @@ export function FAQSection() {
               </div>
             )
           })}
-        </div>
-
-        {/* Still have questions */}
-        <div className="text-center mt-12 pt-8 border-t border-line/60">
-          <p className="text-[14px] text-muted">
-            Have a question that isn&apos;t answered here?{" "}
-            <a
-              href="mailto:support@vesper.ai"
-              className="font-semibold text-ink underline underline-offset-4 hover:text-signal-blue transition-colors"
-            >
-              Email our founders directly
-            </a>
-          </p>
         </div>
       </div>
     </section>
