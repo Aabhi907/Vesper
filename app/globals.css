@@ -296,4 +296,23 @@
     0%   { transform: scale(1);   opacity: 0.5; }
     100% { transform: scale(2.5); opacity: 0; }
   }
+
+  /* ── Chat Launcher & Eye Following Animations ── */
+  @keyframes chat-enter {
+    from { opacity: 0; transform: translateY(16px) scale(0.6); }
+  }
+  @keyframes chat-float {
+    50% { transform: translateY(-3px); }
+  }
+  .chat-launcher { animation: chat-enter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s both; }
+  .chat-float { animation: chat-float 4.2s ease-in-out 2s infinite; }
+  .chat-eyes { transform: translate(calc(var(--look-x, 0px) * 0.35), calc(var(--look-y, 0px) * 0.35)); }
+  .chat-pupil { transform: translate(var(--look-x, 0px), var(--look-y, 0px)); }
+  .chat-eye { transition: transform 120ms ease-out; }
+  @media (hover: hover) and (pointer: fine) {
+    .chat-launcher:hover .chat-eye { transform: scale(1.12); }
+  }
+  .chat-launcher[data-open] .chat-eye { transform: scaleY(0.55); }
+  .chat-launcher[data-blink] .chat-eye,
+  .chat-launcher [data-blink] .chat-eye { transform: scaleY(0.1); }
 }

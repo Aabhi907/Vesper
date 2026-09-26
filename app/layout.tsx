@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Navbar, Footer } from "@/components/layout"
 import { CookieBanner, ScrollToTop } from "@/components/interactive-utils"
+import { ChatLauncher } from "@/components/ui/ChatLauncher"
 import "@/app/globals.css"
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -88,7 +89,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <CookieBanner />
         <ScrollToTop />
+        <ChatLauncher />
       </body>
     </html>
   )
 }
+

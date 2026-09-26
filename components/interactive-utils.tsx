@@ -41,7 +41,7 @@ export function ScrollToTop() {
           exit={{ opacity: 0, y: 16, scale: 0.8 }}
           onClick={scrollToTop}
           aria-label="Scroll back to top"
-          className="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-ink text-canvas dark:bg-white dark:text-black flex items-center justify-center shadow-frame hover:opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-ink/20"
+          className="fixed bottom-[84px] right-6 sm:bottom-[92px] sm:right-7 z-40 w-10 h-10 rounded-full bg-ink text-canvas dark:bg-white dark:text-black flex items-center justify-center shadow-frame hover:opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-ink/20"
         >
           <ArrowUp className="w-4 h-4 stroke-[2.5]" />
         </motion.button>

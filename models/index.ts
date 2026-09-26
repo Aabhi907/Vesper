@@ -1,0 +1,6 @@
+export * from "./types"
+export * from "./data/pricing.data"
+export * from "./data/testimonials.data"
+export * from "./data/faq.data"
+export * from "./data/team.data"
+export * from "./data/navigation.data"

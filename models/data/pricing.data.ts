@@ -1,0 +1,56 @@
+import type { PricingPlan } from "../types"
+
+export const PRICING_PLANS: PricingPlan[] = [
+  {
+    name: "Starter",
+    badge: null,
+    price: { monthly: "Rs. 4,999", yearly: "Rs. 3,999" },
+    period: "per month",
+    description: "For small studios and solo operators automating their first channel.",
+    features: [
+      "Up to 100 automated bookings / month",
+      "1 messaging channel (WhatsApp or Instagram)",
+      "Google Calendar 2-way sync",
+      "Instant conflict checks",
+      "Standard support & setup guide",
+    ],
+    ctaText: "Start 14-day trial",
+    ctaHref: "#demo",
+    highlight: false,
+  },
+  {
+    name: "Pro",
+    badge: "Most popular",
+    price: { monthly: "Rs. 11,999", yearly: "Rs. 9,599" },
+    period: "per month",
+    description: "For active salons, hotels, and service shops handling daily guest messages.",
+    features: [
+      "Unlimited conversations & bookings",
+      "All channels: WhatsApp, Instagram & Messenger",
+      "Real-time calendar slot verification",
+      "Instant staff alert & human handoff",
+      "Custom service menu & FAQ rules",
+      "Automated booking confirmations",
+    ],
+    ctaText: "Start 14-day free trial",
+    ctaHref: "#demo",
+    highlight: true,
+  },
+  {
+    name: "Business",
+    badge: null,
+    price: { monthly: "Rs. 19,999", yearly: "Rs. 15,999" },
+    period: "per month",
+    description: "For operators with multiple staff members, calendars, or branches.",
+    features: [
+      "Everything in Pro",
+      "Multi-staff & multi-calendar routing",
+      "Multiple location support",
+      "Custom CRM & database synchronization",
+      "Dedicated onboarding & priority support",
+    ],
+    ctaText: "Start 14-day trial",
+    ctaHref: "#demo",
+    highlight: false,
+  },
+]

@@ -7,6 +7,13 @@ import { cn } from "@/lib/utils"
 import { ScrollProgress } from "@/components/interactive-utils"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+import {
+  HEADER_NAV_LINKS,
+  FOOTER_PRODUCT_LINKS,
+  FOOTER_COMPANY_LINKS,
+  FOOTER_LEGAL_LINKS,
+} from "@/models"
+
 /* ── Navbar ── */
 export function Navbar() {
   const { scrollY } = useScroll()
@@ -43,13 +50,7 @@ export function Navbar() {
             <Link href="/" className="text-[13px] font-bold text-ink tracking-tight hover:opacity-80 transition-opacity">
               vesper
             </Link>
-            {[
-              { label: "demo", href: "/#demo" },
-              { label: "features", href: "/#features" },
-              { label: "pricing", href: "/#pricing" },
-              { label: "product", href: "/product" },
-              { label: "trust", href: "/trust" },
-            ].map((item) => (
+            {HEADER_NAV_LINKS.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
@@ -114,13 +115,7 @@ export function Footer() {
         <div className="flex flex-wrap gap-x-14 gap-y-8">
           <div className="flex flex-col gap-2.5">
             <h4 className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-1">Product</h4>
-            {[
-              { label: "Interactive Demo", href: "/#demo" },
-              { label: "Core Features", href: "/#features" },
-              { label: "Integrations Beam", href: "/#integrations" },
-              { label: "Pricing & Plans", href: "/#pricing" },
-              { label: "Architecture", href: "/product" },
-            ].map((l) => (
+            {FOOTER_PRODUCT_LINKS.map((l) => (
               <Link key={l.label} href={l.href} className="text-[13px] text-white/70 hover:text-white transition-colors">
                 {l.label}
               </Link>
@@ -129,13 +124,7 @@ export function Footer() {
 
           <div className="flex flex-col gap-2.5">
             <h4 className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-1">Company</h4>
-            {[
-              { label: "Team & Founders", href: "/team" },
-              { label: "Industry Solutions", href: "/clinics" },
-              { label: "Trust & Safety", href: "/trust" },
-              { label: "Frequently Asked Questions", href: "/#faq" },
-              { label: "Changelog", href: "/changelog" },
-            ].map((l) => (
+            {FOOTER_COMPANY_LINKS.map((l) => (
               <Link key={l.label} href={l.href} className="text-[13px] text-white/70 hover:text-white transition-colors">
                 {l.label}
               </Link>
@@ -144,11 +133,7 @@ export function Footer() {
 
           <div className="flex flex-col gap-2.5">
             <h4 className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-1">Legal &amp; Privacy</h4>
-            {[
-              { label: "Privacy Policy", href: "/privacy" },
-              { label: "Terms of Service", href: "/terms" },
-              { label: "Cookie Policy", href: "/privacy" },
-            ].map((l) => (
+            {FOOTER_LEGAL_LINKS.map((l) => (
               <Link key={l.label} href={l.href} className="text-[13px] text-white/70 hover:text-white transition-colors">
                 {l.label}
               </Link>
