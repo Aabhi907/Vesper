@@ -133,17 +133,44 @@
   .text-night        { color: hsl(var(--night)); }
   .border-line       { border-color: hsl(var(--line)); }
 
+  /* ── Dark mode contrast overrides for text & buttons ── */
+  .dark .text-black,
+  .dark .text-black\/95,
+  .dark .text-black\/90,
   .dark .text-black\/85,
   .dark .text-black\/80,
-  .dark .text-black\/70 {
-    color: hsl(var(--ink));
+  .dark .text-black\/75,
+  .dark .text-black\/70,
+  .dark .text-\[\#111111\],
+  .dark .text-\[\#0a0a0a\],
+  .dark .text-\[\#171717\] {
+    color: hsl(var(--ink)) !important;
   }
 
+  .dark .text-black\/65,
+  .dark .text-black\/60,
+  .dark .text-black\/55,
   .dark .text-black\/50,
+  .dark .text-black\/45,
   .dark .text-black\/40,
   .dark .text-black\/35,
-  .dark .text-black\/30 {
-    color: hsl(var(--muted));
+  .dark .text-black\/30,
+  .dark .text-black\/25,
+  .dark .text-\[\#555555\],
+  .dark .text-\[\#666666\],
+  .dark .text-\[\#707070\],
+  .dark .text-\[\#737373\],
+  .dark .text-\[\#888888\],
+  .dark .text-muted\/60,
+  .dark .text-muted\/70 {
+    color: hsl(var(--muted)) !important;
+  }
+
+  /* Fix white-on-white text collision when bg-ink is near-white in dark mode */
+  .dark .bg-ink.text-white,
+  .dark .bg-ink .text-white,
+  .dark .bg-ink > .text-white {
+    color: #0b0e14 !important;
   }
 
   .dark .border-black\/10,

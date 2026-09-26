@@ -9,11 +9,11 @@ function WinChrome({ title, children, className = "", style = {} }: {
 }) {
   return (
     <div className={`win-chrome ${className}`} style={style}>
-      <div className="flex items-center gap-2 px-4 h-[38px] border-b border-[hsl(0_0%_84%)] bg-gradient-to-b from-[hsl(0_0%_90%)] to-[hsl(0_0%_86%)] flex-shrink-0">
-        <span className="w-[12px] h-[12px] rounded-full bg-[#ff5f57] border border-black/10" />
-        <span className="w-[12px] h-[12px] rounded-full bg-[#febc2e] border border-black/10" />
-        <span className="w-[12px] h-[12px] rounded-full bg-[#28c840] border border-black/10" />
-        {title && <span className="ml-2 text-[12px] text-black/50 font-medium">{title}</span>}
+      <div className="flex items-center gap-2 px-4 h-[38px] border-b border-[hsl(0_0%_84%)] dark:border-line bg-gradient-to-b from-[hsl(0_0%_90%)] to-[hsl(0_0%_86%)] dark:from-[hsl(var(--soft-canvas))] dark:to-[hsl(var(--canvas))] flex-shrink-0">
+        <span className="w-[12px] h-[12px] rounded-full bg-[#ff5f57] border border-black/10 dark:border-white/10" />
+        <span className="w-[12px] h-[12px] rounded-full bg-[#febc2e] border border-black/10 dark:border-white/10" />
+        <span className="w-[12px] h-[12px] rounded-full bg-[#28c840] border border-black/10 dark:border-white/10" />
+        {title && <span className="ml-2 text-[12px] text-black/50 dark:text-muted font-medium">{title}</span>}
       </div>
       {children}
     </div>
@@ -38,41 +38,41 @@ function WhatsAppChat() {
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" opacity="0.6"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
       </div>
       {/* WA chat wallpaper bg */}
-      <div className="bg-[#e5ddd5] px-4 py-4 min-h-[300px] space-y-3" style={{ backgroundImage:"radial-gradient(circle, rgba(0,0,0,0.025) 1px, transparent 1px)", backgroundSize:"18px 18px" }}>
-        <div className="flex justify-center"><span className="bg-white/70 backdrop-blur-sm text-[10.5px] text-black/50 px-3 py-1 rounded-full shadow-sm">Today</span></div>
+      <div className="bg-[#e5ddd5] dark:bg-[#0b141a] px-4 py-4 min-h-[300px] space-y-3" style={{ backgroundImage:"radial-gradient(circle, rgba(0,0,0,0.025) 1px, transparent 1px)", backgroundSize:"18px 18px" }}>
+        <div className="flex justify-center"><span className="bg-white/70 dark:bg-white/10 backdrop-blur-sm text-[10.5px] text-black/50 dark:text-white/60 px-3 py-1 rounded-full shadow-sm">Today</span></div>
         {/* User message */}
         <div className="flex justify-end">
-          <div className="bg-[#dcf8c6] text-[13.5px] text-black/85 px-3.5 py-2.5 rounded-xl rounded-tr-sm max-w-[75%] shadow-sm">
+          <div className="bg-[#dcf8c6] dark:bg-[#005c4b] text-[13.5px] text-black/85 dark:text-white px-3.5 py-2.5 rounded-xl rounded-tr-sm max-w-[75%] shadow-sm">
             <p>Hi! I want to book a haircut + hair colour for this Saturday 🎨</p>
             <div className="flex justify-end items-center gap-1 mt-1">
-              <span className="text-[10px] text-black/35">11:14 AM</span>
+              <span className="text-[10px] text-black/35 dark:text-white/60">11:14 AM</span>
               <svg width="16" height="10" viewBox="0 0 16 11" fill="none"><path d="M1.5 5.5l3 3 6-7" stroke="#4fc3f7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M5.5 8.5l6-7" stroke="#4fc3f7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </div>
           </div>
         </div>
         {/* Availability check */}
         <div className="flex justify-start">
-          <div className="flex items-center gap-2 bg-white/75 backdrop-blur-sm px-3 py-1.5 rounded-full text-[11.5px] text-[#075e54] font-medium shadow-sm border border-[#25d366]/20">
+          <div className="flex items-center gap-2 bg-white/75 dark:bg-[#1f2c34] backdrop-blur-sm px-3 py-1.5 rounded-full text-[11.5px] text-[#075e54] dark:text-[#25d366] font-medium shadow-sm border border-[#25d366]/20">
             <span className="relative flex h-1.5 w-1.5"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25d366] opacity-70"/><span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#25d366]"/></span>
             Checking stylist availability…
           </div>
         </div>
         {/* AI reply */}
         <div className="flex justify-start">
-          <div className="bg-white text-[13.5px] text-black/85 px-3.5 py-2.5 rounded-xl rounded-tl-sm max-w-[80%] shadow-sm">
+          <div className="bg-white dark:bg-[#1f2c34] text-[13.5px] text-black/85 dark:text-white px-3.5 py-2.5 rounded-xl rounded-tl-sm max-w-[80%] shadow-sm">
             <p>Hey! 💇‍♀️ Saturday slots with our colourist Priya:</p>
-            <p className="mt-2 font-medium text-[13px] leading-[1.8]">✂️ <span className="font-semibold">10:00 AM</span> — Haircut + Colour (2.5 hrs)<br/>✂️ <span className="font-semibold">1:30 PM</span> — Haircut + Colour (2.5 hrs)</p>
+            <p className="mt-2 font-medium text-[13px] leading-[1.8]">✂️ <span className="font-semibold text-black dark:text-white">10:00 AM</span> — Haircut + Colour (2.5 hrs)<br/>✂️ <span className="font-semibold text-black dark:text-white">1:30 PM</span> — Haircut + Colour (2.5 hrs)</p>
             <p className="mt-1.5">Want me to book one? 🌟</p>
-            <div className="flex justify-end mt-1"><span className="text-[10px] text-black/35">11:15 AM</span></div>
+            <div className="flex justify-end mt-1"><span className="text-[10px] text-black/35 dark:text-white/60">11:15 AM</span></div>
           </div>
         </div>
       </div>
       {/* WA input */}
-      <div className="flex items-center gap-2 px-3 py-2.5 bg-[#f0f0f0]">
+      <div className="flex items-center gap-2 px-3 py-2.5 bg-[#f0f0f0] dark:bg-[#1f2c34]">
         <div className="w-8 h-8 rounded-full bg-[#919191]/20 flex items-center justify-center flex-shrink-0">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#919191" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
         </div>
-        <div className="flex-1 bg-white rounded-full px-4 py-2 text-[13px] text-black/30 shadow-sm">Type a message</div>
+        <div className="flex-1 bg-white dark:bg-[#2a3942] rounded-full px-4 py-2 text-[13px] text-black/30 dark:text-white/50 shadow-sm">Type a message</div>
         <div className="w-9 h-9 rounded-full bg-[#075e54] flex items-center justify-center flex-shrink-0 shadow">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
         </div>
@@ -88,25 +88,25 @@ function InstagramChat() {
   return (
     <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }} transition={{ duration:0.2 }}>
       {/* IG header */}
-      <div className="flex items-center gap-3 px-4 py-2.5 bg-white border-b border-gray-100">
+      <div className="flex items-center gap-3 px-4 py-2.5 bg-white dark:bg-[#121212] border-b border-gray-100 dark:border-white/10">
         <div className="relative flex-shrink-0">
           <div className="w-9 h-9 rounded-full flex items-center justify-center text-[16px]" style={{ background:"linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)" }}>🏨</div>
-          <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white" />
+          <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white dark:border-[#121212]" />
         </div>
         <div className="flex-1">
-          <p className="text-[13.5px] font-bold text-black leading-tight">thegrandinn.hotel</p>
-          <p className="text-[11px] text-black/45">Active now</p>
+          <p className="text-[13.5px] font-bold text-black dark:text-white leading-tight">thegrandinn.hotel</p>
+          <p className="text-[11px] text-black/45 dark:text-white/50">Active now</p>
         </div>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="1.8" strokeLinecap="round" opacity="0.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 6.18 2 2 0 015 4h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 11.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18v2.92z"/></svg>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="1.8" strokeLinecap="round" opacity="0.5"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-black/50 dark:text-white/60" strokeWidth="1.8" strokeLinecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 6.18 2 2 0 015 4h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 11.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18v2.92z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-black/50 dark:text-white/60" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
       </div>
       {/* IG messages */}
-      <div className="bg-white px-4 py-4 min-h-[300px] space-y-3">
-        <div className="flex justify-center"><span className="text-[11px] text-black/35 font-medium">Tuesday 10:41 AM</span></div>
+      <div className="bg-white dark:bg-[#121212] px-4 py-4 min-h-[300px] space-y-3">
+        <div className="flex justify-center"><span className="text-[11px] text-black/35 dark:text-white/50 font-medium">Tuesday 10:41 AM</span></div>
         {/* Bot message */}
         <div className="flex justify-start items-end gap-2">
           <div className="w-6 h-6 rounded-full flex-shrink-0 text-[10px] flex items-center justify-center" style={{ background:"linear-gradient(45deg, #f09433, #dc2743, #bc1888)" }}>🏨</div>
-          <div className="bg-[#efefef] text-[13.5px] text-black/85 px-4 py-2.5 rounded-2xl rounded-bl-md max-w-[72%]">
+          <div className="bg-[#efefef] dark:bg-[#262626] text-[13.5px] text-black/85 dark:text-white/95 px-4 py-2.5 rounded-2xl rounded-bl-md max-w-[72%]">
             🌟 Welcome to The Grand Inn! I&apos;m your 24/7 AI concierge. How can I help?
           </div>
         </div>
@@ -119,7 +119,7 @@ function InstagramChat() {
         {/* Checking */}
         <div className="flex justify-start items-end gap-2">
           <div className="w-6 h-6 rounded-full flex-shrink-0 text-[10px] flex items-center justify-center" style={{ background:"linear-gradient(45deg, #f09433, #dc2743, #bc1888)" }}>🏨</div>
-          <div className="flex items-center gap-2 bg-[#efefef] px-4 py-2 rounded-2xl rounded-bl-md text-[11.5px] font-medium text-black/55">
+          <div className="flex items-center gap-2 bg-[#efefef] dark:bg-[#262626] px-4 py-2 rounded-2xl rounded-bl-md text-[11.5px] font-medium text-black/55 dark:text-white/70">
             <span className="relative flex h-1.5 w-1.5"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c13584] opacity-70"/><span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#c13584]"/></span>
             Checking room availability…
           </div>
@@ -127,24 +127,24 @@ function InstagramChat() {
         {/* Reply */}
         <div className="flex justify-start items-end gap-2">
           <div className="w-6 h-6 rounded-full flex-shrink-0 text-[10px] flex items-center justify-center" style={{ background:"linear-gradient(45deg, #f09433, #dc2743, #bc1888)" }}>🏨</div>
-          <div className="bg-[#efefef] text-[13.5px] text-black/85 px-4 py-2.5 rounded-2xl rounded-bl-md max-w-[74%]">
-            🎉 Yes! <span className="font-semibold">Deluxe Room 204</span> is available Dec 24–26. Mountain view, king bed. <span className="font-semibold">$89/night</span>. Shall I reserve it?
+          <div className="bg-[#efefef] dark:bg-[#262626] text-[13.5px] text-black/85 dark:text-white/95 px-4 py-2.5 rounded-2xl rounded-bl-md max-w-[74%]">
+            🎉 Yes! <span className="font-semibold text-black dark:text-white">Deluxe Room 204</span> is available Dec 24–26. Mountain view, king bed. <span className="font-semibold text-black dark:text-white">$89/night</span>. Shall I reserve it?
           </div>
         </div>
         <div className="flex justify-end items-center gap-1">
-          <span className="text-[10px] text-black/30">Seen</span>
+          <span className="text-[10px] text-black/30 dark:text-white/50">Seen</span>
           <div className="w-3.5 h-3.5 rounded-full flex-shrink-0 text-[8px] flex items-center justify-center" style={{ background:"linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045)" }}>✓</div>
         </div>
         <div className="flex justify-end">
-          <div className="bg-white border border-gray-200 rounded-full px-2 py-0.5 text-[12px] shadow-sm">🔥</div>
+          <div className="bg-white dark:bg-[#262626] border border-gray-200 dark:border-white/10 rounded-full px-2 py-0.5 text-[12px] shadow-sm">🔥</div>
         </div>
       </div>
       {/* IG input */}
-      <div className="flex items-center gap-2 px-3 py-2.5 bg-white border-t border-gray-100">
-        <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+      <div className="flex items-center gap-2 px-3 py-2.5 bg-white dark:bg-[#121212] border-t border-gray-100 dark:border-white/10">
+        <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center flex-shrink-0">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c13584" strokeWidth="2" strokeLinecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
         </div>
-        <div className="flex-1 border border-gray-200 rounded-full px-4 py-2 text-[13px] text-black/30">Message…</div>
+        <div className="flex-1 border border-gray-200 dark:border-white/15 bg-white dark:bg-[#262626] rounded-full px-4 py-2 text-[13px] text-black/40 dark:text-white/50">Message…</div>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c13584" strokeWidth="2" strokeLinecap="round" opacity="0.8"><path d="M12 5v14M5 12l7-7 7 7"/></svg>
         <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background:"linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045)" }}>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
@@ -161,32 +161,32 @@ function MessengerChat() {
   return (
     <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }} transition={{ duration:0.2 }}>
       {/* Messenger header */}
-      <div className="flex items-center gap-3 px-4 py-2.5 bg-white border-b border-gray-100">
+      <div className="flex items-center gap-3 px-4 py-2.5 bg-white dark:bg-[#18191a] border-b border-gray-100 dark:border-white/10">
         <div className="relative flex-shrink-0">
           <div className="w-9 h-9 rounded-full flex items-center justify-center text-[16px]" style={{ background:"linear-gradient(135deg, #0084ff, #a033ff)" }}>🔧</div>
-          <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#31a24c] rounded-full border-2 border-white" />
+          <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#31a24c] rounded-full border-2 border-white dark:border-[#18191a]" />
         </div>
         <div className="flex-1">
-          <p className="text-[13.5px] font-bold text-black leading-tight">QuickFix Garage</p>
-          <div className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-[#31a24c]"/><p className="text-[11px] text-black/45">Active now</p></div>
+          <p className="text-[13.5px] font-bold text-black dark:text-white leading-tight">QuickFix Garage</p>
+          <div className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-[#31a24c]"/><p className="text-[11px] text-black/45 dark:text-white/60">Active now</p></div>
         </div>
-        <div className="w-8 h-8 rounded-full bg-[#f0f2f5] flex items-center justify-center flex-shrink-0">
+        <div className="w-8 h-8 rounded-full bg-[#f0f2f5] dark:bg-[#3a3b3c] flex items-center justify-center flex-shrink-0">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0084ff" strokeWidth="2" strokeLinecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 6.18 2 2 0 015 4h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 11.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18v2.92z"/></svg>
         </div>
-        <div className="w-8 h-8 rounded-full bg-[#f0f2f5] flex items-center justify-center flex-shrink-0">
+        <div className="w-8 h-8 rounded-full bg-[#f0f2f5] dark:bg-[#3a3b3c] flex items-center justify-center flex-shrink-0">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0084ff" strokeWidth="2" strokeLinecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
         </div>
-        <div className="w-8 h-8 rounded-full bg-[#f0f2f5] flex items-center justify-center flex-shrink-0">
+        <div className="w-8 h-8 rounded-full bg-[#f0f2f5] dark:bg-[#3a3b3c] flex items-center justify-center flex-shrink-0">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0084ff" strokeWidth="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
         </div>
       </div>
       {/* Messages */}
-      <div className="bg-white px-4 py-4 min-h-[300px] space-y-3">
-        <div className="flex justify-center"><span className="text-[11px] text-black/35 font-medium">Wednesday 2:15 PM</span></div>
+      <div className="bg-white dark:bg-[#18191a] px-4 py-4 min-h-[300px] space-y-3">
+        <div className="flex justify-center"><span className="text-[11px] text-black/35 dark:text-white/50 font-medium">Wednesday 2:15 PM</span></div>
         {/* Bot */}
         <div className="flex justify-start items-end gap-2">
           <div className="w-6 h-6 rounded-full flex-shrink-0 text-[10px] flex items-center justify-center" style={{ background:"linear-gradient(135deg, #0084ff, #a033ff)" }}>🔧</div>
-          <div className="bg-[#f0f2f5] text-[13.5px] text-black/85 px-4 py-2.5 rounded-2xl rounded-bl-sm max-w-[70%]">
+          <div className="bg-[#f0f2f5] dark:bg-[#3a3b3c] text-[13.5px] text-black/85 dark:text-white px-4 py-2.5 rounded-2xl rounded-bl-sm max-w-[70%]">
             Hey! 🔧 QuickFix Garage here. I&apos;m your 24/7 service bot. What do you need?
           </div>
         </div>
@@ -199,7 +199,7 @@ function MessengerChat() {
         {/* Checking */}
         <div className="flex justify-start items-end gap-2">
           <div className="w-6 h-6 rounded-full flex-shrink-0 text-[10px] flex items-center justify-center" style={{ background:"linear-gradient(135deg, #0084ff, #a033ff)" }}>🔧</div>
-          <div className="flex items-center gap-2 bg-[#f0f2f5] px-4 py-2 rounded-2xl rounded-bl-sm text-[11.5px] text-black/50 font-medium">
+          <div className="flex items-center gap-2 bg-[#f0f2f5] dark:bg-[#3a3b3c] px-4 py-2 rounded-2xl rounded-bl-sm text-[11.5px] text-black/50 dark:text-white/70 font-medium">
             <span className="relative flex h-1.5 w-1.5"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0084ff] opacity-70"/><span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#0084ff]"/></span>
             Checking mechanic slots this weekend…
           </div>
@@ -207,29 +207,29 @@ function MessengerChat() {
         {/* Reply */}
         <div className="flex justify-start items-end gap-2">
           <div className="w-6 h-6 rounded-full flex-shrink-0 text-[10px] flex items-center justify-center" style={{ background:"linear-gradient(135deg, #0084ff, #a033ff)" }}>🔧</div>
-          <div className="bg-[#f0f2f5] text-[13.5px] text-black/85 px-4 py-2.5 rounded-2xl rounded-bl-sm max-w-[74%]">
-            ✅ <span className="font-semibold">Saturday 9 AM</span> is open! Full service includes oil change, brakes & chain lube. Est. <span className="font-semibold">3 hrs</span>. Book it?
+          <div className="bg-[#f0f2f5] dark:bg-[#3a3b3c] text-[13.5px] text-black/85 dark:text-white px-4 py-2.5 rounded-2xl rounded-bl-sm max-w-[74%]">
+            ✅ <span className="font-semibold text-black dark:text-white">Saturday 9 AM</span> is open! Full service includes oil change, brakes &amp; chain lube. Est. <span className="font-semibold text-black dark:text-white">3 hrs</span>. Book it?
           </div>
         </div>
         {/* Reaction */}
         <div className="flex justify-start pl-8">
-          <div className="bg-white border border-gray-200 rounded-full px-2 py-0.5 text-[12px] shadow-sm flex items-center gap-1">👍 <span className="text-[10px] text-black/35">1</span></div>
+          <div className="bg-white dark:bg-[#242526] border border-gray-200 dark:border-white/10 rounded-full px-2 py-0.5 text-[12px] shadow-sm flex items-center gap-1">👍 <span className="text-[10px] text-black/35 dark:text-white/60">1</span></div>
         </div>
         {/* Seen */}
         <div className="flex justify-end items-center gap-1">
-          <span className="text-[10px] text-black/30">Seen 2:16 PM</span>
+          <span className="text-[10px] text-black/30 dark:text-white/50">Seen 2:16 PM</span>
           <div className="w-3.5 h-3.5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background:"linear-gradient(135deg, #0084ff, #a033ff)" }}>
             <svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 3l2 2 4-4" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </div>
         </div>
       </div>
       {/* Messenger input */}
-      <div className="flex items-center gap-2 px-3 py-2.5 bg-white border-t border-gray-100">
-        <div className="w-8 h-8 rounded-full bg-[#f0f2f5] flex items-center justify-center flex-shrink-0">
+      <div className="flex items-center gap-2 px-3 py-2.5 bg-white dark:bg-[#18191a] border-t border-gray-100 dark:border-white/10">
+        <div className="w-8 h-8 rounded-full bg-[#f0f2f5] dark:bg-[#3a3b3c] flex items-center justify-center flex-shrink-0">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0084ff" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
         </div>
-        <div className="flex-1 bg-[#f0f2f5] rounded-full px-4 py-2 text-[13px] text-black/30">Aa</div>
-        <div className="w-8 h-8 rounded-full bg-[#f0f2f5] flex items-center justify-center flex-shrink-0">
+        <div className="flex-1 bg-[#f0f2f5] dark:bg-[#3a3b3c] rounded-full px-4 py-2 text-[13px] text-black/40 dark:text-white/50">Aa</div>
+        <div className="w-8 h-8 rounded-full bg-[#f0f2f5] dark:bg-[#3a3b3c] flex items-center justify-center flex-shrink-0">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0084ff" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
         </div>
         <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background:"linear-gradient(135deg, #0084ff, #a033ff)" }}>
@@ -258,12 +258,12 @@ export function Hero() {
         className="absolute left-[2%] 2xl:left-[6%] top-[22%] w-[220px] lg:w-[245px] hidden xl:block float-2 z-0"
       >
         <WinChrome title="whatsapp.mov">
-          <div className="bg-[#ece5dd] p-3.5 space-y-2.5">
+          <div className="bg-[#ece5dd] dark:bg-[#0b141a] p-3.5 space-y-2.5">
             <div className="flex justify-end">
-              <div className="bg-[#dcf8c6] text-[12px] text-black/80 px-3 py-2 rounded-xl rounded-tr-sm max-w-[85%] shadow-xs">Can I book tomorrow at 3pm?</div>
+              <div className="bg-[#dcf8c6] dark:bg-[#005c4b] text-[12px] text-black/80 dark:text-white px-3 py-2 rounded-xl rounded-tr-sm max-w-[85%] shadow-xs">Can I book tomorrow at 3pm?</div>
             </div>
             <div className="flex justify-start">
-              <div className="bg-white text-[12px] text-black/80 px-3 py-2 rounded-xl rounded-tl-sm max-w-[85%] shadow-xs">Yes! 3 PM is open. Booked ✓</div>
+              <div className="bg-white dark:bg-[#1f2c34] text-[12px] text-black/80 dark:text-white px-3 py-2 rounded-xl rounded-tl-sm max-w-[85%] shadow-xs">Yes! 3 PM is open. Booked ✓</div>
             </div>
           </div>
         </WinChrome>
@@ -277,13 +277,13 @@ export function Hero() {
         className="absolute right-[2%] 2xl:right-[6%] top-[20%] w-[215px] lg:w-[235px] hidden xl:block float-3 z-0"
       >
         <WinChrome title="booking.mov">
-          <div className="bg-white p-3.5 space-y-2">
-            <div className="text-[10.5px] font-semibold text-black/40 uppercase tracking-wider">Confirmed</div>
+          <div className="bg-white dark:bg-soft-canvas p-3.5 space-y-2">
+            <div className="text-[10.5px] font-semibold text-black/40 dark:text-muted uppercase tracking-wider">Confirmed</div>
             <div className="text-[13px] font-bold text-ink">Deluxe Room 204 · Dec 24</div>
             <div className="text-[11.5px] text-muted">2 Nights · 2 Guests Reserved</div>
-            <div className="mt-1.5 flex items-center gap-1.5 bg-green-50 border border-green-200 rounded-lg px-2.5 py-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-green-600 flex-shrink-0" />
-              <span className="text-[11.5px] text-green-700 font-medium">Booked &amp; confirmed</span>
+            <div className="mt-1.5 flex items-center gap-1.5 bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800/40 rounded-lg px-2.5 py-1.5">
+              <CheckCircle2 className="w-3.5 h-3.5 text-green-600 dark:text-green-400 flex-shrink-0" />
+              <span className="text-[11.5px] text-green-700 dark:text-green-300 font-medium">Booked &amp; confirmed</span>
             </div>
           </div>
         </WinChrome>
@@ -292,7 +292,7 @@ export function Hero() {
       {/* ── Central headline ── */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-[960px] mx-auto my-auto px-4">
         <motion.div initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7, ease:"easeOut" }} className="flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-signal-blue/20 text-signal-blue text-[11px] sm:text-[12px] font-bold tracking-wider uppercase mb-5 sm:mb-7 shadow-xs">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/40 border border-signal-blue/20 dark:border-signal-blue/40 text-signal-blue text-[11px] sm:text-[12px] font-bold tracking-wider uppercase mb-5 sm:mb-7 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-signal-blue animate-pulse" />
             AI Booking Assistant · Any Service Business
           </div>
@@ -321,7 +321,7 @@ export function Hero() {
             </a>
           </div>
 
-          <p className="mt-4 sm:mt-5 text-[12px] sm:text-[13px] text-muted/60">
+          <p className="mt-4 sm:mt-5 text-[12px] sm:text-[13px] text-muted/60 dark:text-muted/80">
             100% free to try · no card needed · works with your calendar
           </p>
         </motion.div>
@@ -363,26 +363,38 @@ export function PlatformDemo() {
       <div className="w-full max-w-[680px] mx-auto">
         <WinChrome title="vesper-demo.mov">
           {/* Platform tab bar */}
-          <div className="flex items-center border-b border-[hsl(0_0%_84%)] bg-[hsl(0_0%_93%)]">
+          <div className="flex items-center border-b border-[hsl(0_0%_84%)] dark:border-line bg-[hsl(0_0%_93%)] dark:bg-[hsl(var(--soft-canvas))]">
             <button
               onClick={()=>setActiveTab("whatsapp")}
-              className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 text-[12.5px] sm:text-[13px] font-semibold border-b-2 transition-all ${activeTab==="whatsapp"?"border-[#25d366] text-[#075e54] bg-white/70":"border-transparent text-black/40 hover:text-black/65"}`}
+              className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 text-[12.5px] sm:text-[13px] font-semibold border-b-2 transition-all ${
+                activeTab==="whatsapp"
+                  ? "border-[#25d366] text-[#075e54] dark:text-[#25d366] bg-white/70 dark:bg-white/10"
+                  : "border-transparent text-black/40 dark:text-white/60 hover:text-black/65 dark:hover:text-white/90"
+              }`}
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className={activeTab==="whatsapp"?"text-[#25d366]":"text-black/25"}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className={activeTab==="whatsapp"?"text-[#25d366]":"text-black/25 dark:text-white/40"}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               <span>WhatsApp</span>
             </button>
             <button
               onClick={()=>setActiveTab("instagram")}
-              className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 text-[12.5px] sm:text-[13px] font-semibold border-b-2 transition-all ${activeTab==="instagram"?"border-[#c13584] text-[#c13584] bg-white/70":"border-transparent text-black/40 hover:text-black/65"}`}
+              className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 text-[12.5px] sm:text-[13px] font-semibold border-b-2 transition-all ${
+                activeTab==="instagram"
+                  ? "border-[#c13584] text-[#c13584] dark:text-[#f472b6] bg-white/70 dark:bg-white/10"
+                  : "border-transparent text-black/40 dark:text-white/60 hover:text-black/65 dark:hover:text-white/90"
+              }`}
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className={activeTab==="instagram"?"text-[#c13584]":"text-black/25"}><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className={activeTab==="instagram"?"text-[#c13584]":"text-black/25 dark:text-white/40"}><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
               <span>Instagram</span>
             </button>
             <button
               onClick={()=>setActiveTab("messenger")}
-              className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 text-[12.5px] sm:text-[13px] font-semibold border-b-2 transition-all ${activeTab==="messenger"?"border-[#0084ff] text-[#0084ff] bg-white/70":"border-transparent text-black/40 hover:text-black/65"}`}
+              className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 text-[12.5px] sm:text-[13px] font-semibold border-b-2 transition-all ${
+                activeTab==="messenger"
+                  ? "border-[#0084ff] text-[#0084ff] dark:text-[#60a5fa] bg-white/70 dark:bg-white/10"
+                  : "border-transparent text-black/40 dark:text-white/60 hover:text-black/65 dark:hover:text-white/90"
+              }`}
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className={activeTab==="messenger"?"text-[#0084ff]":"text-black/25"}><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.683V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className={activeTab==="messenger"?"text-[#0084ff]":"text-black/25 dark:text-white/40"}><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.683V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg>
               <span>Messenger</span>
             </button>
           </div>
@@ -444,7 +456,7 @@ export function Manifesto() {
         {/* Notes-style window */}
         <div className="w-full max-w-[580px]">
           <WinChrome title="notes">
-            <div className="bg-[#fdf8e8] p-10 md:p-14 min-h-[340px]">
+            <div className="bg-[#fdf8e8] dark:bg-[#151b26] p-10 md:p-14 min-h-[340px]">
               <div className="space-y-5 text-[15px] leading-[1.7] text-ink/80 font-[450]">
                 <motion.p style={{ opacity: o1 }}>
                   most service businesses lose high-paying customers because they can&apos;t reply at midnight.
@@ -460,7 +472,7 @@ export function Manifesto() {
                   <span className="blink-cursor" />
                 </motion.p>
               </div>
-              <div className="mt-10 flex items-center gap-4 border-t border-black/10 pt-6">
+              <div className="mt-10 flex items-center gap-4 border-t border-black/10 dark:border-white/10 pt-6">
                 <div className="w-8 h-8 rounded-full bg-signal-blue flex items-center justify-center text-white text-[13px] font-bold flex-shrink-0">S</div>
                 <div>
                   <p className="text-[13px] font-semibold text-ink">the team,</p>
@@ -478,9 +490,9 @@ export function Manifesto() {
 /* ── Three Jobs ── */
 export function ThreeJobs() {
   const jobs = [
-    { icon: MessageSquare, title: "Answer accurately", copy: "Vesper reads from your approved business knowledge. No hallucinations about prices, staff, or availability.", color: "bg-blue-50 text-blue-600" },
-    { icon: Calendar,     title: "Book safely",       copy: "Every booking is checked against real availability before confirming. Zero double-bookings.",       color: "bg-green-50 text-green-600" },
-    { icon: Zap,          title: "Remember context",  copy: "Recent messages and history are layered together for natural, multi-turn conversations.",            color: "bg-amber-50 text-amber-600" },
+    { icon: MessageSquare, title: "Answer accurately", copy: "Vesper reads from your approved business knowledge. No hallucinations about prices, staff, or availability.", color: "bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400" },
+    { icon: Calendar,     title: "Book safely",       copy: "Every booking is checked against real availability before confirming. Zero double-bookings.",       color: "bg-green-50 dark:bg-green-950/40 text-green-600 dark:text-green-400" },
+    { icon: Zap,          title: "Remember context",  copy: "Recent messages and history are layered together for natural, multi-turn conversations.",            color: "bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400" },
   ]
   return (
     <section className="w-full py-28 px-6 bg-canvas" id="features">
@@ -492,7 +504,7 @@ export function ThreeJobs() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {jobs.map((job, i) => (
             <WinChrome key={i} className="flex flex-col h-full">
-              <div className="bg-white p-8 flex flex-col h-full">
+              <div className="bg-white dark:bg-soft-canvas p-8 flex flex-col h-full">
                 <div className={`w-10 h-10 rounded-full ${job.color} flex items-center justify-center mb-6`}>
                   <job.icon className="w-5 h-5" />
                 </div>
@@ -530,15 +542,15 @@ export function TrustSection() {
               ))}
             </div>
           </div>
-          <p className="text-[13px] text-muted/60 font-medium text-center max-w-[600px] mx-auto">10,000+ bookings handled · 200+ service businesses · growing every day</p>
+          <p className="text-[13px] text-muted/60 dark:text-muted/80 font-medium text-center max-w-[600px] mx-auto">10,000+ bookings handled · 200+ service businesses · growing every day</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {cols.map((col, ci) => (
             <div key={ci} className="flex flex-col gap-4">
               {col.map((fb) => (
                 <WinChrome key={fb.handle}>
-                  <div className="bg-white" style={{ borderTop:`3px solid ${fb.color}20` }}>
-                    <div className="p-5 border-b border-[hsl(0_0%_90%)]" style={{ background:`linear-gradient(90deg, ${fb.color}14, ${fb.color}14), linear-gradient(90deg, #e8e8e8 0%, #f4f4f4 50%, #e8e8e8 100%)` }} />
+                  <div className="bg-white dark:bg-soft-canvas" style={{ borderTop:`3px solid ${fb.color}20` }}>
+                    <div className="p-5 border-b border-[hsl(0_0%_90%)] dark:border-line" style={{ background:`linear-gradient(90deg, ${fb.color}14, ${fb.color}14), linear-gradient(90deg, #e8e8e8 0%, #f4f4f4 50%, #e8e8e8 100%)` }} />
                     <div className="p-5">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-9 h-9 rounded-full flex items-center justify-center text-white text-[14px] font-bold flex-shrink-0" style={{ background:fb.color }}>
@@ -547,7 +559,7 @@ export function TrustSection() {
                         <div>
                           <p className="text-[13px] font-semibold text-ink">{fb.name}</p>
                           <p className="text-[12px] text-muted">{fb.handle}</p>
-                          {fb.role && <span className="inline-block mt-0.5 text-[10px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded-full bg-black/5 text-black/40">{fb.role}</span>}
+                          {fb.role && <span className="inline-block mt-0.5 text-[10px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded-full bg-black/5 dark:bg-white/10 text-black/40 dark:text-white/70">{fb.role}</span>}
                         </div>
                       </div>
                       <p className="text-[14px] text-ink/80 leading-relaxed">{fb.quote}</p>
@@ -638,13 +650,13 @@ export function FinalCTA() {
 
           {/* Billing Toggle */}
           <div className="flex items-center justify-center mt-8">
-            <div className="inline-flex items-center p-1 rounded-full bg-[hsl(40_10%_92%)] border border-line">
+            <div className="inline-flex items-center p-1 rounded-full bg-[hsl(40_10%_92%)] dark:bg-soft-canvas border border-line">
               <button
                 type="button"
                 onClick={() => setBilling("monthly")}
                 className={`px-4 sm:px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all ${
                   billing === "monthly"
-                    ? "bg-white text-ink shadow-sm"
+                    ? "bg-white dark:bg-white/15 text-ink shadow-sm"
                     : "text-muted hover:text-ink"
                 }`}
               >
@@ -655,12 +667,12 @@ export function FinalCTA() {
                 onClick={() => setBilling("yearly")}
                 className={`px-4 sm:px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all inline-flex items-center gap-1.5 ${
                   billing === "yearly"
-                    ? "bg-white text-ink shadow-sm"
+                    ? "bg-white dark:bg-white/15 text-ink shadow-sm"
                     : "text-muted hover:text-ink"
                 }`}
               >
                 <span>Annual</span>
-                <span className="text-[11px] font-bold text-emerald-700 bg-emerald-100/70 px-2 py-0.5 rounded-full">
+                <span className="text-[11px] font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-100/70 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full">
                   Save 20%
                 </span>
               </button>
@@ -673,15 +685,15 @@ export function FinalCTA() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative bg-white rounded-2xl sm:rounded-3xl flex flex-col justify-between transition-all duration-200 ${
+              className={`relative bg-white dark:bg-soft-canvas rounded-2xl sm:rounded-3xl flex flex-col justify-between transition-all duration-200 ${
                 plan.highlight
-                  ? "border-2 border-ink shadow-frame ring-1 ring-ink/5 md:-translate-y-2"
-                  : "border border-line shadow-card hover:shadow-card-hover hover:border-ink/20"
+                  ? "border-2 border-ink dark:border-signal-blue shadow-frame ring-1 ring-ink/5 md:-translate-y-2"
+                  : "border border-line shadow-card hover:shadow-card-hover hover:border-ink/20 dark:hover:border-white/30"
               }`}
             >
               {plan.badge && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
-                  <span className="bg-ink text-white text-[11px] font-bold tracking-wider uppercase px-3.5 py-1 rounded-full shadow-sm">
+                  <span className="bg-ink text-white dark:bg-signal-blue dark:text-white text-[11px] font-bold tracking-wider uppercase px-3.5 py-1 rounded-full shadow-sm">
                     {plan.badge}
                   </span>
                 </div>
@@ -716,7 +728,7 @@ export function FinalCTA() {
               {/* Feature List */}
               <div className="p-7 sm:p-8 flex-1 flex flex-col justify-between gap-6">
                 <div className="space-y-3.5">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-muted/70">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-muted/70 dark:text-muted/90">
                     What's included
                   </p>
                   {plan.features.map((f) => (
@@ -737,8 +749,8 @@ export function FinalCTA() {
                     href={plan.ctaHref}
                     className={`block w-full text-center py-3.5 px-4 rounded-xl text-[14px] font-semibold transition-all ${
                       plan.highlight
-                        ? "bg-ink text-white hover:bg-ink/90 shadow-sm"
-                        : "bg-soft-canvas text-ink hover:bg-[hsl(40_12%_88%)] border border-line"
+                        ? "bg-ink text-white dark:bg-signal-blue dark:text-white hover:opacity-90 shadow-sm"
+                        : "bg-soft-canvas text-ink hover:bg-[hsl(40_12%_88%)] dark:hover:bg-white/10 border border-line"
                     }`}
                   >
                     {plan.ctaText}
@@ -754,7 +766,7 @@ export function FinalCTA() {
           <p className="text-[13px] text-muted font-medium">
             14-day free trial on all plans · Billed in NPR (Nepali Rupees) · Cancel anytime
           </p>
-          <p className="text-[12px] text-muted/60">
+          <p className="text-[12px] text-muted/60 dark:text-muted/80">
             Need a custom integration or multi-branch plan?{" "}
             <a href="mailto:hello@vesper.ai" className="underline hover:text-ink">
               Talk to our team

@@ -157,10 +157,11 @@ function AnimatedBeam({
     >
       <path
         d={path}
-        stroke={pathColor}
+        stroke="currentColor"
         strokeWidth={pathWidth}
         strokeOpacity={pathOpacity}
         strokeLinecap="round"
+        className="text-black/[0.08] dark:text-white/[0.14]"
       />
 
       <path
@@ -227,10 +228,10 @@ const IntegrationNode = forwardRef<HTMLDivElement, NodeProps>(
       <div className="flex flex-col items-center gap-2 group cursor-pointer">
         <motion.div
           ref={ref}
-          className={`relative flex items-center justify-center overflow-hidden border border-black/10 bg-white shadow-card ${
+          className={`relative flex items-center justify-center overflow-hidden border border-black/10 dark:border-white/15 bg-white dark:bg-soft-canvas shadow-card ${
             large
               ? "w-[82px] h-[82px] sm:w-[98px] sm:h-[98px] rounded-[24px] sm:rounded-[28px] shadow-[0_12px_32px_rgba(52,114,255,0.2),0_0_0_8px_rgba(52,114,255,0.06)] border-signal-blue/30"
-              : "w-[54px] h-[54px] sm:w-[64px] sm:h-[64px] rounded-[18px] sm:rounded-[22px] hover:border-black/20 hover:shadow-frame"
+              : "w-[54px] h-[54px] sm:w-[64px] sm:h-[64px] rounded-[18px] sm:rounded-[22px] hover:border-black/20 dark:hover:border-white/30 hover:shadow-frame"
           }`}
           whileHover={{
             scale: 1.09,
@@ -242,13 +243,13 @@ const IntegrationNode = forwardRef<HTMLDivElement, NodeProps>(
             damping: 18,
           }}
         >
-          <span className="absolute w-[90%] h-[45%] left-[5%] -top-[18%] rounded-full opacity-60 blur-[10px] bg-black/5 pointer-events-none" />
+          <span className="absolute w-[90%] h-[45%] left-[5%] -top-[18%] rounded-full opacity-60 blur-[10px] bg-black/5 dark:bg-white/5 pointer-events-none" />
           <div className={`relative z-10 flex items-center justify-center ${large ? "w-[64%] h-[64%]" : "w-[58%] h-[58%]"}`}>
             {icon}
           </div>
         </motion.div>
 
-        <span className="text-[11px] sm:text-[12px] font-bold tracking-wider uppercase text-ink/60 group-hover:text-ink transition-colors">
+        <span className="text-[11px] sm:text-[12px] font-bold tracking-wider uppercase text-ink/60 dark:text-ink/85 group-hover:text-ink transition-colors">
           {name}
         </span>
       </div>

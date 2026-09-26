@@ -281,11 +281,11 @@ export function BookDemoModal({
                       onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-xl border border-line bg-white dark:bg-[hsl(var(--canvas))] text-ink text-[14px] focus:outline-none focus:border-ink transition-all"
                     >
-                      <option value="Salon / Spa">Salon, Hair &amp; Spa</option>
-                      <option value="Hotel / Resort">Hotel, Guesthouse &amp; Resort</option>
-                      <option value="Auto Workshop">Auto Workshop / Bike Garage</option>
-                      <option value="Clinic / Dental">Clinic, Dental &amp; Healthcare</option>
-                      <option value="Other Service">Other Service Business</option>
+                      <option value="Salon / Spa" className="bg-white dark:bg-[#121824] text-ink">Salon, Hair &amp; Spa</option>
+                      <option value="Hotel / Resort" className="bg-white dark:bg-[#121824] text-ink">Hotel, Guesthouse &amp; Resort</option>
+                      <option value="Auto Workshop" className="bg-white dark:bg-[#121824] text-ink">Auto Workshop / Bike Garage</option>
+                      <option value="Clinic / Dental" className="bg-white dark:bg-[#121824] text-ink">Clinic, Dental &amp; Healthcare</option>
+                      <option value="Other Service" className="bg-white dark:bg-[#121824] text-ink">Other Service Business</option>
                     </select>
                   </div>
 
