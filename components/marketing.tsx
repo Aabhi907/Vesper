@@ -1,6 +1,6 @@
 "use client"
 import * as React from "react"
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from "framer-motion"
 import { Check, CheckCircle2, ChevronDown, Shield, Globe, Database } from "lucide-react"
 
 /* ── macOS window chrome wrapper ── */
@@ -551,6 +551,112 @@ function HanddrawnZapIcon({ className = "w-6 h-6" }: { className?: string }) {
   )
 }
 
+const tiltSpring = { damping: 25, stiffness: 120 }
+const driftSpring = { damping: 30, stiffness: 100 }
+
+function InteractiveJobCard({
+  job,
+}: {
+  job: {
+    icon: React.ComponentType<{ className?: string }>
+    title: string
+    copy: string
+  }
+}) {
+  const ref = React.useRef<HTMLDivElement>(null)
+  const [hover, setHover] = React.useState(false)
+  const [canTilt, setCanTilt] = React.useState(true)
+
+  React.useEffect(() => {
+    const mq = window.matchMedia("(pointer: fine) and (prefers-reduced-motion: no-preference)")
+    setCanTilt(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setCanTilt(e.matches)
+    mq.addEventListener?.("change", handler)
+    return () => mq.removeEventListener?.("change", handler)
+  }, [])
+
+  const px = useMotionValue(0)
+  const py = useMotionValue(0)
+
+  const rotateX = useSpring(useTransform(py, [-250, 250], [14, -14]), tiltSpring)
+  const rotateY = useSpring(useTransform(px, [-250, 250], [-14, 14]), tiltSpring)
+  const sheenX = useSpring(useTransform(px, [-250, 250], ["-100%", "200%"]), driftSpring)
+  const glowX = useSpring(useTransform(px, [-250, 250], [-80, 80]), driftSpring)
+  const glowY = useSpring(useTransform(py, [-250, 250], [-80, 80]), driftSpring)
+  const shadowX = useTransform(px, [-250, 250], [24, -24])
+  const shadowY = useTransform(py, [-250, 250], [24, -24])
+
+  const track = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current || !canTilt) return
+    const r = ref.current.getBoundingClientRect()
+    px.set(e.clientX - (r.left + r.width / 2))
+    py.set(e.clientY - (r.top + r.height / 2))
+  }
+
+  const leave = () => {
+    setHover(false)
+    px.set(0)
+    py.set(0)
+  }
+
+  return (
+    <div
+      className="relative flex flex-col h-full"
+      style={canTilt ? { perspective: "1000px" } : undefined}
+      onMouseMove={canTilt ? track : undefined}
+      onMouseEnter={canTilt ? () => setHover(true) : undefined}
+      onMouseLeave={canTilt ? leave : undefined}
+    >
+      <motion.div
+        ref={ref}
+        style={canTilt ? { rotateX, rotateY, transformStyle: "preserve-3d" } : undefined}
+        className="relative z-20 w-full h-full flex flex-col"
+      >
+        {/* Soft shadow drifting opposite the pointer */}
+        {canTilt && (
+          <motion.div
+            aria-hidden
+            style={{ x: shadowX, y: shadowY, opacity: hover ? 0.35 : 0.08 }}
+            className="pointer-events-none absolute -inset-3 -z-10 rounded-2xl bg-black/40 dark:bg-black/60 blur-[24px] transition-opacity duration-300"
+          />
+        )}
+
+        <WinChrome className="flex flex-col h-full relative overflow-hidden">
+          {/* Hover glow that follows the pointer */}
+          {canTilt && (
+            <motion.div
+              aria-hidden
+              style={{ x: glowX, y: glowY, opacity: hover ? 0.35 : 0 }}
+              className="pointer-events-none absolute -inset-24 z-0 rounded-full bg-gradient-to-tr from-signal-blue/20 to-purple-500/20 blur-[50px] transition-opacity duration-500"
+            />
+          )}
+
+          {/* White sheen that slides across */}
+          {canTilt && (
+            <motion.div
+              aria-hidden
+              style={{ x: sheenX }}
+              className="pointer-events-none absolute inset-0 size-full -skew-x-12 bg-gradient-to-r from-transparent via-white/20 dark:via-white/10 to-transparent z-20"
+            />
+          )}
+
+          {/* Content lifted toward the viewer */}
+          <div
+            style={canTilt ? { transform: "translateZ(30px)", transformStyle: "preserve-3d" } : undefined}
+            className="bg-white dark:bg-soft-canvas p-8 flex flex-col h-full relative z-10"
+          >
+            <div className="w-12 h-12 rounded-xl bg-soft-canvas dark:bg-white/5 border border-line flex items-center justify-center mb-6 text-ink shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+              <job.icon className="w-6 h-6 text-ink" />
+            </div>
+            <h3 className="text-[18px] font-semibold text-ink mb-3">{job.title}</h3>
+            <p className="text-[14px] text-muted leading-relaxed">{job.copy}</p>
+          </div>
+        </WinChrome>
+      </motion.div>
+    </div>
+  )
+}
+
 /* ── Three Jobs ── */
 export function ThreeJobs() {
   const jobs = [
@@ -579,15 +685,7 @@ export function ThreeJobs() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {jobs.map((job, i) => (
-            <WinChrome key={i} className="flex flex-col h-full">
-              <div className="bg-white dark:bg-soft-canvas p-8 flex flex-col h-full">
-                <div className="w-12 h-12 rounded-xl bg-soft-canvas dark:bg-white/5 border border-line flex items-center justify-center mb-6 text-ink shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
-                  <job.icon className="w-6 h-6 text-ink" />
-                </div>
-                <h3 className="text-[18px] font-semibold text-ink mb-3">{job.title}</h3>
-                <p className="text-[14px] text-muted leading-relaxed">{job.copy}</p>
-              </div>
-            </WinChrome>
+            <InteractiveJobCard key={i} job={job} />
           ))}
         </div>
       </div>
@@ -648,6 +746,429 @@ export function TrustSection() {
         </div>
       </div>
     </section>
+  )
+}
+
+function BlueCapSticker({ className = "" }: { className?: string }) {
+  return (
+    <div className={`relative inline-flex flex-col items-end pointer-events-none select-none ${className}`}>
+      {/* 3D Blue Cap with White Sticker Border */}
+      <div className="relative -rotate-12 filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.22)]">
+        <svg
+          width="74"
+          height="52"
+          viewBox="0 0 120 84"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="overflow-visible"
+        >
+          <defs>
+            <filter id="cap-sticker-outline" x="-20%" y="-20%" width="140%" height="140%">
+              <feMorphology in="SourceAlpha" result="EXPANDED" operator="dilate" radius="5" />
+              <feFlood floodColor="white" result="WHITE_COLOR" />
+              <feComposite in="WHITE_COLOR" in2="EXPANDED" operator="in" result="OUTLINE" />
+              <feMerge>
+                <feMergeNode in="OUTLINE" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <linearGradient id="crown-grad" x1="45" y1="12" x2="105" y2="58" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#60A5FA" />
+              <stop offset="40%" stopColor="#2563EB" />
+              <stop offset="100%" stopColor="#1E40AF" />
+            </linearGradient>
+            <linearGradient id="visor-grad" x1="12" y1="38" x2="72" y2="70" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="70%" stopColor="#1D4ED8" />
+              <stop offset="100%" stopColor="#172554" />
+            </linearGradient>
+          </defs>
+
+          <g filter="url(#cap-sticker-outline)">
+            {/* Crown dome */}
+            <path
+              d="M 46 54 C 40 32 50 14 74 14 C 98 14 110 28 112 52 C 108 55 86 58 46 54 Z"
+              fill="url(#crown-grad)"
+              stroke="#1D4ED8"
+              strokeWidth="2"
+            />
+            {/* Crown highlight specular */}
+            <path
+              d="M 54 50 C 48 34 56 20 74 16 C 88 16 98 24 102 38"
+              fill="none"
+              stroke="white"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              opacity="0.45"
+            />
+            {/* Crown panel stitch */}
+            <path
+              d="M 74 14 C 74 28 73 42 71 55"
+              fill="none"
+              stroke="#1E3A8A"
+              strokeWidth="1.5"
+              strokeDasharray="2.5 2.5"
+              opacity="0.7"
+            />
+            {/* Crown apex button */}
+            <ellipse cx="74" cy="14" rx="5" ry="3" fill="#93C5FD" stroke="#1D4ED8" strokeWidth="1.5" />
+
+            {/* Front curved visor / bill */}
+            <path
+              d="M 12 56 C 10 50 26 44 54 48 C 76 51 92 54 94 58 C 82 72 44 74 12 56 Z"
+              fill="url(#visor-grad)"
+              stroke="#1D4ED8"
+              strokeWidth="2"
+            />
+            {/* Visor edge rim light */}
+            <path
+              d="M 15 55 C 32 66 60 68 88 59"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              opacity="0.5"
+            />
+          </g>
+        </svg>
+
+        {/* Playful "no cap!" angled script */}
+        <div className="text-right -mt-2 mr-0.5">
+          <span className="text-[13px] font-black italic tracking-wide text-signal-blue dark:text-sky-300 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] font-sans rotate-[-8deg] inline-block">
+            no cap!
+          </span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function StudentDiscountTerminal() {
+  return (
+    <div className="mt-14 sm:mt-16 w-full max-w-[960px] mx-auto relative px-2 sm:px-0">
+      {/* "just ship it" Rainbow Sticker perched on top-right */}
+      <div className="absolute -top-5 right-6 sm:right-12 z-30 pointer-events-none select-none -rotate-6">
+        <div className="relative px-3.5 py-1 bg-white dark:bg-zinc-900 rounded-full shadow-[0_6px_16px_rgba(0,0,0,0.18)] border-2 border-white dark:border-zinc-700 ring-1 ring-black/5">
+          <span className="font-black italic tracking-wide text-xs sm:text-[13px] bg-gradient-to-r from-emerald-500 via-pink-500 to-amber-500 bg-clip-text text-transparent">
+            just ship it
+          </span>
+        </div>
+      </div>
+
+      {/* Terminal Window Box */}
+      <div className="relative rounded-2xl sm:rounded-3xl bg-[#161618] border border-zinc-800 shadow-2xl p-6 sm:p-8 sm:py-7 overflow-hidden text-left">
+        {/* macOS traffic light window controls */}
+        <div className="flex items-center gap-2 mb-5">
+          <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]/50" />
+          <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]/50" />
+          <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]/50" />
+        </div>
+
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">
+          {/* Terminal Text Content */}
+          <div className="space-y-3 max-w-2xl">
+            <div className="font-mono text-white text-base sm:text-lg font-bold flex items-center gap-1.5">
+              <span>&lt; student discount &gt;</span>
+              <span className="inline-block w-2 h-4 sm:h-5 bg-white animate-pulse" />
+            </div>
+            <p className="font-mono text-zinc-400 text-xs sm:text-[13.5px] leading-relaxed">
+              if you&apos;re a student, show us your school email or student id! we&apos;ll give you 50% off your first month on pro to help you out *
+            </p>
+
+            {/* GitHub Octocat Icon */}
+            <div className="pt-2">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-zinc-500 hover:text-white transition-colors"
+              >
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Right Action: Skeuomorphic Button & Pixel Alien */}
+          <div className="flex items-center gap-5 sm:gap-6 self-end lg:self-center shrink-0">
+            <a
+              href="mailto:founders@vesper.ai?subject=Student%20Discount%20Application"
+              className="inline-flex items-center justify-center px-6 sm:px-7 py-3 rounded-full text-zinc-900 text-[14px] font-bold bg-gradient-to-b from-white via-zinc-100 to-zinc-200 shadow-[0_6px_16px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,1),inset_0_-2px_2px_rgba(0,0,0,0.12)] border border-white/90 hover:brightness-105 active:scale-95 transition-all cursor-pointer whitespace-nowrap"
+            >
+              reach out to us
+            </a>
+
+            {/* Pixel Space Invader / Alien Sticker */}
+            <div className="relative select-none pointer-events-none drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
+              <svg width="34" height="26" viewBox="0 0 11 8" fill="#FF6B4A">
+                <rect x="2" y="0" width="1" height="1" />
+                <rect x="8" y="0" width="1" height="1" />
+                <rect x="3" y="1" width="1" height="1" />
+                <rect x="7" y="1" width="1" height="1" />
+                <rect x="2" y="2" width="7" height="1" />
+                <rect x="1" y="3" width="2" height="1" />
+                <rect x="4" y="3" width="3" height="1" />
+                <rect x="8" y="3" width="2" height="1" />
+                <rect x="0" y="4" width="11" height="1" />
+                <rect x="0" y="5" width="1" height="1" />
+                <rect x="2" y="5" width="7" height="1" />
+                <rect x="10" y="5" width="1" height="1" />
+                <rect x="0" y="6" width="1" height="1" />
+                <rect x="2" y="6" width="1" height="1" />
+                <rect x="8" y="6" width="1" height="1" />
+                <rect x="10" y="6" width="1" height="1" />
+                <rect x="3" y="7" width="2" height="1" />
+                <rect x="6" y="7" width="2" height="1" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Subtext below terminal */}
+      <p className="text-center font-mono text-[11px] text-muted/70 mt-3">
+        * open to new and existing subs.
+      </p>
+    </div>
+  )
+}
+
+function InteractivePricingCard({
+  plan,
+  billing,
+}: {
+  plan: {
+    name: string
+    badge: string | null
+    price: { monthly: string; yearly: string }
+    period: string
+    description: string
+    features: string[]
+    ctaText: string
+    ctaHref: string
+    highlight: boolean
+  }
+  billing: "monthly" | "yearly"
+}) {
+  const ref = React.useRef<HTMLDivElement>(null)
+  const [hover, setHover] = React.useState(false)
+  const [canTilt, setCanTilt] = React.useState(true)
+
+  React.useEffect(() => {
+    const mq = window.matchMedia("(pointer: fine) and (prefers-reduced-motion: no-preference)")
+    setCanTilt(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setCanTilt(e.matches)
+    mq.addEventListener?.("change", handler)
+    return () => mq.removeEventListener?.("change", handler)
+  }, [])
+
+  const px = useMotionValue(0)
+  const py = useMotionValue(0)
+
+  const rotateX = useSpring(useTransform(py, [-300, 300], [12, -12]), tiltSpring)
+  const rotateY = useSpring(useTransform(px, [-300, 300], [-12, 12]), tiltSpring)
+  const sheenX = useSpring(useTransform(px, [-300, 300], ["-120%", "220%"]), driftSpring)
+  const glowX = useSpring(useTransform(px, [-300, 300], [-100, 100]), driftSpring)
+  const glowY = useSpring(useTransform(py, [-300, 300], [-100, 100]), driftSpring)
+  const shadowX = useTransform(px, [-300, 300], [24, -24])
+  const shadowY = useTransform(py, [-300, 300], [24, -24])
+
+  const track = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current || !canTilt) return
+    const r = ref.current.getBoundingClientRect()
+    px.set(e.clientX - (r.left + r.width / 2))
+    py.set(e.clientY - (r.top + r.height / 2))
+  }
+
+  const leave = () => {
+    setHover(false)
+    px.set(0)
+    py.set(0)
+  }
+
+  // Tier-tailored glow gradients
+  const glowGradient = plan.highlight
+    ? "bg-gradient-to-tr from-signal-blue/40 via-indigo-500/30 to-violet-500/25"
+    : plan.name === "Starter"
+    ? "bg-gradient-to-tr from-sky-500/25 via-blue-500/15 to-transparent"
+    : "bg-gradient-to-tr from-emerald-500/25 via-teal-500/20 to-blue-500/15"
+
+  return (
+    <div
+      className="relative flex flex-col h-full"
+      style={canTilt ? { perspective: "1200px" } : undefined}
+      onMouseMove={canTilt ? track : undefined}
+      onMouseEnter={canTilt ? () => setHover(true) : undefined}
+      onMouseLeave={canTilt ? leave : undefined}
+    >
+      <motion.div
+        ref={ref}
+        style={canTilt ? { rotateX, rotateY, transformStyle: "preserve-3d" } : undefined}
+        animate={plan.highlight ? { y: hover ? -8 : 0 } : { y: hover ? -5 : 0 }}
+        transition={{ type: "spring", stiffness: 280, damping: 22 }}
+        className="relative z-20 w-full h-full flex flex-col"
+      >
+        {/* Floating Most Popular Badge (outside overflow container to avoid clipping) */}
+        {plan.badge && (
+          <div
+            className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-40"
+            style={canTilt ? { transform: "translateZ(44px)" } : undefined}
+          >
+            <span className="bg-ink text-white dark:bg-signal-blue dark:text-white text-[11px] font-bold tracking-wider uppercase px-4 py-1 rounded-full shadow-lg border border-white/20 inline-flex items-center gap-1.5 whitespace-nowrap">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              {plan.badge}
+            </span>
+          </div>
+        )}
+
+        {/* "no cap!" Blue Cap Sticker for the Business tier (matches 2nd photo) */}
+        {plan.name === "Business" && (
+          <div
+            className="absolute -top-6 -right-3 sm:-right-4 z-40 pointer-events-none"
+            style={canTilt ? { transform: "translateZ(50px)" } : undefined}
+          >
+            <BlueCapSticker />
+          </div>
+        )}
+
+        {/* Dynamic counter-drifting shadow underneath */}
+        {canTilt && (
+          <motion.div
+            aria-hidden
+            style={{
+              x: shadowX,
+              y: shadowY,
+              opacity: hover ? 0.4 : plan.highlight ? 0.22 : 0.08,
+            }}
+            className={`pointer-events-none absolute -inset-3 -z-10 rounded-3xl blur-[30px] transition-opacity duration-300 ${
+              plan.highlight
+                ? "bg-signal-blue/30 dark:bg-signal-blue/45"
+                : "bg-black/30 dark:bg-black/60"
+            }`}
+          />
+        )}
+
+        {/* Card Body */}
+        <div
+          className={`relative bg-white dark:bg-soft-canvas rounded-2xl sm:rounded-3xl flex flex-col justify-between h-full overflow-hidden transition-all duration-200 ${
+            plan.highlight
+              ? "border-2 border-ink dark:border-signal-blue shadow-frame ring-1 ring-ink/5"
+              : "border border-line/90 dark:border-white/10 shadow-card hover:border-ink/25 dark:hover:border-white/30"
+          }`}
+          style={canTilt ? { transformStyle: "preserve-3d" } : undefined}
+        >
+          {/* macOS Window Controls (Traffic Lights) on each card */}
+          <div className="flex items-center justify-between px-6 pt-5 pb-1 relative z-10">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-[#E0443E]/50" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-[#DEA123]/50" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-[#1AAB29]/50" />
+            </div>
+          </div>
+
+          {/* Cursor-tracking atmospheric glow */}
+          {canTilt && (
+            <motion.div
+              aria-hidden
+              style={{
+                x: glowX,
+                y: glowY,
+                opacity: hover ? (plan.highlight ? 0.5 : 0.35) : plan.highlight ? 0.18 : 0,
+              }}
+              className={`pointer-events-none absolute -inset-32 z-0 rounded-full blur-[70px] transition-opacity duration-500 ${glowGradient}`}
+            />
+          )}
+
+          {/* Specular glass sheen */}
+          {canTilt && (
+            <motion.div
+              aria-hidden
+              style={{ x: sheenX }}
+              className="pointer-events-none absolute inset-0 size-full -skew-x-12 bg-gradient-to-r from-transparent via-white/25 dark:via-white/10 to-transparent z-20"
+            />
+          )}
+
+          {/* Lifted Card Header & Price */}
+          <div
+            className="p-6 sm:p-7 pt-3 border-b border-line/60 relative z-10"
+            style={canTilt ? { transform: "translateZ(32px)", transformStyle: "preserve-3d" } : undefined}
+          >
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-xl font-bold text-ink tracking-tight">{plan.name}</h3>
+              {plan.highlight && (
+                <span className="text-[11px] font-medium text-muted bg-canvas px-2.5 py-1 rounded-md border border-line">
+                  Recommended
+                </span>
+              )}
+            </div>
+            <p className="text-[13px] text-muted leading-snug min-h-[38px]">
+              {plan.description}
+            </p>
+
+            {/* Smooth Animated Price transition */}
+            <div className="flex items-baseline gap-1.5 mt-5">
+              <motion.span
+                key={plan.price[billing]}
+                initial={{ opacity: 0, y: -6, filter: "blur(4px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.22, ease: "easeOut" }}
+                className="text-3xl sm:text-4xl lg:text-[38px] font-extrabold text-ink tracking-tight inline-block"
+              >
+                {plan.price[billing]}
+              </motion.span>
+              <span className="text-xs sm:text-sm font-medium text-muted">
+                {billing === "yearly" ? "/mo (annual)" : `/${plan.period}`}
+              </span>
+            </div>
+          </div>
+
+          {/* Lifted Feature List & CTA */}
+          <div
+            className="p-6 sm:p-7 flex-1 flex flex-col justify-between gap-6 relative z-10"
+            style={canTilt ? { transform: "translateZ(26px)", transformStyle: "preserve-3d" } : undefined}
+          >
+            <div className="space-y-3.5">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-muted/70 dark:text-muted/90">
+                What's included
+              </p>
+              {plan.features.map((f) => (
+                <div key={f} className="flex items-start gap-3 group/feature">
+                  <div className="w-4 h-4 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center mt-0.5 shrink-0 transition-transform duration-200 group-hover/feature:scale-110">
+                    <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400 stroke-[2.5]" />
+                  </div>
+                  <span className="text-[13.5px] text-ink/85 leading-tight">
+                    {f}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Button elevated in 3D */}
+            <div
+              className="pt-4"
+              style={canTilt ? { transform: "translateZ(30px)" } : undefined}
+            >
+              <motion.a
+                href={plan.ctaHref}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className={`block w-full text-center py-3.5 px-4 rounded-xl text-[14px] font-semibold transition-all ${
+                  plan.highlight
+                    ? "bg-ink text-white dark:bg-signal-blue dark:text-white hover:opacity-90 shadow-md hover:shadow-lg"
+                    : "bg-soft-canvas text-ink hover:bg-[hsl(40_12%_88%)] dark:hover:bg-white/10 border border-line"
+                }`}
+              >
+                {plan.ctaText}
+              </motion.a>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
   )
 }
 
@@ -757,85 +1278,14 @@ export function FinalCTA() {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch pt-4">
           {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`relative bg-white dark:bg-soft-canvas rounded-2xl sm:rounded-3xl flex flex-col justify-between transition-all duration-200 ${
-                plan.highlight
-                  ? "border-2 border-ink dark:border-signal-blue shadow-frame ring-1 ring-ink/5 md:-translate-y-2"
-                  : "border border-line shadow-card hover:shadow-card-hover hover:border-ink/20 dark:hover:border-white/30"
-              }`}
-            >
-              {plan.badge && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
-                  <span className="bg-ink text-white dark:bg-signal-blue dark:text-white text-[11px] font-bold tracking-wider uppercase px-3.5 py-1 rounded-full shadow-sm">
-                    {plan.badge}
-                  </span>
-                </div>
-              )}
-
-              {/* Card Header & Price */}
-              <div className="p-7 sm:p-8 border-b border-line/60">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-lg font-bold text-ink">{plan.name}</h3>
-                  {plan.highlight && (
-                    <span className="text-[11px] font-medium text-muted bg-soft-canvas px-2.5 py-1 rounded-md border border-line">
-                      Recommended
-                    </span>
-                  )}
-                </div>
-                <p className="text-[13px] text-muted leading-snug min-h-[38px]">
-                  {plan.description}
-                </p>
-
-                <div className="flex items-baseline gap-1.5 mt-5">
-                  <span className="text-3xl sm:text-4xl lg:text-[38px] font-extrabold text-ink tracking-tight">
-                    {plan.price[billing]}
-                  </span>
-                  <span className="text-xs sm:text-sm font-medium text-muted">
-                    {billing === "yearly"
-                      ? "/mo (annual)"
-                      : `/${plan.period}`}
-                  </span>
-                </div>
-              </div>
-
-              {/* Feature List */}
-              <div className="p-7 sm:p-8 flex-1 flex flex-col justify-between gap-6">
-                <div className="space-y-3.5">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-muted/70 dark:text-muted/90">
-                    What's included
-                  </p>
-                  {plan.features.map((f) => (
-                    <div key={f} className="flex items-start gap-3">
-                      <div className="w-4 h-4 rounded-full bg-emerald-500/10 flex items-center justify-center mt-0.5 shrink-0">
-                        <Check className="w-3 h-3 text-emerald-600 stroke-[2.5]" />
-                      </div>
-                      <span className="text-[13.5px] text-ink/85 leading-tight">
-                        {f}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA Button */}
-                <div className="pt-4">
-                  <a
-                    href={plan.ctaHref}
-                    className={`block w-full text-center py-3.5 px-4 rounded-xl text-[14px] font-semibold transition-all ${
-                      plan.highlight
-                        ? "bg-ink text-white dark:bg-signal-blue dark:text-white hover:opacity-90 shadow-sm"
-                        : "bg-soft-canvas text-ink hover:bg-[hsl(40_12%_88%)] dark:hover:bg-white/10 border border-line"
-                    }`}
-                  >
-                    {plan.ctaText}
-                  </a>
-                </div>
-              </div>
-            </div>
+            <InteractivePricingCard key={plan.name} plan={plan} billing={billing} />
           ))}
         </div>
+
+        {/* Student Discount Terminal Banner (First Photo) */}
+        <StudentDiscountTerminal />
 
         {/* Footer Guarantee */}
         <div className="text-center mt-12 space-y-2">
