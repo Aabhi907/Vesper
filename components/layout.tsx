@@ -1,20 +1,18 @@
 "use client"
 import * as React from "react"
 import Link from "next/link"
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion"
-import { Menu, X, ArrowRight, ShieldCheck, Sparkles } from "lucide-react"
+import { motion, useScroll, useMotionValueEvent } from "framer-motion"
+import { ShieldCheck } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { ScrollProgress, BookDemoModal } from "@/components/interactive-utils"
+import { ScrollProgress } from "@/components/interactive-utils"
 
 /* ── Navbar ── */
 export function Navbar() {
   const { scrollY } = useScroll()
   const [isScrolled, setIsScrolled] = React.useState(false)
-  const [time, setTime] = React.useState("")
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
-  const [demoModalOpen, setDemoModalOpen] = React.useState(false)
+  const [time, setTime]             = React.useState("")
 
-  useMotionValueEvent(scrollY, "change", (v) => setIsScrolled(v > 28))
+  useMotionValueEvent(scrollY, "change", (v) => setIsScrolled(v > 32))
 
   React.useEffect(() => {
     const tick = () =>
@@ -24,20 +22,9 @@ export function Navbar() {
     return () => clearInterval(id)
   }, [])
 
-  const navLinks = [
-    { label: "Demo", href: "/#demo" },
-    { label: "Features", href: "/#features" },
-    { label: "Integrations", href: "/#integrations" },
-    { label: "Team", href: "/team" },
-    { label: "Pricing", href: "/#pricing" },
-    { label: "FAQ", href: "/#faq" },
-  ]
-
   return (
     <>
       <ScrollProgress />
-      <BookDemoModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
-
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -45,105 +32,53 @@ export function Navbar() {
         className={cn(
           "fixed top-0 z-50 w-full transition-all duration-ui",
           isScrolled
-            ? "h-[50px] bg-[hsl(40_25%_95%/0.88)] backdrop-blur-md border-b border-line shadow-xs"
-            : "h-[50px] bg-[hsl(40_25%_95%/0.75)] backdrop-blur-md border-b border-line/60"
+            ? "h-[44px] bg-[hsl(0_0%_90%/0.85)] backdrop-blur-md border-b border-[hsl(0_0%_80%)] shadow-sm"
+            : "h-[44px] bg-[hsl(0_0%_90%/0.75)] backdrop-blur-md border-b border-[hsl(0_0%_80%)]"
         )}
       >
-        <div className="mx-auto flex h-full max-w-[1440px] items-center justify-between px-4 sm:px-6">
+        <div className="mx-auto flex h-full max-w-[1440px] items-center justify-between px-4">
           {/* Left: brand + nav */}
-          <nav className="flex items-center gap-6">
-            <Link
-              href="/"
-              className="text-[15px] font-black text-ink tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2"
-            >
-              <span className="w-5 h-5 rounded-md bg-ink text-white flex items-center justify-center text-[11px] font-extrabold">
-                V
-              </span>
-              <span>vesper</span>
+          <nav className="flex items-center gap-5">
+            <Link href="/" className="text-[13px] font-bold text-ink tracking-tight hover:opacity-80 transition-opacity">
+              vesper
             </Link>
-
-            <div className="hidden md:flex items-center gap-5">
-              {navLinks.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-[13px] font-medium text-muted hover:text-ink transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
+            {[
+              { label: "demo", href: "/#demo" },
+              { label: "features", href: "/#features" },
+              { label: "pricing", href: "/#pricing" },
+              { label: "product", href: "/product" },
+              { label: "trust", href: "/trust" },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-[13px] text-ink/70 hover:text-ink transition-colors hidden md:block"
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
 
           {/* Right: status + CTA */}
-          <div className="flex items-center gap-3.5">
-            {/* Battery & Time Indicator */}
-            <div className="hidden lg:flex items-center gap-2 px-2.5 py-1 rounded-full bg-black/5 text-muted text-[11.5px] font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Kathmandu</span>
-              <span className="tabular-nums font-semibold text-ink">{time}</span>
-            </div>
-
-            {/* CTA Book Demo */}
-            <button
-              type="button"
-              onClick={() => setDemoModalOpen(true)}
-              className="flex items-center gap-1.5 bg-ink text-white text-[13px] font-semibold px-4 py-1.5 rounded-full hover:bg-ink/85 transition-all shadow-xs"
+          <div className="flex items-center gap-4">
+            {/* Battery */}
+            <svg className="hidden md:block" width="22" height="12" viewBox="0 0 22 12" fill="none" aria-hidden>
+              <rect x="0.5" y="0.5" width="18" height="11" rx="2.5" stroke="hsl(0,0%,55%)" strokeWidth="1"/>
+              <rect x="2" y="2" width="11" height="8" rx="1.5" fill="hsl(0,0%,55%)"/>
+              <path d="M20 4v4" stroke="hsl(0,0%,55%)" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+            {/* Time */}
+            <span className="hidden md:block text-[13px] text-ink/70 font-medium tabular-nums">{time}</span>
+            {/* CTA */}
+            <Link
+              href="/#demo"
+              className="flex items-center gap-2 bg-ink text-canvas text-[13px] font-semibold px-4 py-1.5 rounded-full hover:bg-ink/80 transition-colors"
             >
-              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-              <span>Book a Demo</span>
-            </button>
-
-            {/* Mobile Hamburger Button */}
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle Navigation Menu"
-              className="md:hidden w-8 h-8 rounded-full bg-soft-canvas flex items-center justify-center text-ink border border-line"
-            >
-              {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-            </button>
+              <span className="text-[11px]">🌙</span>
+              <span>book a demo</span>
+            </Link>
           </div>
         </div>
-
-        {/* Mobile Slide-down Menu Drawer */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.25 }}
-              className="md:hidden bg-canvas border-b border-line px-6 py-6 shadow-frame flex flex-col gap-4"
-            >
-              {navLinks.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-[15px] font-semibold text-ink hover:text-signal-blue py-1.5 border-b border-line/40 flex items-center justify-between"
-                >
-                  <span>{item.label}</span>
-                  <ArrowRight className="w-4 h-4 text-muted/60" />
-                </Link>
-              ))}
-
-              <div className="pt-2">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMobileMenuOpen(false)
-                    setDemoModalOpen(true)
-                  }}
-                  className="w-full py-3 rounded-xl bg-ink text-white font-semibold text-[14px] flex items-center justify-center gap-2 shadow-sm"
-                >
-                  <Sparkles className="w-4 h-4 text-amber-300" />
-                  <span>Book a 1-on-1 walkthrough</span>
-                </button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </motion.header>
     </>
   )
