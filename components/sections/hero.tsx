@@ -195,8 +195,9 @@ export function Hero() {
           </div>
 
           <p className="text-[15px] sm:text-[18px] md:text-[20px] text-muted mb-8 sm:mb-10 max-w-[620px] mx-auto leading-relaxed font-normal">
-            Answer messages, check real availability, and book appointments across WhatsApp, Instagram &amp; Messenger — for salons, hotels, garages, and any service business.
+            Answer messages, check real availability, and book appointments across WhatsApp, Instagram &amp; Messenger for salons, hotels, garages, and any service business.
           </p>
+
 
           <div className="flex flex-col sm:flex-row items-center gap-3 justify-center w-full sm:w-auto">
             <a
