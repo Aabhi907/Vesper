@@ -44,9 +44,9 @@ export function Navbar() {
             : "h-[44px] bg-[hsl(0_0%_90%/0.75)] dark:bg-[hsl(224_25%_7%/0.75)] backdrop-blur-md border-b border-[hsl(0_0%_80%)] dark:border-line"
         )}
       >
-        <div className="mx-auto flex h-full max-w-[1440px] items-center justify-between px-4">
+        <div className="mx-auto flex h-full max-w-[1360px] items-center justify-between px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24">
           {/* Left: brand + nav */}
-          <nav className="flex items-center gap-5">
+          <nav className="flex items-center gap-6">
             <Link href="/" className="text-[13px] font-bold text-ink tracking-tight hover:opacity-80 transition-opacity">
               vesper
             </Link>

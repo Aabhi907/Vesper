@@ -104,7 +104,7 @@ export function HeroTiltCard({
 ══════════════════════════════════════════════════ */
 export function Hero() {
   return (
-    <section className="relative w-full min-h-[100dvh] flex flex-col justify-center items-center overflow-hidden bg-hero-wash pt-14 pb-8 px-4 sm:px-6">
+    <section className="relative w-full min-h-[100dvh] flex flex-col justify-center items-center overflow-hidden bg-hero-wash pt-16 sm:pt-20 pb-10 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24">
       {/* ── Dark mode Ember Grain Shader full backdrop ── */}
       <div className="absolute inset-0 pointer-events-none hidden dark:block z-0" aria-hidden="true">
         <EmberGrainField
@@ -123,7 +123,7 @@ export function Hero() {
       <div className="absolute left-[8%] bottom-[20%] text-[18px] float-1 select-none pointer-events-none hidden lg:block opacity-25">✦</div>
 
       {/* ── Floating window: live chat (left) ── */}
-      <div className="absolute left-[2%] 2xl:left-[6%] top-[22%] w-[220px] lg:w-[245px] hidden xl:block float-2 z-10">
+      <div className="absolute left-[3.5%] lg:left-[5%] xl:left-[6.5%] 2xl:left-[9%] top-[22%] w-[220px] lg:w-[245px] hidden xl:block float-2 z-10">
         <HeroTiltCard initialRotate={-3}>
           <WinChrome title="whatsapp.mov">
             <div className="bg-[#ece5dd] dark:bg-[#0b141a] p-3.5 space-y-2.5">
@@ -139,7 +139,7 @@ export function Hero() {
       </div>
 
       {/* ── Floating window: Google Calendar (right) ── */}
-      <div className="absolute right-[2%] 2xl:right-[5.5%] top-[19%] w-[245px] lg:w-[270px] hidden xl:block float-3 z-10">
+      <div className="absolute right-[3.5%] lg:right-[5%] xl:right-[6.5%] 2xl:right-[8.5%] top-[19%] w-[245px] lg:w-[270px] hidden xl:block float-3 z-10">
         <HeroTiltCard initialRotate={4}>
           <div className="relative">
             <GoogleCalendarCard
@@ -162,7 +162,7 @@ export function Hero() {
       </div>
 
       {/* ── Floating Messenger Multi-Channel Alert (Bottom Left) ── */}
-      <div className="absolute left-[3%] 2xl:left-[6%] bottom-[14%] hidden xl:flex float-1 z-10">
+      <div className="absolute left-[4%] lg:left-[5.5%] xl:left-[7.5%] 2xl:left-[10%] bottom-[14%] hidden xl:flex float-1 z-10">
         <HeroTiltCard initialRotate={-1}>
           <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-white/95 dark:bg-[#161d2a]/95 backdrop-blur-md border border-line shadow-sm text-ink select-none">
             <div className="w-6 h-6 rounded-full flex items-center justify-center text-[12px] bg-[#0084ff]/10 text-[#0084ff]">💬</div>
@@ -175,7 +175,7 @@ export function Hero() {
       </div>
 
       {/* ── Central headline (always sharp & crisp) ── */}
-      <div className="relative z-10 flex flex-col items-center text-center max-w-[960px] mx-auto my-auto px-4">
+      <div className="relative z-10 flex flex-col items-center text-center max-w-[960px] mx-auto my-auto px-6 sm:px-10 md:px-12">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeOut" }} className="flex flex-col items-center">
           {/* ── Pure Clean Glass Pill (Colorless, Transparent Frost) ── */}
           <div className="relative inline-flex items-center px-5 py-2 rounded-full bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl border border-white/80 dark:border-white/15 text-ink text-[12.5px] sm:text-[13.5px] font-medium tracking-tight mb-6 sm:mb-8 shadow-[inset_0_1px_1.5px_rgba(255,255,255,0.9),0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[inset_0_1px_1.5px_rgba(255,255,255,0.2),0_8px_24px_rgba(0,0,0,0.3)] select-none">
