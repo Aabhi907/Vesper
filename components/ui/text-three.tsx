@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 
 interface TextThreeProps {
   /** Text to type out. If words array is provided, words takes precedence */
@@ -43,8 +43,21 @@ export default function TextThree({
   const [currentWordIndex, setCurrentWordIndex] = React.useState(0)
   const [currentText, setCurrentText] = React.useState("")
   const [isDeleting, setIsDeleting] = React.useState(false)
+  const [cursorVisible, setCursorVisible] = React.useState(true)
 
   const activeWord = wordList[currentWordIndex] || ""
+
+  // Hide cursor 5 seconds after text is fully written
+  React.useEffect(() => {
+    if (!isDeleting && currentText === activeWord && currentText.length > 0) {
+      const hideTimer = setTimeout(() => {
+        setCursorVisible(false)
+      }, 5000)
+      return () => clearTimeout(hideTimer)
+    } else {
+      setCursorVisible(true)
+    }
+  }, [currentText, activeWord, isDeleting])
 
   React.useEffect(() => {
     let timer: NodeJS.Timeout
@@ -77,17 +90,22 @@ export default function TextThree({
   return (
     <span className={`inline-flex items-baseline font-inherit ${className}`}>
       <span>{currentText}</span>
-      {showCursor && (
-        <motion.span
-          aria-hidden="true"
-          animate={{ opacity: [1, 0, 1] }}
-          transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-          className={`inline-block ml-1 sm:ml-2 w-[2px] sm:w-[2.5px] h-[0.78em] bg-black dark:bg-white rounded-full align-middle select-none ${cursorClassName}`}
-        />
-      )}
+      <AnimatePresence>
+        {showCursor && cursorVisible && (
+          <motion.span
+            key="cursor"
+            aria-hidden="true"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: [1, 0, 1] }}
+            exit={{ opacity: 0, transition: { duration: 0.5 } }}
+            transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+            className={`inline-block ml-1 sm:ml-2 w-[2px] sm:w-[2.5px] h-[0.78em] bg-black dark:bg-white rounded-full align-middle select-none ${cursorClassName}`}
+          />
+        )}
+      </AnimatePresence>
     </span>
   )
-
 }
 
 export { TextThree }
+
