@@ -1,4 +1,5 @@
 import { Hero, PlatformDemo, TrustStrip, Manifesto, ThreeJobs, TrustSection, FinalCTA } from "@/components/marketing"
+import { BilingualEngineSection } from "@/components/bilingual-showcase"
 import { IntegrationsBeam } from "@/components/integrations-beam"
 import { TeamTooltips } from "@/components/team-tooltip"
 import { FAQSection } from "@/components/faq"
@@ -9,6 +10,7 @@ export default function HomePage() {
       <Hero />
       <PlatformDemo />
       <TrustStrip />
+      <BilingualEngineSection />
       <Manifesto />
       <ThreeJobs />
       <IntegrationsBeam />

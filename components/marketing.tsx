@@ -2,6 +2,7 @@
 import * as React from "react"
 import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from "framer-motion"
 import { Check, CheckCircle2, ChevronDown, Shield, Globe, Database } from "lucide-react"
+import { EmberGrainField } from "./ember-grain-field"
 
 /* ── macOS window chrome wrapper ── */
 function WinChrome({ title, children, className = "", style = {} }: {
@@ -20,8 +21,7 @@ function WinChrome({ title, children, className = "", style = {} }: {
   )
 }
 
-/* ── Hero ── */
-/* ══════════════════════════════════════════════════
+/* ──/* ══════════════════════════════════════════════════
    WhatsApp Chat UI  ✂️ Salon — Glam Studio
 ══════════════════════════════════════════════════ */
 function WhatsAppChat() {
@@ -31,8 +31,8 @@ function WhatsAppChat() {
       <div className="flex items-center gap-3 px-4 py-2.5 bg-[#075e54]">
         <div className="w-9 h-9 rounded-full bg-[#25d366]/30 border-2 border-[#25d366]/50 flex items-center justify-center text-[16px] flex-shrink-0">💇</div>
         <div className="flex-1">
-          <p className="text-[13.5px] font-semibold text-white leading-tight">Glam Studio Salon</p>
-          <p className="text-[11px] text-[#25d366]">online</p>
+          <p className="text-[13.5px] font-semibold text-white leading-tight">Glam Studio Salon · Kathmandu</p>
+          <p className="text-[11px] text-[#25d366]">online · 24/7 AI Booking Assistant</p>
         </div>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 6.18 2 2 0 015 4h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 11.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18v2.92z"/></svg>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" opacity="0.6"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
@@ -42,8 +42,8 @@ function WhatsAppChat() {
         <div className="flex justify-center"><span className="bg-white/70 dark:bg-white/10 backdrop-blur-sm text-[10.5px] text-black/50 dark:text-white/60 px-3 py-1 rounded-full shadow-sm">Today</span></div>
         {/* User message */}
         <div className="flex justify-end">
-          <div className="bg-[#dcf8c6] dark:bg-[#005c4b] text-[13.5px] text-black/85 dark:text-white px-3.5 py-2.5 rounded-xl rounded-tr-sm max-w-[75%] shadow-sm">
-            <p>Hi! I want to book a haircut + hair colour for this Saturday 🎨</p>
+          <div className="bg-[#dcf8c6] dark:bg-[#005c4b] text-[13.5px] text-black/85 dark:text-white px-3.5 py-2.5 rounded-xl rounded-tr-sm max-w-[78%] shadow-sm">
+            <p>Dai bholi Saturday 11 baje haircut ra hair colour ko slot khali cha? 🎨</p>
             <div className="flex justify-end items-center gap-1 mt-1">
               <span className="text-[10px] text-black/35 dark:text-white/60">11:14 AM</span>
               <svg width="16" height="10" viewBox="0 0 16 11" fill="none"><path d="M1.5 5.5l3 3 6-7" stroke="#4fc3f7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M5.5 8.5l6-7" stroke="#4fc3f7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -54,15 +54,15 @@ function WhatsAppChat() {
         <div className="flex justify-start">
           <div className="flex items-center gap-2 bg-white/75 dark:bg-[#1f2c34] backdrop-blur-sm px-3 py-1.5 rounded-full text-[11.5px] text-[#075e54] dark:text-[#25d366] font-medium shadow-sm border border-[#25d366]/20">
             <span className="relative flex h-1.5 w-1.5"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25d366] opacity-70"/><span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#25d366]"/></span>
-            Checking stylist availability…
+            Checking Priya's calendar in real-time…
           </div>
         </div>
         {/* AI reply */}
         <div className="flex justify-start">
-          <div className="bg-white dark:bg-[#1f2c34] text-[13.5px] text-black/85 dark:text-white px-3.5 py-2.5 rounded-xl rounded-tl-sm max-w-[80%] shadow-sm">
-            <p>Hey! 💇‍♀️ Saturday slots with our colourist Priya:</p>
+          <div className="bg-white dark:bg-[#1f2c34] text-[13.5px] text-black/85 dark:text-white px-3.5 py-2.5 rounded-xl rounded-tl-sm max-w-[82%] shadow-sm">
+            <p>Namaste hajur! 🙏 Saturday colourist Priya sanga 2 ta slot khali cha:</p>
             <p className="mt-2 font-medium text-[13px] leading-[1.8]">✂️ <span className="font-semibold text-black dark:text-white">10:00 AM</span> — Haircut + Colour (2.5 hrs)<br/>✂️ <span className="font-semibold text-black dark:text-white">1:30 PM</span> — Haircut + Colour (2.5 hrs)</p>
-            <p className="mt-1.5">Want me to book one? 🌟</p>
+            <p className="mt-1.5">Rs. 1,800 parcha. Kun time ma lock gardim hajur? 🌟</p>
             <div className="flex justify-end mt-1"><span className="text-[10px] text-black/35 dark:text-white/60">11:15 AM</span></div>
           </div>
         </div>
@@ -72,7 +72,9 @@ function WhatsAppChat() {
         <div className="w-8 h-8 rounded-full bg-[#919191]/20 flex items-center justify-center flex-shrink-0">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#919191" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
         </div>
-        <div className="flex-1 bg-white dark:bg-[#2a3942] rounded-full px-4 py-2 text-[13px] text-black/30 dark:text-white/50 shadow-sm">Type a message</div>
+        <div className="flex-1 bg-white dark:bg-[#2a3942] rounded-full px-4 py-2 text-[13px] text-black/30 dark:text-white/50 shadow-sm">
+          Type a message…
+        </div>
         <div className="w-9 h-9 rounded-full bg-[#075e54] flex items-center justify-center flex-shrink-0 shadow">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
         </div>
@@ -94,8 +96,8 @@ function InstagramChat() {
           <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white dark:border-[#121212]" />
         </div>
         <div className="flex-1">
-          <p className="text-[13.5px] font-bold text-black dark:text-white leading-tight">thegrandinn.hotel</p>
-          <p className="text-[11px] text-black/45 dark:text-white/50">Active now</p>
+          <p className="text-[13.5px] font-bold text-black dark:text-white leading-tight">thegrandinn.pokhara</p>
+          <p className="text-[11px] text-black/45 dark:text-white/50">Active now · 24/7 AI Concierge</p>
         </div>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-black/50 dark:text-white/60" strokeWidth="1.8" strokeLinecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 6.18 2 2 0 015 4h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 11.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18v2.92z"/></svg>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-black/50 dark:text-white/60" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
@@ -106,14 +108,14 @@ function InstagramChat() {
         {/* Bot message */}
         <div className="flex justify-start items-end gap-2">
           <div className="w-6 h-6 rounded-full flex-shrink-0 text-[10px] flex items-center justify-center" style={{ background:"linear-gradient(45deg, #f09433, #dc2743, #bc1888)" }}>🏨</div>
-          <div className="bg-[#efefef] dark:bg-[#262626] text-[13.5px] text-black/85 dark:text-white/95 px-4 py-2.5 rounded-2xl rounded-bl-md max-w-[72%]">
-            🌟 Welcome to The Grand Inn! I&apos;m your 24/7 AI concierge. How can I help?
+          <div className="bg-[#efefef] dark:bg-[#262626] text-[13.5px] text-black/85 dark:text-white/95 px-4 py-2.5 rounded-2xl rounded-bl-md max-w-[76%]">
+            🌟 Namaste! Welcome to The Grand Inn Pokhara. 24/7 AI concierge hajur. Kasari help garna sakchu?
           </div>
         </div>
         {/* User */}
         <div className="flex justify-end">
-          <div className="text-white text-[13.5px] px-4 py-2.5 rounded-2xl rounded-br-md max-w-[70%]" style={{ background:"linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045)" }}>
-            Do you have a deluxe room for 2 nights, Dec 24–26? 🎄
+          <div className="text-white text-[13.5px] px-4 py-2.5 rounded-2xl rounded-br-md max-w-[76%]" style={{ background:"linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045)" }}>
+            Namaste! Dec 24–26 ma 2 nights ko deluxe room cha? Couple ko lagi 🎄
           </div>
         </div>
         {/* Checking */}
@@ -121,14 +123,14 @@ function InstagramChat() {
           <div className="w-6 h-6 rounded-full flex-shrink-0 text-[10px] flex items-center justify-center" style={{ background:"linear-gradient(45deg, #f09433, #dc2743, #bc1888)" }}>🏨</div>
           <div className="flex items-center gap-2 bg-[#efefef] dark:bg-[#262626] px-4 py-2 rounded-2xl rounded-bl-md text-[11.5px] font-medium text-black/55 dark:text-white/70">
             <span className="relative flex h-1.5 w-1.5"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c13584] opacity-70"/><span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#c13584]"/></span>
-            Checking room availability…
+            Pokhara lake-view rooms check hudai cha…
           </div>
         </div>
         {/* Reply */}
         <div className="flex justify-start items-end gap-2">
           <div className="w-6 h-6 rounded-full flex-shrink-0 text-[10px] flex items-center justify-center" style={{ background:"linear-gradient(45deg, #f09433, #dc2743, #bc1888)" }}>🏨</div>
-          <div className="bg-[#efefef] dark:bg-[#262626] text-[13.5px] text-black/85 dark:text-white/95 px-4 py-2.5 rounded-2xl rounded-bl-md max-w-[74%]">
-            🎉 Yes! <span className="font-semibold text-black dark:text-white">Deluxe Room 204</span> is available Dec 24–26. Mountain view, king bed. <span className="font-semibold text-black dark:text-white">$89/night</span>. Shall I reserve it?
+          <div className="bg-[#efefef] dark:bg-[#262626] text-[13.5px] text-black/85 dark:text-white/95 px-4 py-2.5 rounded-2xl rounded-bl-md max-w-[76%]">
+            🎉 Hajur cha! <span className="font-semibold text-black dark:text-white">Deluxe Room 204</span> available cha Dec 24–26. Mountain view, king bed, breakfast sahit <span className="font-semibold text-black dark:text-white">Rs. 4,500/night</span>. Reserve gardim ta?
           </div>
         </div>
         <div className="flex justify-end items-center gap-1">
@@ -144,7 +146,9 @@ function InstagramChat() {
         <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center flex-shrink-0">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c13584" strokeWidth="2" strokeLinecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
         </div>
-        <div className="flex-1 border border-gray-200 dark:border-white/15 bg-white dark:bg-[#262626] rounded-full px-4 py-2 text-[13px] text-black/40 dark:text-white/50">Message…</div>
+        <div className="flex-1 border border-gray-200 dark:border-white/15 bg-white dark:bg-[#262626] rounded-full px-4 py-2 text-[13px] text-black/40 dark:text-white/50">
+          Message…
+        </div>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c13584" strokeWidth="2" strokeLinecap="round" opacity="0.8"><path d="M12 5v14M5 12l7-7 7 7"/></svg>
         <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background:"linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045)" }}>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
@@ -167,8 +171,8 @@ function MessengerChat() {
           <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#31a24c] rounded-full border-2 border-white dark:border-[#18191a]" />
         </div>
         <div className="flex-1">
-          <p className="text-[13.5px] font-bold text-black dark:text-white leading-tight">QuickFix Garage</p>
-          <div className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-[#31a24c]"/><p className="text-[11px] text-black/45 dark:text-white/60">Active now</p></div>
+          <p className="text-[13.5px] font-bold text-black dark:text-white leading-tight">QuickFix Garage · Kathmandu</p>
+          <div className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-[#31a24c]"/><p className="text-[11px] text-black/45 dark:text-white/60">Active now · Automated Booking</p></div>
         </div>
         <div className="w-8 h-8 rounded-full bg-[#f0f2f5] dark:bg-[#3a3b3c] flex items-center justify-center flex-shrink-0">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0084ff" strokeWidth="2" strokeLinecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 6.18 2 2 0 015 4h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 11.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18v2.92z"/></svg>
@@ -186,14 +190,14 @@ function MessengerChat() {
         {/* Bot */}
         <div className="flex justify-start items-end gap-2">
           <div className="w-6 h-6 rounded-full flex-shrink-0 text-[10px] flex items-center justify-center" style={{ background:"linear-gradient(135deg, #0084ff, #a033ff)" }}>🔧</div>
-          <div className="bg-[#f0f2f5] dark:bg-[#3a3b3c] text-[13.5px] text-black/85 dark:text-white px-4 py-2.5 rounded-2xl rounded-bl-sm max-w-[70%]">
-            Hey! 🔧 QuickFix Garage here. I&apos;m your 24/7 service bot. What do you need?
+          <div className="bg-[#f0f2f5] dark:bg-[#3a3b3c] text-[13.5px] text-black/85 dark:text-white px-4 py-2.5 rounded-2xl rounded-bl-sm max-w-[74%]">
+            Hey! 🔧 QuickFix Garage Kathmandu. K service chaineko thiyo hajur?
           </div>
         </div>
         {/* User */}
         <div className="flex justify-end">
-          <div className="text-white text-[13.5px] px-4 py-2.5 rounded-2xl rounded-br-sm max-w-[70%]" style={{ background:"linear-gradient(135deg, #0084ff, #a033ff)" }}>
-            Need a full service for my Honda CB300R, this weekend if possible 🏍️
+          <div className="text-white text-[13.5px] px-4 py-2.5 rounded-2xl rounded-br-md max-w-[76%]" style={{ background:"linear-gradient(135deg, #0084ff, #a033ff)" }}>
+            Dai bike servicing ra chain tight garna bholi Saturday time milcha? Mobil ni change garnu cha 🏍️
           </div>
         </div>
         {/* Checking */}
@@ -201,14 +205,14 @@ function MessengerChat() {
           <div className="w-6 h-6 rounded-full flex-shrink-0 text-[10px] flex items-center justify-center" style={{ background:"linear-gradient(135deg, #0084ff, #a033ff)" }}>🔧</div>
           <div className="flex items-center gap-2 bg-[#f0f2f5] dark:bg-[#3a3b3c] px-4 py-2 rounded-2xl rounded-bl-sm text-[11.5px] text-black/50 dark:text-white/70 font-medium">
             <span className="relative flex h-1.5 w-1.5"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0084ff] opacity-70"/><span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#0084ff]"/></span>
-            Checking mechanic slots this weekend…
+            Checking mechanic bay slots this weekend…
           </div>
         </div>
         {/* Reply */}
         <div className="flex justify-start items-end gap-2">
           <div className="w-6 h-6 rounded-full flex-shrink-0 text-[10px] flex items-center justify-center" style={{ background:"linear-gradient(135deg, #0084ff, #a033ff)" }}>🔧</div>
-          <div className="bg-[#f0f2f5] dark:bg-[#3a3b3c] text-[13.5px] text-black/85 dark:text-white px-4 py-2.5 rounded-2xl rounded-bl-sm max-w-[74%]">
-            ✅ <span className="font-semibold text-black dark:text-white">Saturday 9 AM</span> is open! Full service includes oil change, brakes &amp; chain lube. Est. <span className="font-semibold text-black dark:text-white">3 hrs</span>. Book it?
+          <div className="bg-[#f0f2f5] dark:bg-[#3a3b3c] text-[13.5px] text-black/85 dark:text-white px-4 py-2.5 rounded-2xl rounded-bl-sm max-w-[76%]">
+            ✅ <span className="font-semibold text-black dark:text-white">Saturday 9:30 AM</span> khali cha! Full servicing includes Motul engine oil, brakes &amp; chain lube. Est. <span className="font-semibold text-black dark:text-white">Rs. 1,450 (2.5 hrs)</span>. Book gardim?
           </div>
         </div>
         {/* Reaction */}
@@ -228,12 +232,11 @@ function MessengerChat() {
         <div className="w-8 h-8 rounded-full bg-[#f0f2f5] dark:bg-[#3a3b3c] flex items-center justify-center flex-shrink-0">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0084ff" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
         </div>
-        <div className="flex-1 bg-[#f0f2f5] dark:bg-[#3a3b3c] rounded-full px-4 py-2 text-[13px] text-black/40 dark:text-white/50">Aa</div>
-        <div className="w-8 h-8 rounded-full bg-[#f0f2f5] dark:bg-[#3a3b3c] flex items-center justify-center flex-shrink-0">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0084ff" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+        <div className="flex-1 bg-[#f0f2f5] dark:bg-[#3a3b3c] rounded-full px-4 py-2 text-[13px] text-black/40 dark:text-white/50">
+          Type a message…
         </div>
-        <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background:"linear-gradient(135deg, #0084ff, #a033ff)" }}>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+        <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[#0084ff]">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
         </div>
       </div>
     </motion.div>
@@ -246,6 +249,16 @@ function MessengerChat() {
 export function Hero() {
   return (
     <section className="relative w-full min-h-[100dvh] flex flex-col justify-center items-center overflow-hidden bg-hero-wash pt-14 pb-8 px-4 sm:px-6">
+      {/* ── Dark mode Ember Grain Shader full backdrop ── */}
+      <div className="absolute inset-0 pointer-events-none hidden dark:block z-0" aria-hidden="true">
+        <EmberGrainField
+          background="#090703"
+          glow={[152, 99, 0]}
+          grain={0.28}
+          className="h-full w-full"
+        />
+      </div>
+
       {/* ── Floating decoration ── */}
       <div className="absolute right-[10%] top-[28%] text-[18px] float-2 select-none pointer-events-none hidden lg:block opacity-30">✦</div>
       <div className="absolute left-[10%] bottom-[22%] text-[16px] float-1 select-none pointer-events-none hidden lg:block opacity-30">✦</div>
@@ -346,16 +359,16 @@ export function PlatformDemo() {
 
   return (
     <section className="w-full py-20 md:py-28 px-4 sm:px-6 bg-canvas border-b border-line" id="demo">
-      <div className="mx-auto max-w-[840px] text-center flex flex-col items-center justify-center mb-12">
+      <div className="mx-auto max-w-[840px] text-center flex flex-col items-center justify-center mb-10">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-signal-blue/10 border border-signal-blue/20 text-signal-blue text-[11px] font-bold tracking-wider uppercase mb-4">
           <span className="w-2 h-2 rounded-full bg-signal-blue animate-pulse" />
-          Live Interactive Demo
+          Connected to WhatsApp · Messenger · Instagram
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-ink mb-4 tracking-tight text-center">
           Real conversations. Across every platform.
         </h2>
-        <p className="text-muted text-[15px] sm:text-[17px] max-w-[560px] mx-auto leading-relaxed text-center">
-          Switch platforms below to see how Vesper checks actual availability and books appointments on WhatsApp, Instagram, and Messenger.
+        <p className="text-muted text-[15px] sm:text-[17px] max-w-[580px] mx-auto leading-relaxed text-center">
+          Switch platforms below to see how Vesper seamlessly connects to WhatsApp, Instagram DMs, and Messenger to check live availability and lock bookings 24/7.
         </p>
       </div>
 
@@ -405,7 +418,7 @@ export function PlatformDemo() {
             {activeTab === "messenger" && <MessengerChat key="ms" />}
           </AnimatePresence>
         </WinChrome>
-        <p className="mt-3 text-center text-[12px] text-muted/60">✦ Fully interactive · Switch tabs to test different business scenarios</p>
+        <p className="mt-3 text-center text-[12px] text-muted/60">✦ Fully interactive · Switch platforms to test real automated customer conversations</p>
       </div>
     </section>
   )
