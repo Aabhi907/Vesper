@@ -54,8 +54,8 @@ export default function TrustPage() {
   return (
     <main className="w-full min-h-screen bg-canvas text-ink pt-28 sm:pt-36 pb-28 px-6 sm:px-10 md:px-14 lg:px-20">
       <div className="mx-auto max-w-[860px]">
-        {/* ── Top quiet eyebrow ── */}
-        <ScrollReveal>
+        {/* ── Top quiet eyebrow & Header (Center Aligned) ── */}
+        <ScrollReveal className="text-center flex flex-col items-center">
           <div className="mb-6">
             <span className="text-[12px] font-mono tracking-widest uppercase text-muted">
               trust &middot; principles
@@ -63,12 +63,12 @@ export default function TrustPage() {
           </div>
 
           {/* ── Main Apple-style Headline ── */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-ink mb-6 leading-[1.05]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-ink mb-6 leading-[1.05] text-center">
             AI decides intent.<br />
             The database decides truth.
           </h1>
 
-          <p className="text-[17px] sm:text-[20px] text-muted leading-relaxed font-normal max-w-[680px] mb-12 sm:mb-16">
+          <p className="text-[17px] sm:text-[20px] text-muted leading-relaxed font-normal max-w-[680px] mx-auto mb-12 sm:mb-16 text-center">
             We do not rely on decorative certification seals. Security and reliability at Vesper come from strict engineering rules, tenant isolation, and transactional safety.
           </p>
         </ScrollReveal>
