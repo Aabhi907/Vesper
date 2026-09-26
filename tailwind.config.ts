@@ -56,6 +56,16 @@ const config = {
         "panel":    "400ms",
         "cinematic":"800ms",
       },
+      animation: {
+        meteor: "meteor 5s linear infinite",
+      },
+      keyframes: {
+        meteor: {
+          "0%":   { marginLeft: "0px", opacity: "1" },
+          "70%":  { opacity: "1" },
+          "100%": { marginLeft: "-600px", opacity: "0" },
+        },
+      },
     },
   },
   plugins: [],

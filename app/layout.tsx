@@ -2,6 +2,10 @@ import type { Metadata } from "next"
 import { Navbar, Footer } from "@/components/layout"
 import { CookieBanner, ScrollToTop } from "@/components/interactive-utils"
 import "@/app/globals.css"
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "Vesper - 24/7 AI Front Desk for Service & Booking Businesses",
@@ -56,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }
 
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className={cn("scroll-smooth", "font-sans", geist.variable)} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{

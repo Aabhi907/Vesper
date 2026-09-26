@@ -3,6 +3,8 @@ import * as React from "react"
 import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from "framer-motion"
 import { Check, CheckCircle2, ChevronDown, Shield, Globe, Database } from "lucide-react"
 import { EmberGrainField } from "./ember-grain-field"
+import { GoogleCalendarCard } from "./calendar-card"
+
 
 /* ── macOS window chrome wrapper ── */
 function WinChrome({ title, children, className = "", style = {} }: {
@@ -246,6 +248,98 @@ function MessengerChat() {
 /* ══════════════════════════════════════════════════
    Hero Section (Initial Full-Viewport Screen)
 ══════════════════════════════════════════════════ */
+/* ── Interactive 3D Tilt Card for Hero Windows (Matches 3 Pricing Cards) ── */
+function HeroTiltCard({
+  children,
+  className = "",
+  initialRotate = 0,
+}: {
+  children: React.ReactNode
+  className?: string
+  initialRotate?: number
+}) {
+  const ref = React.useRef<HTMLDivElement>(null)
+  const [hover, setHover] = React.useState(false)
+  const [canTilt, setCanTilt] = React.useState(true)
+
+  React.useEffect(() => {
+    const mq = window.matchMedia("(pointer: fine) and (prefers-reduced-motion: no-preference)")
+    setCanTilt(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setCanTilt(e.matches)
+    mq.addEventListener?.("change", handler)
+    return () => mq.removeEventListener?.("change", handler)
+  }, [])
+
+  const px = useMotionValue(0)
+  const py = useMotionValue(0)
+
+  const rotateX = useSpring(useTransform(py, [-200, 200], [12, -12]), { damping: 25, stiffness: 140 })
+  const rotateY = useSpring(useTransform(px, [-200, 200], [-12, 12]), { damping: 25, stiffness: 140 })
+  const sheenX = useSpring(useTransform(px, [-200, 200], ["-120%", "220%"]), { damping: 20, stiffness: 100 })
+  const glowX = useSpring(useTransform(px, [-200, 200], [-80, 80]), { damping: 20, stiffness: 100 })
+  const glowY = useSpring(useTransform(py, [-200, 200], [-80, 80]), { damping: 20, stiffness: 100 })
+
+  const track = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current || !canTilt) return
+    const r = ref.current.getBoundingClientRect()
+    px.set(e.clientX - (r.left + r.width / 2))
+    py.set(e.clientY - (r.top + r.height / 2))
+  }
+
+  const leave = () => {
+    setHover(false)
+    px.set(0)
+    py.set(0)
+  }
+
+  return (
+    <div
+      className={`relative ${className}`}
+      style={canTilt ? { perspective: "1000px" } : undefined}
+      onMouseMove={canTilt ? track : undefined}
+      onMouseEnter={canTilt ? () => setHover(true) : undefined}
+      onMouseLeave={canTilt ? leave : undefined}
+    >
+      <motion.div
+        ref={ref}
+        style={canTilt ? { rotateX, rotateY, transformStyle: "preserve-3d" } : undefined}
+        animate={{ y: hover ? -8 : 0, scale: hover ? 1.03 : 1, rotate: hover ? 0 : initialRotate }}
+        transition={{ type: "spring", stiffness: 280, damping: 22 }}
+        className="relative z-20 w-full h-full flex flex-col cursor-pointer"
+      >
+        {/* Cursor-tracking atmospheric glow */}
+        {canTilt && (
+          <motion.div
+            aria-hidden
+            style={{
+              x: glowX,
+              y: glowY,
+              opacity: hover ? 0.4 : 0,
+            }}
+            className="pointer-events-none absolute -inset-20 z-0 rounded-full blur-[50px] bg-gradient-to-tr from-signal-blue/30 via-indigo-500/20 to-transparent transition-opacity duration-300"
+          />
+        )}
+
+        {/* Specular glass sheen */}
+        {canTilt && (
+          <motion.div
+            aria-hidden
+            style={{ x: sheenX }}
+            className="pointer-events-none absolute inset-0 size-full -skew-x-12 bg-gradient-to-r from-transparent via-white/20 dark:via-white/10 to-transparent z-30"
+          />
+        )}
+
+        <div className="relative z-10 w-full h-full">
+          {children}
+        </div>
+      </motion.div>
+    </div>
+  )
+}
+
+/* ══════════════════════════════════════════════════
+   Hero Section (Initial Full-Viewport Screen)
+══════════════════════════════════════════════════ */
 export function Hero() {
   return (
     <section className="relative w-full min-h-[100dvh] flex flex-col justify-center items-center overflow-hidden bg-hero-wash pt-14 pb-8 px-4 sm:px-6">
@@ -259,55 +353,59 @@ export function Hero() {
         />
       </div>
 
+      {/* ── Subtle architectural hairline dot grid (gives spatial depth & eliminates empty void) ── */}
+      <div className="absolute inset-0 bg-[radial-gradient(hsl(var(--ink)/0.07)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none z-0" aria-hidden="true" />
+
       {/* ── Floating decoration ── */}
-      <div className="absolute right-[10%] top-[28%] text-[18px] float-2 select-none pointer-events-none hidden lg:block opacity-30">✦</div>
-      <div className="absolute left-[10%] bottom-[22%] text-[16px] float-1 select-none pointer-events-none hidden lg:block opacity-30">✦</div>
+      <div className="absolute right-[8%] top-[24%] text-[20px] float-2 select-none pointer-events-none hidden lg:block opacity-25">✦</div>
+      <div className="absolute left-[8%] bottom-[20%] text-[18px] float-1 select-none pointer-events-none hidden lg:block opacity-25">✦</div>
 
       {/* ── Floating window: live chat (left) ── */}
-      <motion.div
-        initial={{ opacity:0, x:-24, rotate:-3 }}
-        animate={{ opacity:1, x:0,  rotate:-3 }}
-        transition={{ delay:0.3, duration:0.7, ease:"easeOut" }}
-        className="absolute left-[2%] 2xl:left-[6%] top-[22%] w-[220px] lg:w-[245px] hidden xl:block float-2 z-0"
-      >
-        <WinChrome title="whatsapp.mov">
-          <div className="bg-[#ece5dd] dark:bg-[#0b141a] p-3.5 space-y-2.5">
-            <div className="flex justify-end">
-              <div className="bg-[#dcf8c6] dark:bg-[#005c4b] text-[12px] text-black/80 dark:text-white px-3 py-2 rounded-xl rounded-tr-sm max-w-[85%] shadow-xs">Can I book tomorrow at 3pm?</div>
+      <div className="absolute left-[2%] 2xl:left-[6%] top-[22%] w-[220px] lg:w-[245px] hidden xl:block float-2 z-10">
+        <HeroTiltCard initialRotate={-3}>
+          <WinChrome title="whatsapp.mov">
+            <div className="bg-[#ece5dd] dark:bg-[#0b141a] p-3.5 space-y-2.5">
+              <div className="flex justify-end">
+                <div className="bg-[#dcf8c6] dark:bg-[#005c4b] text-[12px] text-black/80 dark:text-white px-3 py-2 rounded-xl rounded-tr-sm max-w-[85%] shadow-xs">Can I book tomorrow at 3pm?</div>
+              </div>
+              <div className="flex justify-start">
+                <div className="bg-white dark:bg-[#1f2c34] text-[12px] text-black/80 dark:text-white px-3 py-2 rounded-xl rounded-tl-sm max-w-[85%] shadow-xs">Yes! 3 PM is open. Booked ✓</div>
+              </div>
             </div>
-            <div className="flex justify-start">
-              <div className="bg-white dark:bg-[#1f2c34] text-[12px] text-black/80 dark:text-white px-3 py-2 rounded-xl rounded-tl-sm max-w-[85%] shadow-xs">Yes! 3 PM is open. Booked ✓</div>
+          </WinChrome>
+        </HeroTiltCard>
+      </div>
+
+      {/* ── Floating window: Google Calendar (right) ── */}
+      <div className="absolute right-[2%] 2xl:right-[5.5%] top-[19%] w-[245px] lg:w-[270px] hidden xl:block float-3 z-10">
+        <HeroTiltCard initialRotate={4}>
+          <GoogleCalendarCard
+            title="Dental Checkup"
+            time="3:00 PM"
+            statusText="Calendar updated"
+          />
+        </HeroTiltCard>
+      </div>
+
+      {/* ── Floating Messenger Multi-Channel Alert (Bottom Left) ── */}
+      <div className="absolute left-[3%] 2xl:left-[6%] bottom-[14%] hidden xl:flex float-1 z-10">
+        <HeroTiltCard initialRotate={-1}>
+          <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-white/95 dark:bg-[#161d2a]/95 backdrop-blur-md border border-line shadow-sm text-ink select-none">
+            <div className="w-6 h-6 rounded-full flex items-center justify-center text-[12px] bg-[#0084ff]/10 text-[#0084ff]">💬</div>
+            <div className="text-left">
+              <p className="text-[11.5px] font-bold leading-tight">QuickFix Garage Kathmandu</p>
+              <p className="text-[9.5px] text-muted">Messenger booking synced 2 min ago</p>
             </div>
           </div>
-        </WinChrome>
-      </motion.div>
+        </HeroTiltCard>
+      </div>
 
-      {/* ── Floating window: booking confirmed (right) ── */}
-      <motion.div
-        initial={{ opacity:0, x:24, rotate:4 }}
-        animate={{ opacity:1, x:0,  rotate:4 }}
-        transition={{ delay:0.5, duration:0.7, ease:"easeOut" }}
-        className="absolute right-[2%] 2xl:right-[6%] top-[20%] w-[215px] lg:w-[235px] hidden xl:block float-3 z-0"
-      >
-        <WinChrome title="booking.mov">
-          <div className="bg-white dark:bg-soft-canvas p-3.5 space-y-2">
-            <div className="text-[10.5px] font-semibold text-black/40 dark:text-muted uppercase tracking-wider">Confirmed</div>
-            <div className="text-[13px] font-bold text-ink">Deluxe Room 204 · Dec 24</div>
-            <div className="text-[11.5px] text-muted">2 Nights · 2 Guests Reserved</div>
-            <div className="mt-1.5 flex items-center gap-1.5 bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800/40 rounded-lg px-2.5 py-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-green-600 dark:text-green-400 flex-shrink-0" />
-              <span className="text-[11.5px] text-green-700 dark:text-green-300 font-medium">Booked &amp; confirmed</span>
-            </div>
-          </div>
-        </WinChrome>
-      </motion.div>
-
-      {/* ── Central headline ── */}
+      {/* ── Central headline (always sharp & crisp) ── */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-[960px] mx-auto my-auto px-4">
         <motion.div initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7, ease:"easeOut" }} className="flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/40 border border-signal-blue/20 dark:border-signal-blue/40 text-signal-blue text-[11px] sm:text-[12px] font-bold tracking-wider uppercase mb-5 sm:mb-7 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-signal-blue animate-pulse" />
-            AI Booking Assistant · Any Service Business
+          {/* ── Pure Clean Glass Pill (Colorless, Transparent Frost) ── */}
+          <div className="relative inline-flex items-center px-5 py-2 rounded-full bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl border border-white/80 dark:border-white/15 text-ink text-[12.5px] sm:text-[13.5px] font-medium tracking-tight mb-6 sm:mb-8 shadow-[inset_0_1px_1.5px_rgba(255,255,255,0.9),0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[inset_0_1px_1.5px_rgba(255,255,255,0.2),0_8px_24px_rgba(0,0,0,0.3)] select-none">
+            <span>AI Booking Assistant · Any Service Business</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px] font-black text-ink mb-5 sm:mb-7 tracking-[-0.04em] leading-[0.93]">

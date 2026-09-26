@@ -17,7 +17,7 @@ const CONVERSATIONS: Record<TabKey, {
   turns: ChatTurn[]
 }> = {
   codeswitch: {
-    tabLabel: "⚡ Code-Switching (Mixed)",
+    tabLabel: "Code-Switching",
     subtitle: "Customer starts in Roman Nepali, then switches to English. Vesper adapts automatically.",
     turns: [
       {
@@ -44,7 +44,7 @@ const CONVERSATIONS: Record<TabKey, {
     ],
   },
   nepali: {
-    tabLabel: "🇳🇵 Pure Roman Nepali",
+    tabLabel: "Roman Nepali",
     subtitle: "Full conversation in local Roman Nepali with honorifics (dai, hajur, tapai).",
     turns: [
       {
@@ -70,7 +70,7 @@ const CONVERSATIONS: Record<TabKey, {
     ],
   },
   english: {
-    tabLabel: "🇬🇧 Pure English",
+    tabLabel: "English",
     subtitle: "For expats, tourists, and international guests texting in English.",
     turns: [
       {
@@ -126,7 +126,6 @@ export function BilingualEngineSection() {
         {/* Minimal, Simple Header */}
         <div className="text-center mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-soft-canvas border border-line text-[11px] font-semibold text-muted uppercase tracking-wider mb-2.5">
-            <span>🇳🇵</span>
             <span>Bilingual Intelligence</span>
           </div>
 
@@ -138,8 +137,8 @@ export function BilingualEngineSection() {
             Whether your customers text <span className="font-semibold text-ink">&ldquo;Dai bholi slot cha?&rdquo;</span> or in English, Vesper understands the local dialect and books the calendar.
           </p>
 
-          {/* Simple Tab Pills */}
-          <div className="inline-flex items-center p-1 rounded-full bg-soft-canvas border border-line mt-5 gap-1">
+          {/* ── Apple-Style Segmented Control (No Icons, Clean & Tactile) ── */}
+          <div className="inline-flex items-center p-1 rounded-[10px] bg-black/[0.06] dark:bg-white/[0.08] backdrop-blur-md mt-5 border border-black/5 dark:border-white/5">
             {(Object.keys(CONVERSATIONS) as TabKey[]).map((key) => {
               const isActive = activeTab === key
               return (
@@ -147,13 +146,20 @@ export function BilingualEngineSection() {
                   key={key}
                   type="button"
                   onClick={() => setActiveTab(key)}
-                  className={`px-3.5 sm:px-4 py-1.5 rounded-full text-[12px] font-semibold transition-all ${
+                  className={`relative px-4 py-1.5 text-[12.5px] font-medium tracking-tight rounded-[7px] transition-colors duration-150 select-none ${
                     isActive
-                      ? "bg-ink text-white dark:bg-white dark:text-zinc-900 shadow-xs"
+                      ? "text-ink font-semibold"
                       : "text-muted hover:text-ink"
                   }`}
                 >
-                  {CONVERSATIONS[key].tabLabel}
+                  {isActive && (
+                    <motion.div
+                      layoutId="apple-segmented-pill"
+                      className="absolute inset-0 bg-white dark:bg-[#1a1b20] rounded-[7px] shadow-[0_1px_3px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.06)] border border-black/5 dark:border-white/10"
+                      transition={{ type: "spring", stiffness: 500, damping: 35 }}
+                    />
+                  )}
+                  <span className="relative z-10">{CONVERSATIONS[key].tabLabel}</span>
                 </button>
               )
             })}
