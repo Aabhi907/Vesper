@@ -4,7 +4,8 @@ import * as React from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { WinChrome, ScrollReveal } from "@/components/shared"
-import { ArrowRight, Check, Sparkles } from "lucide-react"
+import { ArrowRight, Check, Sparkles, Globe } from "lucide-react"
+import { WorldMap } from "@/components/ui/world-map"
 
 const STEPS = [
   {
@@ -184,6 +185,76 @@ export default function ProductPage() {
                   <p className="text-[12px] font-mono text-canvas/60 mb-1">Vesper &middot; 11:43 PM</p>
                   <p className="text-[14.5px] leading-relaxed font-normal">
                     ✓ All set! You are booked with Anita for Sunday at 3:00 PM. Calendar invite sent, see you then!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </WinChrome>
+        </ScrollReveal>
+
+        {/* ── Global Coordination & World Map (Foreign Client Ready) ── */}
+        <ScrollReveal delay={0.18} className="mb-24">
+          <div className="mb-8">
+            <span className="text-[12px] font-mono tracking-widest uppercase text-muted block mb-2">
+              global &middot; any timezone
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-3">
+              Awake for clients worldwide.
+            </h2>
+            <p className="text-[15px] sm:text-[16px] text-muted max-w-[640px] leading-relaxed">
+              When an international client or tourist in London, New York, or Sydney inquires during their afternoon, your local front desk is usually asleep. Vesper bridges every timezone with instant availability checks, multi-currency support, and live booking.
+            </p>
+          </div>
+
+          <WinChrome title="vesper &middot; global live traffic">
+            <div className="bg-[#fcfaf6] dark:bg-[#11161d] p-4 sm:p-8">
+              <WorldMap
+                dots={[
+                  {
+                    start: { lat: 40.7128, lng: -74.006, label: "New York" },
+                    end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
+                  },
+                  {
+                    start: { lat: 51.5074, lng: -0.1278, label: "London" },
+                    end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
+                  },
+                  {
+                    start: { lat: 25.2048, lng: 55.2708, label: "Dubai" },
+                    end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
+                  },
+                  {
+                    start: { lat: 1.3521, lng: 103.8198, label: "Singapore" },
+                    end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
+                  },
+                  {
+                    start: { lat: -33.8688, lng: 151.2093, label: "Sydney" },
+                    end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
+                  },
+                  {
+                    start: { lat: 35.6762, lng: 139.6503, label: "Tokyo" },
+                    end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
+                  },
+                ]}
+                lineColor="#3b82f6"
+              />
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-6 mt-4 border-t border-line/60 text-left">
+                <div>
+                  <p className="text-[13.5px] font-bold text-ink">Automatic Timezone Sync</p>
+                  <p className="text-[12.5px] text-muted leading-relaxed mt-1">
+                    Recognizes international phone country codes (+1, +44, +971, +61) and schedules in your exact local time without confusion.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[13.5px] font-bold text-ink">Multi-Currency &amp; Tourist Ready</p>
+                  <p className="text-[12.5px] text-muted leading-relaxed mt-1">
+                    Quotes prices and packages in USD, EUR, GBP, or NPR effortlessly for international travelers, tour groups, and medical tourists.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[13.5px] font-bold text-ink">Zero Midnight Drop-off</p>
+                  <p className="text-[12.5px] text-muted leading-relaxed mt-1">
+                    Foreign travelers lock in their reservations before boarding their flights, instead of scrambling after landing at your shop.
                   </p>
                 </div>
               </div>
