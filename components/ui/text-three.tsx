@@ -82,13 +82,12 @@ export default function TextThree({
           aria-hidden="true"
           animate={{ opacity: [1, 0, 1] }}
           transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-          className={`inline-block ml-1 font-normal text-signal-blue select-none ${cursorClassName}`}
-        >
-          {cursor}
-        </motion.span>
+          className={`inline-block ml-1 sm:ml-2 w-[2px] sm:w-[2.5px] h-[0.78em] bg-black dark:bg-white rounded-full align-middle select-none ${cursorClassName}`}
+        />
       )}
     </span>
   )
+
 }
 
 export { TextThree }
