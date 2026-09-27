@@ -59,8 +59,8 @@ export function WhatsAppChat() {
           <div className="bg-white dark:bg-[#1f2c34] text-[13.5px] text-black/85 dark:text-white px-3.5 py-2.5 rounded-xl rounded-tl-sm max-w-[82%] shadow-sm">
             <p>Namaste hajur! 🙏 Saturday colourist Priya sanga 2 ta slot khali cha:</p>
             <p className="mt-2 font-medium text-[13px] leading-[1.8]">
-              ✂️ <span className="font-semibold text-black dark:text-white">10:00 AM</span> — Haircut + Colour (2.5 hrs)<br />
-              ✂️ <span className="font-semibold text-black dark:text-white">1:30 PM</span> — Haircut + Colour (2.5 hrs)
+              ✂️ <span className="font-semibold text-black dark:text-white">10:00 AM</span>: Haircut + Colour (2.5 hrs)<br />
+              ✂️ <span className="font-semibold text-black dark:text-white">1:30 PM</span>: Haircut + Colour (2.5 hrs)
             </p>
             <p className="mt-1.5">Rs. 1,800 parcha. Kun time ma lock gardim hajur? 🌟</p>
             <div className="flex justify-end mt-1"><span className="text-[10px] text-black/35 dark:text-white/60">11:15 AM</span></div>

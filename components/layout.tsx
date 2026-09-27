@@ -2,10 +2,12 @@
 import * as React from "react"
 import Link from "next/link"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
-import { ShieldCheck } from "lucide-react"
+import { ShieldCheck, Search } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { ScrollProgress } from "@/components/interactive-utils"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { CommandMenu } from "@/components/command-menu"
+import { SecurityModal } from "@/components/security-modal"
 
 import {
   HEADER_NAV_LINKS,
@@ -19,6 +21,8 @@ export function Navbar() {
   const { scrollY } = useScroll()
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [time, setTime]             = React.useState("")
+  const [isCommandOpen, setIsCommandOpen]   = React.useState(false)
+  const [isSecurityOpen, setIsSecurityOpen] = React.useState(false)
 
   useMotionValueEvent(scrollY, "change", (v) => setIsScrolled(v > 32))
 
@@ -28,6 +32,18 @@ export function Navbar() {
     tick()
     const id = setInterval(tick, 10_000)
     return () => clearInterval(id)
+  }, [])
+
+  // Global ⌘K shortcut
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault()
+        setIsCommandOpen((prev) => !prev)
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
   }, [])
 
   return (
@@ -61,8 +77,18 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Right: status + CTA */}
-          <div className="flex items-center gap-3 sm:gap-3.5">
+          {/* Right: status + ⌘K + CTA */}
+          <div className="flex items-center gap-2.5 sm:gap-3.5">
+            {/* ⌘K Trigger Button (P2) */}
+            <button
+              onClick={() => setIsCommandOpen(true)}
+              className="flex items-center justify-between gap-3 h-8 px-3.5 sm:px-4 min-w-[88px] sm:min-w-[104px] rounded-full text-[12px] font-medium text-muted hover:text-ink bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/15 transition-all border border-black/5 dark:border-white/10 cursor-pointer shadow-2xs active:scale-[0.98]"
+              title="Open Command Palette (⌘K)"
+            >
+              <Search className="w-3.5 h-3.5 text-muted/80 flex-shrink-0" />
+              <span className="text-[12px] font-mono font-medium tracking-tight text-ink/90">⌘K</span>
+            </button>
+
             {/* Dark Mode Toggle */}
             <ThemeToggle />
 
@@ -85,70 +111,111 @@ export function Navbar() {
           </div>
         </div>
       </motion.header>
+
+      {/* Global Command Menu */}
+      <CommandMenu
+        isOpen={isCommandOpen}
+        onClose={() => setIsCommandOpen(false)}
+        onOpenSecurity={() => setIsSecurityOpen(true)}
+        onSelectScenario={(id) => {
+          const el = document.getElementById("simulator") || document.getElementById("demo")
+          el?.scrollIntoView({ behavior: "smooth" })
+        }}
+      />
+
+      {/* Enterprise Security & SLA Drawer */}
+      <SecurityModal
+        isOpen={isSecurityOpen}
+        onClose={() => setIsSecurityOpen(false)}
+      />
     </>
   )
 }
 
 /* ── Footer ── */
 export function Footer() {
+  const [isSecurityOpen, setIsSecurityOpen] = React.useState(false)
+
   return (
-    <footer className="w-full bg-[#111116] text-white py-16 px-6 mt-auto border-t border-white/10">
-      <div className="mx-auto max-w-[1240px] flex flex-col md:flex-row justify-between items-start gap-12">
-        <div className="max-w-sm">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-6 h-6 rounded-md bg-white text-ink flex items-center justify-center text-[12px] font-black">
-              V
-            </span>
-            <p className="text-[18px] font-extrabold tracking-tight text-white">vesper</p>
+    <>
+      <footer className="w-full bg-[#111116] text-white py-16 px-6 mt-auto border-t border-white/10">
+        <div className="mx-auto max-w-[1240px] flex flex-col md:flex-row justify-between items-start gap-12">
+          <div className="max-w-sm">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-6 h-6 rounded-md bg-white text-ink flex items-center justify-center text-[12px] font-black">
+                V
+              </span>
+              <p className="text-[18px] font-extrabold tracking-tight text-white">vesper</p>
+            </div>
+
+            <p className="text-[13.5px] text-white/60 leading-relaxed font-normal">
+              The 24/7 AI front desk for service and reservation businesses. Instant calendar availability checks across WhatsApp, Instagram, Messenger, and web.
+            </p>
+
+            {/* Clickable Status Pill (P5) */}
+            <button
+              onClick={() => setIsSecurityOpen(true)}
+              className="mt-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-500/40 text-[11.5px] text-white/80 transition-all cursor-pointer group"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>All systems operational · 99.98% SLA</span>
+              <span className="text-[10px] text-white/40 group-hover:text-emerald-300 font-mono transition-colors">↗</span>
+            </button>
           </div>
 
-          <p className="text-[13.5px] text-white/60 leading-relaxed font-normal">
-            The 24/7 AI front desk for service and reservation businesses. Instant calendar availability checks across WhatsApp, Instagram, Messenger, and web.
-          </p>
+          <div className="flex flex-wrap gap-x-14 gap-y-8">
+            <div className="flex flex-col gap-2.5">
+              <h4 className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-1">Product</h4>
+              {FOOTER_PRODUCT_LINKS.map((l) => (
+                <Link key={l.label} href={l.href} className="text-[13px] text-white/70 hover:text-white transition-colors">
+                  {l.label}
+                </Link>
+              ))}
+            </div>
 
-          <div className="mt-5 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11.5px] text-white/70">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>All systems operational · 99.9% uptime</span>
+            <div className="flex flex-col gap-2.5">
+              <h4 className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-1">Company</h4>
+              {FOOTER_COMPANY_LINKS.map((l) => (
+                <Link key={l.label} href={l.href} className="text-[13px] text-white/70 hover:text-white transition-colors">
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+
+            <div className="flex flex-col gap-2.5">
+              <h4 className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-1">Legal &amp; Privacy</h4>
+              {FOOTER_LEGAL_LINKS.map((l) => (
+                <Link key={l.label} href={l.href} className="text-[13px] text-white/70 hover:text-white transition-colors">
+                  {l.label}
+                </Link>
+              ))}
+              <button
+                onClick={() => setIsSecurityOpen(true)}
+                className="text-[13px] text-left text-white/70 hover:text-white transition-colors cursor-pointer"
+              >
+                Security &amp; SLA Specs
+              </button>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-x-14 gap-y-8">
-          <div className="flex flex-col gap-2.5">
-            <h4 className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-1">Product</h4>
-            {FOOTER_PRODUCT_LINKS.map((l) => (
-              <Link key={l.label} href={l.href} className="text-[13px] text-white/70 hover:text-white transition-colors">
-                {l.label}
-              </Link>
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-2.5">
-            <h4 className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-1">Company</h4>
-            {FOOTER_COMPANY_LINKS.map((l) => (
-              <Link key={l.label} href={l.href} className="text-[13px] text-white/70 hover:text-white transition-colors">
-                {l.label}
-              </Link>
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-2.5">
-            <h4 className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-1">Legal &amp; Privacy</h4>
-            {FOOTER_LEGAL_LINKS.map((l) => (
-              <Link key={l.label} href={l.href} className="text-[13px] text-white/70 hover:text-white transition-colors">
-                {l.label}
-              </Link>
-            ))}
-          </div>
+        <div className="mx-auto max-w-[1240px] mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-white/40">
+          <p>© 2026 Vesper Technologies Inc. All rights reserved.</p>
+          <button
+            onClick={() => setIsSecurityOpen(true)}
+            className="flex items-center gap-1.5 hover:text-white/80 transition-colors text-left cursor-pointer"
+          >
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <span>Meta Cloud API &amp; Google Calendar Verified Partner · View Specs</span>
+          </button>
         </div>
-      </div>
+      </footer>
 
-      <div className="mx-auto max-w-[1240px] mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-white/40">
-        <p>© 2026 Vesper Technologies Inc. All rights reserved.</p>
-        <p className="flex items-center gap-1.5">
-          <ShieldCheck className="w-4 h-4 text-emerald-400" />
-          <span>Meta Cloud API &amp; Google Calendar Verified Partner</span>
-        </p>
-      </div>
-    </footer>
+      {/* Security Modal from Footer trigger */}
+      <SecurityModal
+        isOpen={isSecurityOpen}
+        onClose={() => setIsSecurityOpen(false)}
+      />
+    </>
   )
 }

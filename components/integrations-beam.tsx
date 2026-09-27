@@ -449,7 +449,7 @@ export function IntegrationsBeam() {
         </h2>
 
         <p className="text-[15px] sm:text-[17px] text-muted max-w-[560px] mx-auto leading-relaxed font-normal text-center">
-          Customers text where they already spend time. Vesper checks your real schedule, confirms open slots, and books them straight into your calendar — day or night.
+          Customers text where they already spend time. Vesper checks your real schedule, confirms open slots, and books them straight into your calendar, day or night.
         </p>
       </div>
 

@@ -296,7 +296,7 @@ export default function ProductPage() {
         </ScrollReveal>
 
         {/* ── Minimalist Clean Interactive Pipeline (Apple Segmented Pill Dock) ── */}
-        <ScrollReveal delay={0.1} className="mb-24">
+        <ScrollReveal delay={0.1} className="mb-32 sm:mb-36">
           <TooltipProvider>
             <div className="p-1.5 sm:p-2 rounded-2xl bg-soft-canvas border border-line flex flex-wrap gap-1 sm:gap-1.5 mb-8 relative">
               {STEPS.map((s, i) => {
@@ -361,12 +361,9 @@ export default function ProductPage() {
           </WinChrome>
         </ScrollReveal>
 
-        {/* ── Apple-style "How it looks in practice" Window (Center-Aligned Header) ── */}
-        <ScrollReveal delay={0.15} className="mb-24">
-          <div className="mb-8 text-center flex flex-col items-center">
-            <span className="text-[12px] font-mono tracking-widest uppercase text-muted block mb-2">
-              the experience
-            </span>
+        {/* ── Apple-style "How it looks in practice" Window (Eyebrow dropped for pure confidence) ── */}
+        <ScrollReveal delay={0.15} className="mb-32 sm:mb-36">
+          <div className="mb-10 text-center flex flex-col items-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink text-center">
               Quiet, instant, and accurate.
             </h2>
@@ -426,7 +423,7 @@ export default function ProductPage() {
         </ScrollReveal>
 
         {/* ── Global Coordination & World Map (USA & Worldwide Deployment) ── */}
-        <ScrollReveal delay={0.18} className="mb-24">
+        <ScrollReveal delay={0.18} className="mb-32 sm:mb-36">
           <div className="mb-8 text-center flex flex-col items-center">
             <span className="text-[12px] font-mono tracking-widest uppercase text-muted block mb-2">
               global &middot; any country &middot; any timezone
@@ -442,12 +439,9 @@ export default function ProductPage() {
           <WorldMapCard />
         </ScrollReveal>
 
-        {/* ── The Three Disciplines ── */}
-        <ScrollReveal delay={0.2} className="mb-24">
-          <div className="mb-8 text-center">
-            <span className="text-[12px] font-mono tracking-widest uppercase text-muted block mb-2">
-              disciplines
-            </span>
+        {/* ── The Three Disciplines (Eyebrow dropped for pure confidence) ── */}
+        <ScrollReveal delay={0.2} className="mb-32 sm:mb-36">
+          <div className="mb-10 text-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
               Three rules we refuse to break.
             </h2>
@@ -460,7 +454,7 @@ export default function ProductPage() {
           </div>
         </ScrollReveal>
 
-        {/* ── Quiet Apple-style CTA (Zero Emojis + Classic Apple Footnote) ── */}
+        {/* ── Quiet Apple-style CTA (Button-in-Button Architecture + Classic Footnote) ── */}
         <ScrollReveal delay={0.25} className="pt-8 border-t border-line">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>
@@ -475,10 +469,12 @@ export default function ProductPage() {
             <div className="flex items-center gap-3">
               <Link
                 href="/#demo"
-                className="inline-flex items-center gap-2 bg-ink text-canvas text-[13.5px] font-semibold px-6 py-3 rounded-full hover:bg-ink/85 transition-all shadow-xs"
+                className="group inline-flex items-center gap-3 bg-ink text-canvas text-[13.5px] font-semibold pl-5 pr-2 py-1.5 rounded-full hover:bg-ink/85 transition-all shadow-xs active:scale-[0.98]"
               >
                 <span>launch simulator</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span className="w-7 h-7 rounded-full bg-canvas/15 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-canvas" />
+                </span>
               </Link>
               <Link
                 href="/trust"

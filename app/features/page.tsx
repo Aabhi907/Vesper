@@ -61,10 +61,12 @@ export default function FeaturesPage() {
         <div className="text-center">
           <Link
             href="/#demo"
-            className="inline-flex items-center gap-2 bg-ink text-canvas text-[14px] font-semibold px-6 py-3 rounded-full hover:bg-ink/80 transition-colors"
+            className="group inline-flex items-center gap-3 bg-ink text-canvas text-[14px] font-semibold pl-6 pr-2 py-2 rounded-full hover:bg-ink/85 transition-all shadow-xs active:scale-[0.98]"
           >
             <span>See the live interactive demo</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="w-7 h-7 rounded-full bg-canvas/15 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5">
+              <ArrowRight className="w-3.5 h-3.5 text-canvas" />
+            </span>
           </Link>
         </div>
       </div>

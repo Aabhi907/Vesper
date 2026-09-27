@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, ArrowRight } from "lucide-react"
 import { EmberGrainField } from "../ember-grain-field"
 import { GoogleCalendarCard } from "../calendar-card"
 import { WinChrome } from "@/components/shared"
@@ -193,9 +193,12 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row items-center gap-3 justify-center w-full sm:w-auto">
             <a
               href="#demo"
-              className="flex items-center justify-center gap-2 bg-ink text-canvas text-[14px] sm:text-[15px] font-semibold px-7 py-3.5 rounded-full hover:bg-ink/85 transition-all shadow-sm w-full sm:w-auto"
+              className="group inline-flex items-center justify-center gap-3 bg-ink text-canvas text-[14px] sm:text-[15px] font-semibold pl-6 pr-2.5 py-2 rounded-full hover:bg-ink/85 transition-all shadow-sm active:scale-[0.98] w-full sm:w-auto"
             >
               <span>book a demo</span>
+              <span className="w-7 h-7 rounded-full bg-canvas/15 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5">
+                <ArrowRight className="w-3.5 h-3.5 text-canvas" />
+              </span>
             </a>
             <a
               href="#demo"

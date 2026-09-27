@@ -160,7 +160,7 @@ export default function TrustPage() {
         </ScrollReveal>
 
         {/* ── Apple-style Notes Memo Window (with Sticky Note & Handwriting Polish) ── */}
-        <ScrollReveal delay={0.1} className="mb-24">
+        <ScrollReveal delay={0.1} className="mb-32 sm:mb-36">
           <WinChrome title="notes &middot; the vesper thesis">
             <div
               className="bg-[#fdfbf7] dark:bg-[#131922] p-8 sm:p-14 text-ink/85 relative overflow-hidden"
@@ -218,12 +218,9 @@ export default function TrustPage() {
           </WinChrome>
         </ScrollReveal>
 
-        {/* ── The 4 Principles Grid (Center-Aligned Header + Lucide Squarcles) ── */}
-        <ScrollReveal delay={0.15} className="mb-24">
-          <div className="mb-8 text-center flex flex-col items-center">
-            <span className="text-[12px] font-mono tracking-widest uppercase text-muted block mb-2">
-              commitments
-            </span>
+        {/* ── The 4 Principles Grid (Eyebrow dropped for pure confidence) ── */}
+        <ScrollReveal delay={0.15} className="mb-32 sm:mb-36">
+          <div className="mb-10 text-center flex flex-col items-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink text-center">
               Four non-negotiable rules.
             </h2>
@@ -237,7 +234,7 @@ export default function TrustPage() {
         </ScrollReveal>
 
         {/* ── Apple-style "Anti-BS" Comparison Matrix ── */}
-        <ScrollReveal delay={0.18} className="mb-24">
+        <ScrollReveal delay={0.18} className="mb-32 sm:mb-36">
           <div className="mb-8 text-center flex flex-col items-center">
             <span className="text-[12px] font-mono tracking-widest uppercase text-muted block mb-2">
               the contrast
@@ -293,12 +290,9 @@ export default function TrustPage() {
           </WinChrome>
         </ScrollReveal>
 
-        {/* ── Minimalist Clean FAQs (Candid Dry Honesty) ── */}
-        <ScrollReveal delay={0.2} className="mb-24">
-          <div className="mb-8 text-center flex flex-col items-center">
-            <span className="text-[12px] font-mono tracking-widest uppercase text-muted block mb-2">
-              clarity
-            </span>
+        {/* ── Minimalist Clean FAQs (Eyebrow dropped for pure confidence) ── */}
+        <ScrollReveal delay={0.2} className="mb-32 sm:mb-36">
+          <div className="mb-10 text-center flex flex-col items-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink text-center">
               Frequently asked questions.
             </h2>
@@ -336,7 +330,7 @@ export default function TrustPage() {
           </div>
         </ScrollReveal>
 
-        {/* ── Quiet Bottom Action (Zero Emojis + Classic Apple Footnote) ── */}
+        {/* ── Quiet Bottom Action (Button-in-Button Architecture + Classic Footnote) ── */}
         <ScrollReveal delay={0.25} className="pt-8 border-t border-line">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>
@@ -351,10 +345,12 @@ export default function TrustPage() {
             <div className="flex items-center gap-3">
               <Link
                 href="/#demo"
-                className="inline-flex items-center gap-2 bg-ink text-canvas text-[13.5px] font-semibold px-6 py-3 rounded-full hover:bg-ink/85 transition-all shadow-xs"
+                className="group inline-flex items-center gap-3 bg-ink text-canvas text-[13.5px] font-semibold pl-5 pr-2 py-1.5 rounded-full hover:bg-ink/85 transition-all shadow-xs active:scale-[0.98]"
               >
                 <span>book a demo</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span className="w-7 h-7 rounded-full bg-canvas/15 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-canvas" />
+                </span>
               </Link>
               <Link
                 href="/product"

@@ -12,7 +12,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Rajan Shrestha",
     handle: "@grandinn_hotel",
     role: "Hotel Manager",
-    quote: "Room reservations come in 24/7 — even on holidays. Zero front desk needed after 10 PM.",
+    quote: "Room reservations come in 24/7, even on holidays. Zero front desk needed after 10 PM.",
     color: "#3472ff",
   },
   {
@@ -40,7 +40,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Meera Pandey",
     handle: "@spicegardenktm",
     role: "Restaurant Owner",
-    quote: "Table reservations, takeaway slots — Vesper handles it all. Worth every paisa.",
+    quote: "Table reservations and takeaway slots: Vesper handles it all. Worth every paisa.",
     color: "#febc2e",
   },
 ]
