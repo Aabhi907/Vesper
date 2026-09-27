@@ -8,9 +8,9 @@ interface TextThreeProps {
   text?: string
   /** Array of words/phrases to cycle through with typewriter effect */
   words?: string[]
-  /** Typing speed in ms per character (default: 110) */
+  /** Typing speed in ms per character (default: 220) */
   typingSpeed?: number
-  /** Deletion speed in ms per character (default: 60) */
+  /** Deletion speed in ms per character (default: 70) */
   deletingSpeed?: number
   /** Pause duration at the end of word in ms (default: 2200) */
   pauseDuration?: number
@@ -27,8 +27,8 @@ interface TextThreeProps {
 export default function TextThree({
   text = "Vesper",
   words,
-  typingSpeed = 120,
-  deletingSpeed = 60,
+  typingSpeed = 220,
+  deletingSpeed = 70,
   pauseDuration = 2200,
   className = "",
   cursorClassName = "",

@@ -183,7 +183,7 @@ export function Hero() {
           </div>
 
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[96px] xl:text-[112px] font-black text-ink mb-6 sm:mb-8 tracking-[-0.04em] leading-[0.95]">
-            <TextThree text="Vesper" />
+            <TextThree text="Vesper" typingSpeed={220} />
           </h1>
 
           <p className="text-[15px] sm:text-[18px] md:text-[20px] text-muted mb-8 sm:mb-10 max-w-[620px] mx-auto leading-relaxed font-normal">
