@@ -200,39 +200,39 @@ function WorldMapCard() {
             style={canTilt ? { transform: "translateZ(20px)", transformStyle: "preserve-3d" } : undefined}
             className="bg-[#fcfaf6] dark:bg-[#11161d] p-4 sm:p-8 relative z-10"
           >
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-line/40 text-[11px] font-mono text-muted">
+            <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-line/40 text-[11px] font-mono text-muted">
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Live Inbound Routing
+                Global Inbound Routing
               </span>
-              <span className="text-ink/60 dark:text-white/60">6 Global Hubs &middot; Real-Time Sync</span>
+              <span className="text-ink/75 dark:text-white/75 font-medium">USA &middot; UK &middot; Canada &middot; Australia &middot; Worldwide</span>
             </div>
 
             <WorldMap
               dots={[
                 {
-                  start: { lat: 40.7128, lng: -74.006, label: "New York" },
-                  end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
-                },
-                {
                   start: { lat: 51.5074, lng: -0.1278, label: "London" },
-                  end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
-                },
-                {
-                  start: { lat: 25.2048, lng: 55.2708, label: "Dubai" },
-                  end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
-                },
-                {
-                  start: { lat: 1.3521, lng: 103.8198, label: "Singapore" },
-                  end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
-                },
-                {
-                  start: { lat: -33.8688, lng: 151.2093, label: "Sydney" },
-                  end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
+                  end: { lat: 40.7128, lng: -74.006, label: "New York (USA)" },
                 },
                 {
                   start: { lat: 35.6762, lng: 139.6503, label: "Tokyo" },
-                  end: { lat: 27.7172, lng: 85.324, label: "Your Calendar" },
+                  end: { lat: 37.7749, lng: -122.4194, label: "San Francisco (USA)" },
+                },
+                {
+                  start: { lat: -33.8688, lng: 151.2093, label: "Sydney" },
+                  end: { lat: 34.0522, lng: -118.2437, label: "Los Angeles (USA)" },
+                },
+                {
+                  start: { lat: 40.7128, lng: -74.006, label: "New York" },
+                  end: { lat: 51.5074, lng: -0.1278, label: "London (UK)" },
+                },
+                {
+                  start: { lat: 25.2048, lng: 55.2708, label: "Dubai" },
+                  end: { lat: 51.5074, lng: -0.1278, label: "Europe Hub" },
+                },
+                {
+                  start: { lat: 52.5200, lng: 13.4050, label: "Berlin" },
+                  end: { lat: 27.7172, lng: 85.324, label: "Asia Hub" },
                 },
               ]}
               lineColor="#2563eb"
@@ -240,23 +240,31 @@ function WorldMapCard() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 mt-4 border-t border-line/40 text-left">
               <div>
-                <p className="text-[13.5px] font-semibold text-ink">London doesn&apos;t care that you&apos;re asleep.</p>
+                <p className="text-[13.5px] font-semibold text-ink">Your business in the US, Europe, or beyond.</p>
                 <p className="text-[12.5px] text-muted leading-relaxed mt-1 font-normal">
-                  Recognizes international codes (+44, +1, +61) and schedules in your exact local time without 3:00 AM alarm clocks.
+                  Whether your salon, clinic, or service shop is based in New York, California, London, Sydney, or Kathmandu, Vesper syncs seamlessly to your local business timezone (EST, PST, GMT, AEST) with zero setup friction.
                 </p>
               </div>
               <div>
-                <p className="text-[13.5px] font-semibold text-ink">Zero currency math at midnight.</p>
+                <p className="text-[13.5px] font-semibold text-ink">Clients book from any country code.</p>
                 <p className="text-[12.5px] text-muted leading-relaxed mt-1 font-normal">
-                  Seamlessly quotes in USD, EUR, or NPR so tourists can book before their flight lands in Kathmandu.
+                  Seamlessly handles incoming numbers from the US (+1), UK (+44), Australia (+61), UAE (+971), and 50+ countries. Quotes accurately in USD ($), GBP (&pound;), EUR (&euro;), or your local currency.
                 </p>
               </div>
               <div>
-                <p className="text-[13.5px] font-semibold text-ink">Sleep through your bookings.</p>
+                <p className="text-[13.5px] font-semibold text-ink">Zero midnight drop-off, worldwide.</p>
                 <p className="text-[12.5px] text-muted leading-relaxed mt-1 font-normal">
-                  Foreign clients book while you rest; you wake up to confirmed slots on your calendar.
+                  Whether it is a late-night local client texting at 2:00 AM in your home city or an international client booking from across the globe, slots are atomically locked in seconds while you sleep.
                 </p>
               </div>
+            </div>
+
+            {/* Subtle Country Verification Pill Row */}
+            <div className="mt-6 pt-4 border-t border-line/40 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-muted">
+              <span>Verified coverage:</span>
+              <span className="text-ink/80 dark:text-white/80">
+                United States &middot; United Kingdom &middot; Canada &middot; Australia &middot; UAE &middot; Europe &middot; Global
+              </span>
             </div>
           </div>
         </WinChrome>
@@ -420,17 +428,17 @@ export default function ProductPage() {
           </WinChrome>
         </ScrollReveal>
 
-        {/* ── Global Coordination & World Map (Foreign Client Ready) ── */}
+        {/* ── Global Coordination & World Map (USA & Worldwide Deployment) ── */}
         <ScrollReveal delay={0.18} className="mb-24">
           <div className="mb-8 text-center flex flex-col items-center">
             <span className="text-[12px] font-mono tracking-widest uppercase text-muted block mb-2">
-              global &middot; any timezone
+              global &middot; any country &middot; any timezone
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-3 text-center">
-              Awake for clients worldwide.
+              Built for businesses in the US and worldwide.
             </h2>
-            <p className="text-[15px] sm:text-[16px] text-muted max-w-[620px] leading-relaxed mx-auto text-center font-normal">
-              When an international client or tourist in London, New York, or Sydney inquires during their afternoon, your local front desk is usually asleep. Vesper bridges every timezone with instant availability checks, multi-currency support, and live booking.
+            <p className="text-[15px] sm:text-[16px] text-muted max-w-[680px] leading-relaxed mx-auto text-center font-normal">
+              Whether your business operates in the United States, Europe, Australia, or Asia, Vesper connects directly to your local calendar, supports your home currency, and talks to clients from any country around the clock.
             </p>
           </div>
 
