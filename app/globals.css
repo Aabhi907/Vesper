@@ -140,6 +140,7 @@
 @layer utilities {
   /* ── macOS window chrome ── */
   .win-chrome {
+    position: relative;
     background: hsl(var(--window-bg));
     border: 1px solid hsl(var(--line));
     border-radius: 12px;

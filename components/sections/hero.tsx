@@ -182,29 +182,20 @@ export function Hero() {
             <span>AI Booking Assistant · Any Service Business</span>
           </div>
 
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[96px] xl:text-[112px] font-black text-ink mb-3.5 sm:mb-4 tracking-[-0.04em] leading-[0.95]">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[96px] xl:text-[112px] font-black text-ink mb-6 sm:mb-8 tracking-[-0.04em] leading-[0.95]">
             <TextThree text="Vesper" />
           </h1>
-
-
-          {/* ── "sent at 2:47 AM" timestamp pill ── */}
-          <div className="relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/75 dark:bg-white/[0.08] backdrop-blur-md border border-line shadow-xs text-ink text-[12px] sm:text-[13px] font-mono mb-6 sm:mb-7 -rotate-1 select-none pointer-events-none">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="font-semibold tracking-tight">sent at 2:47 AM</span>
-            <span className="text-[10px] text-muted font-sans">· delivered</span>
-          </div>
 
           <p className="text-[15px] sm:text-[18px] md:text-[20px] text-muted mb-8 sm:mb-10 max-w-[620px] mx-auto leading-relaxed font-normal">
             Answer messages, check real availability, and book appointments across WhatsApp, Instagram &amp; Messenger for salons, hotels, garages, and any service business.
           </p>
-
 
           <div className="flex flex-col sm:flex-row items-center gap-3 justify-center w-full sm:w-auto">
             <a
               href="#demo"
               className="flex items-center justify-center gap-2 bg-ink text-canvas text-[14px] sm:text-[15px] font-semibold px-7 py-3.5 rounded-full hover:bg-ink/85 transition-all shadow-sm w-full sm:w-auto"
             >
-              <span>🌙</span> book a demo
+              <span>book a demo</span>
             </a>
             <a
               href="#demo"

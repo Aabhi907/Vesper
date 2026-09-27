@@ -3,10 +3,11 @@ import { Navbar, Footer } from "@/components/layout"
 import { CookieBanner, ScrollToTop } from "@/components/interactive-utils"
 import { ChatLauncher } from "@/components/ui/ChatLauncher"
 import "@/app/globals.css"
-import { Geist } from "next/font/google";
+import { Geist, Caveat } from "next/font/google";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const caveat = Caveat({ subsets: ['latin'], variable: '--font-handwriting', weight: ['400','500','600','700'] });
 
 export const metadata: Metadata = {
   title: "Vesper - 24/7 AI Front Desk for Service & Booking Businesses",
@@ -61,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }
 
   return (
-    <html lang="en" className={cn("scroll-smooth", "font-sans", geist.variable)} suppressHydrationWarning>
+    <html lang="en" className={cn("scroll-smooth", "font-sans", geist.variable, caveat.variable)} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
