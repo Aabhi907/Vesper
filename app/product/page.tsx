@@ -116,9 +116,12 @@ function PillarCard({ num, icon, title, desc }: { num: string; icon: React.React
             style={canTilt ? { transform: "translateZ(25px)", transformStyle: "preserve-3d" } : undefined}
             className="p-8 flex flex-col justify-between h-full relative z-10"
           >
-            {/* Top: rule label */}
-            <div className="flex items-start justify-between mb-8">
-              <span className="text-[11px] font-mono text-signal-blue font-bold tracking-[0.18em] uppercase">
+            {/* Top: big transparent number */}
+            <div className="flex items-start justify-end -mt-2 -mr-1">
+              <span
+                className="text-[72px] font-black leading-none select-none"
+                style={{ color: "hsl(var(--ink) / 0.05)", letterSpacing: "-0.04em" }}
+              >
                 {num}
               </span>
             </div>
