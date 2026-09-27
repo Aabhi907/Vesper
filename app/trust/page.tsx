@@ -105,16 +105,10 @@ function TiltCard({ num, icon, title, desc }: { num: string; icon: React.ReactNo
             style={canTilt ? { transform: "translateZ(25px)", transformStyle: "preserve-3d" } : undefined}
             className="p-8 sm:p-9 flex flex-col justify-between h-full relative z-10"
           >
-            {/* Top row: ghost numeral anchored top-right */}
-            <div className="flex items-start justify-between">
+            {/* Top row: rule label */}
+            <div className="flex items-start justify-between mb-8">
               <span className="text-[11px] font-mono text-signal-blue font-bold tracking-[0.18em] uppercase">
                 Rule {num}
-              </span>
-              <span
-                className="text-[76px] font-black leading-none select-none -mt-2 -mr-1"
-                style={{ color: "hsl(var(--ink) / 0.045)", letterSpacing: "-0.04em" }}
-              >
-                {num}
               </span>
             </div>
 
