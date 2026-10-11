@@ -14,7 +14,26 @@ import {
   FOOTER_PRODUCT_LINKS,
   FOOTER_COMPANY_LINKS,
   FOOTER_LEGAL_LINKS,
+  CALENDLY_URL,
 } from "@/models"
+
+declare global {
+  interface Window { Calendly?: { initPopupWidget(opts: { url: string }): void } }
+}
+
+// Calendly's own popup widget; script + css load on first click only
+function openCalendly() {
+  if (window.Calendly) return window.Calendly.initPopupWidget({ url: CALENDLY_URL! })
+  const css = document.createElement("link")
+  css.rel = "stylesheet"
+  css.href = "https://assets.calendly.com/assets/external/widget.css"
+  document.head.appendChild(css)
+  const js = document.createElement("script")
+  js.src = "https://assets.calendly.com/assets/external/widget.js"
+  js.onload = () => window.Calendly?.initPopupWidget({ url: CALENDLY_URL! })
+  js.onerror = () => window.open(CALENDLY_URL, "_blank", "noopener")
+  document.head.appendChild(js)
+}
 
 /* ── Navbar ── */
 export function Navbar() {
@@ -100,6 +119,14 @@ export function Navbar() {
             </svg>
             {/* Time */}
             <span className="hidden md:block text-[13px] text-ink/70 font-medium tabular-nums">{time}</span>
+            {CALENDLY_URL && (
+              <button
+                onClick={openCalendly}
+                className="hidden sm:flex items-center text-[13px] font-semibold text-ink px-4 py-1.5 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer"
+              >
+                talk to us
+              </button>
+            )}
             {/* CTA */}
             <Link
               href="/#demo"
