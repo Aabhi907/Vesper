@@ -2,8 +2,9 @@
 import * as React from "react"
 import Link from "next/link"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
-import { ShieldCheck, Search } from "lucide-react"
+import { ShieldCheck, Search, Linkedin, Instagram, Github } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { SOCIAL_LINKS } from "@/lib/site"
 import { ScrollProgress } from "@/components/interactive-utils"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { CommandMenu } from "@/components/command-menu"
@@ -228,6 +229,26 @@ export function Footer() {
 
         <div className="mx-auto max-w-[1240px] mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-white/40">
           <p>© 2026 Vesper. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            {[
+              { href: SOCIAL_LINKS.linkedin, label: "Vesper on LinkedIn", icon: <Linkedin className="w-4 h-4" /> },
+              { href: SOCIAL_LINKS.instagram, label: "Vesper on Instagram", icon: <Instagram className="w-4 h-4" /> },
+              {
+                href: SOCIAL_LINKS.x,
+                label: "Vesper on X",
+                icon: (
+                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                ),
+              },
+              { href: SOCIAL_LINKS.github, label: "Vesper on GitHub", icon: <Github className="w-4 h-4" /> },
+            ].map((s) => (
+              <a key={s.href} href={s.href} target="_blank" rel="me noopener" aria-label={s.label} className="hover:text-white transition-colors">
+                {s.icon}
+              </a>
+            ))}
+          </div>
           <button
             onClick={() => setIsSecurityOpen(true)}
             className="flex items-center gap-1.5 hover:text-white/80 transition-colors text-left cursor-pointer"

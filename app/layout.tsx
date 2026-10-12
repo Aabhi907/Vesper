@@ -5,7 +5,7 @@ import { ChatLauncher } from "@/components/ui/ChatLauncher"
 import "@/app/globals.css"
 import { Geist, Caveat } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, SOCIAL_LINKS } from "@/lib/site";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 const caveat = Caveat({ subsets: ['latin'], variable: '--font-handwriting', weight: ['400','500','600','700'] });
@@ -74,7 +74,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "Vesper is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger and books appointments against real calendar availability, 24/7.",
         disambiguatingDescription:
           "Vesper (vesper.codes) is an AI booking assistant software company based in Kathmandu, Nepal; not the Vesper cocktail or any other company named Vesper.",
-        founder: { "@type": "Person", name: "Samrat Ghimire" },
+        founder: {
+          "@type": "Person",
+          name: "Samrat Ghimire",
+          sameAs: ["https://github.com/SamratGhimire01", "https://www.linkedin.com/in/samratghimire01"],
+        },
+        sameAs: Object.values(SOCIAL_LINKS),
         areaServed: { "@type": "Country", name: "Nepal" },
       },
       {
