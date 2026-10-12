@@ -98,7 +98,7 @@ export function SecurityModal({ isOpen, onClose }: SecurityModalProps) {
             {/* Content Body */}
             <div className="p-6 pb-12 space-y-6 max-h-[calc(85vh-130px)] overflow-y-auto">
               {/* Live Heartbeat Banner */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-4 rounded-xl bg-black/[0.02] dark:bg-white/[0.03] border border-black/5 dark:border-white/10">
+              <div className="grid grid-cols-2 gap-3 p-4 rounded-xl bg-black/[0.02] dark:bg-white/[0.03] border border-black/5 dark:border-white/10">
                 <div>
                   <span className="text-[11px] text-muted font-medium uppercase tracking-wider">Live Status</span>
                   <div className="flex items-center gap-1.5 mt-1 font-semibold text-[13.5px] text-emerald-600 dark:text-emerald-400">
@@ -107,25 +107,21 @@ export function SecurityModal({ isOpen, onClose }: SecurityModalProps) {
                   </div>
                 </div>
                 <div>
-                  <span className="text-[11px] text-muted font-medium uppercase tracking-wider">Avg Latency</span>
-                  <p className="mt-1 font-semibold text-[13.5px] text-ink tabular-nums">284ms E2E</p>
-                </div>
-                <div>
-                  <span className="text-[11px] text-muted font-medium uppercase tracking-wider">Cloud Region</span>
-                  <p className="mt-1 font-semibold text-[13.5px] text-ink">AWS ap-south-1</p>
+                  <span className="text-[11px] text-muted font-medium uppercase tracking-wider">Hosting</span>
+                  <p className="mt-1 font-semibold text-[13.5px] text-ink">Railway &amp; Supabase</p>
                 </div>
               </div>
 
               {/* 4 Pillars Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* Pillar 1: Zero Retention */}
+                {/* Pillar 1: Data Handling */}
                 <div className="p-4 rounded-xl border border-black/5 dark:border-white/10 bg-white dark:bg-white/[0.02] space-y-2">
                   <div className="flex items-center gap-2 text-ink">
                     <Database className="w-4 h-4 text-signal-blue" />
-                    <h3 className="text-[13.5px] font-bold">Zero-PII Data Retention</h3>
+                    <h3 className="text-[13.5px] font-bold">Customer Data Stays Yours</h3>
                   </div>
                   <p className="text-[12.5px] text-muted leading-relaxed">
-                    Customer conversations are processed in volatile memory and purged within 24 hours. Only the confirmed calendar reservation metadata is committed to your calendar.
+                    Customer conversations are stored only to run your bookings and are never used to train public AI models. Only the confirmed reservation is written to your calendar.
                   </p>
                 </div>
 
