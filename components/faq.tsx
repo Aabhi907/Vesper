@@ -4,7 +4,7 @@ import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 import Link from "next/link"
-import { FAQS } from "@/models"
+import { FAQS, HOME_FAQ_COUNT } from "@/models"
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = React.useState<number | null>(0)
@@ -54,7 +54,7 @@ export function FAQSection() {
             </motion.div>
           </div>
 
-          {FAQS.map((faq, index) => {
+          {FAQS.slice(0, HOME_FAQ_COUNT).map((faq, index) => {
             const isOpen = openIndex === index
 
             return (
