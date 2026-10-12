@@ -1,5 +1,13 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft, FileText } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description:
+    "The terms that govern use of Vesper.",
+  alternates: { canonical: "/terms" },
+}
 
 export default function TermsPage() {
   return (

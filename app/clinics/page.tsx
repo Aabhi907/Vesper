@@ -1,4 +1,12 @@
+import type { Metadata } from "next"
 import { Button } from "@/components/ui"
+
+export const metadata: Metadata = {
+  title: "For Clinics & Service Businesses",
+  description:
+    "Vesper handles service questions, pricing inquiries and appointment bookings for clinics, salons, hotels, garages and any appointment-driven business.",
+  alternates: { canonical: "/clinics" },
+}
 
 export default function SolutionsPage() {
   return (

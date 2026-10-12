@@ -1,5 +1,13 @@
+import type { Metadata } from "next"
 import { MessageSquare, Calendar, Zap, Shield, CheckCircle2, ArrowRight } from "lucide-react"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Features",
+  description:
+    "Omnichannel inbox, real availability engine, 24/7 replies, grounded answers from your own prices and policies, and human handoff.",
+  alternates: { canonical: "/features" },
+}
 
 export default function FeaturesPage() {
   const features = [

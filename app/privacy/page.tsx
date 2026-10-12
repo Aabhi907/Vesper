@@ -1,5 +1,13 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft, Shield } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "How Vesper collects, uses and protects customer and business data.",
+  alternates: { canonical: "/privacy" },
+}
 
 export default function PrivacyPage() {
   return (
