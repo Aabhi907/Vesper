@@ -57,6 +57,12 @@ Vesper does not answer phone calls.
 - [Nepali chatbot](https://vesper.codes/nepali-chatbot): Roman Nepali, Devanagari and Nepali-English mixed chat, with example conversations
 - [AI receptionist Nepal](https://vesper.codes/ai-receptionist-nepal): NPR pricing, eSewa and Khalti deposits, Nepal time
 
+## Problems and intents
+
+- [Appointment booking bot](https://vesper.codes/appointment-booking-bot): AI appointment scheduler with Google Calendar sync
+- [After-hours auto reply](https://vesper.codes/after-hours-auto-reply): 24/7 replies and night-time bookings
+- [Human handoff](https://vesper.codes/human-handoff): staff inbox with live chat takeover
+
 ## Official profiles
 
 - [LinkedIn](https://www.linkedin.com/company/143977886)
