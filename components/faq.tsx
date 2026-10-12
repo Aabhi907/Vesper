@@ -3,6 +3,7 @@
 import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
+import Link from "next/link"
 import { FAQS } from "@/models"
 
 export function FAQSection() {
@@ -27,6 +28,11 @@ export function FAQSection() {
 
           <p className="text-[#666666] dark:text-muted text-[14px] sm:text-[15.5px] text-center">
             what to know about vesper, privacy, and getting started.
+          </p>
+          <p className="mt-3 text-[13.5px] text-[#666666] dark:text-muted">
+            <Link href="/what-is-vesper" className="font-semibold text-ink underline">What is Vesper?</Link>
+            {" · "}
+            <Link href="/faq" className="font-semibold text-ink underline">All FAQs</Link>
           </p>
         </div>
 

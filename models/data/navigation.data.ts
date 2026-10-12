@@ -24,10 +24,11 @@ export const FOOTER_PRODUCT_LINKS: NavLink[] = [
 ]
 
 export const FOOTER_COMPANY_LINKS: NavLink[] = [
+  { label: "What is Vesper?", href: "/what-is-vesper" },
   { label: "Team & Founders", href: "/team" },
   { label: "Industry Solutions", href: "/clinics" },
   { label: "Trust & Safety", href: "/trust" },
-  { label: "Frequently Asked Questions", href: "/#faq" },
+  { label: "Frequently Asked Questions", href: "/faq" },
   { label: "Changelog", href: "/changelog" },
 ]
 
