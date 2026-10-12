@@ -150,7 +150,7 @@ export function Navbar() {
         }}
       />
 
-      {/* Enterprise Security & SLA Drawer */}
+      {/* Security Drawer */}
       <SecurityModal
         isOpen={isSecurityOpen}
         onClose={() => setIsSecurityOpen(false)}
@@ -185,7 +185,7 @@ export function Footer() {
               className="mt-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-500/40 text-[11.5px] text-white/80 transition-all cursor-pointer group"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>All systems operational · 99.98% SLA</span>
+              <span>Security &amp; data handling</span>
               <span className="text-[10px] text-white/40 group-hover:text-emerald-300 font-mono transition-colors">↗</span>
             </button>
           </div>
@@ -220,20 +220,20 @@ export function Footer() {
                 onClick={() => setIsSecurityOpen(true)}
                 className="text-[13px] text-left text-white/70 hover:text-white transition-colors cursor-pointer"
               >
-                Security &amp; SLA Specs
+                Security Specs
               </button>
             </div>
           </div>
         </div>
 
         <div className="mx-auto max-w-[1240px] mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-white/40">
-          <p>© 2026 Vesper Technologies Inc. All rights reserved.</p>
+          <p>© 2026 Vesper. All rights reserved.</p>
           <button
             onClick={() => setIsSecurityOpen(true)}
             className="flex items-center gap-1.5 hover:text-white/80 transition-colors text-left cursor-pointer"
           >
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Meta Cloud API &amp; Google Calendar Verified Partner · View Specs</span>
+            <span>Built on the official Meta Cloud API &amp; Google Calendar API · View Specs</span>
           </button>
         </div>
       </footer>

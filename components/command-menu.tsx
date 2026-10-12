@@ -25,7 +25,7 @@ export interface CommandItem {
   id: string
   title: string
   subtitle?: string
-  category: "Scenarios" | "Navigation" | "Security & SLA" | "Preferences"
+  category: "Scenarios" | "Navigation" | "Security" | "Preferences"
   icon: React.ComponentType<{ className?: string }>
   shortcut?: string
   action: () => void
@@ -178,9 +178,9 @@ export function CommandMenu({
     },
     {
       id: "security-specs",
-      title: "View Security, Compliance & SLA Drawer",
-      subtitle: "SOC2 Type II, AES-256 HMAC-SHA256, 99.98% SLA",
-      category: "Security & SLA",
+      title: "View Security & Data Handling",
+      subtitle: "Official Meta & Google APIs, least-privilege OAuth, data handling",
+      category: "Security",
       icon: ShieldCheck,
       shortcut: "⌘S",
       action: () => {
