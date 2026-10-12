@@ -11,7 +11,11 @@ const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 const caveat = Caveat({ subsets: ['latin'], variable: '--font-handwriting', weight: ['400','500','600','700'] });
 
 export const metadata: Metadata = {
-  title: "Vesper - 24/7 AI Front Desk for Service & Booking Businesses",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Vesper - 24/7 AI Front Desk for Service & Booking Businesses",
+    template: "%s | Vesper",
+  },
   description:
     "Answer customer inquiries, check real-time availability, and book appointments across WhatsApp, Instagram, Messenger and web - 24/7.",
   keywords: [
@@ -24,7 +28,10 @@ export const metadata: Metadata = {
     "hotel reservation AI",
     "Vesper AI",
   ],
-  authors: [{ name: "Vesper Team" }],
+  authors: [{ name: "Samrat Ghimire" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Vesper - 24/7 AI Front Desk for Service & Booking Businesses",
     description:
