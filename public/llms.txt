@@ -39,7 +39,6 @@ Vesper does not answer phone calls.
 - [Product](https://vesper.codes/product): how a message becomes a booking
 - [Features](https://vesper.codes/features): feature list
 - [Pricing](https://vesper.codes/pricing): plans and prices
-- [Clinics & service businesses](https://vesper.codes/clinics): who it is for
 - [Team](https://vesper.codes/team): who builds Vesper
 - [Trust](https://vesper.codes/trust): booking safety and data handling
 - [Changelog](https://vesper.codes/changelog): product updates
@@ -62,6 +61,16 @@ Vesper does not answer phone calls.
 - [Appointment booking bot](https://vesper.codes/appointment-booking-bot): AI appointment scheduler with Google Calendar sync
 - [After-hours auto reply](https://vesper.codes/after-hours-auto-reply): 24/7 replies and night-time bookings
 - [Human handoff](https://vesper.codes/human-handoff): staff inbox with live chat takeover
+
+## Use cases
+
+- [Salons and beauty parlours](https://vesper.codes/use-cases/salons): salon booking chatbot
+- [Clinics and dental practices](https://vesper.codes/use-cases/clinics): appointment chatbot, no medical advice
+- [Hotels and homestays](https://vesper.codes/use-cases/hotels): reservation requests on WhatsApp
+- [Education consultancies](https://vesper.codes/use-cases/consultancies): abroad study inquiries, no visa promises
+- [Trekking and tour agencies](https://vesper.codes/use-cases/trekking): multi-day trek bookings by start date
+- [Restaurants](https://vesper.codes/use-cases/restaurants): table and private room reservations
+- [Gyms](https://vesper.codes/use-cases/gyms): membership inquiries and session booking
 
 ## Official profiles
 
