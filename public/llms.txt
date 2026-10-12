@@ -8,7 +8,7 @@
 - Books, reschedules and cancels appointments against real availability, with Google Calendar sync
 - Understands English, Nepali and Romanized Nepali
 - Hands the conversation to a human staff member when needed
-- Supports eSewa and Khalti payments
+- Takes booking deposits through eSewa and Khalti
 - Built for salons, clinics, hotels and guesthouses, garages, and other appointment-driven businesses
 
 ## Channels
@@ -27,6 +27,8 @@
 ## Pages
 
 - [Home](https://vesper.codes/): overview
+- [What is Vesper?](https://vesper.codes/what-is-vesper): plain definition, how it works, who uses it, cost
+- [FAQ](https://vesper.codes/faq): common questions answered
 - [Product](https://vesper.codes/product): how a message becomes a booking
 - [Features](https://vesper.codes/features): feature list
 - [Pricing](https://vesper.codes/pricing): plans and prices

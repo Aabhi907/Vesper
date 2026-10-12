@@ -4,6 +4,8 @@ import { SITE_URL } from "@/lib/site";
 // Bump a page's date when its content meaningfully changes.
 const PAGES: { path: string; lastModified: string; priority: number }[] = [
   { path: "", lastModified: "2026-10-12", priority: 1.0 },
+  { path: "/what-is-vesper", lastModified: "2026-10-12", priority: 0.9 },
+  { path: "/faq", lastModified: "2026-10-12", priority: 0.8 },
   { path: "/product", lastModified: "2026-10-12", priority: 0.9 },
   { path: "/features", lastModified: "2026-10-12", priority: 0.8 },
   { path: "/pricing", lastModified: "2026-10-12", priority: 0.9 },
