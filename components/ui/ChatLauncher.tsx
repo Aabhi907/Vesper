@@ -63,7 +63,7 @@ function generateVesperReply(query: string): { text: string; action?: { label: s
 
   if (q.includes("price") || q.includes("pricing") || q.includes("cost") || q.includes("plan") || q.includes("subscription")) {
     return {
-      text: "Vesper offers three simple tiers: Starter at Rs. 4,999/mo, Pro at Rs. 9,999/mo, and Business at Rs. 19,999/mo. All plans include a 14-day free trial with zero setup fees!",
+      text: "Vesper offers three simple tiers: Starter at Rs. 4,999/mo, Pro at Rs. 11,999/mo, and Business at Rs. 19,999/mo. All plans include a 14-day free trial with zero setup fees!",
       action: { label: "View Pricing Plans", href: "/pricing" },
     }
   }
