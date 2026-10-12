@@ -21,7 +21,7 @@ export function faqJsonLd(items: { question: string; answer: string }[]) {
 }
 
 export const DISAMBIGUATION =
-  "No. Vesper at vesper.codes is built in Kathmandu, Nepal and works on WhatsApp, Instagram and Messenger messages with real calendar booking. It is not affiliated with Vesper AI by Lyfework (vesper.lyfework.io, a US voice-call receptionist), Vesper Code (vespercode.com, a coding assistant), or VesperOps."
+  "Vesper at vesper.codes is not affiliated with other products named Vesper. It is built in Kathmandu, Nepal and works on WhatsApp, Instagram and Messenger messages with real calendar booking. It is separate from Vesper AI by Lyfework (vesper.lyfework.io, a US voice-call receptionist), Vesper Code (vespercode.com, a coding assistant) and VesperOps."
 
 export function breadcrumbJsonLd(crumbs: { name: string; path: string }[]) {
   return {
