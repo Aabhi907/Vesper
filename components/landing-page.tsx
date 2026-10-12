@@ -9,12 +9,14 @@ export type Landing = {
   description: string
   h1: string // includes "Vesper"
   intro: string // starts with "Vesper", answers the page's main question in <=25 words
-  chats: { heading: string; label: string; lang?: string; messages: { from: "customer" | "vesper"; text: string }[] }[]
+  chats: { heading: string; label: string; lang?: string; messages: { from: keyof typeof SPEAKER; text: string }[] }[]
   sections: { heading: string; lang?: string; paragraphs?: string[]; bullets?: string[] }[]
   steps: { heading: string; items: string[] }
   faq: { question: string; answer: string }[]
   related: { label: string; href: string }[]
   crumb: string
+  table?: { heading: string; columns: string[]; rows: string[][] }
+  sources?: { label: string; href: string }[]
 }
 
 export function landingMetadata(page: Landing): Metadata {
@@ -25,6 +27,9 @@ export function landingMetadata(page: Landing): Metadata {
     openGraph: { title: page.title, description: page.description, url: page.path, siteName: "Vesper", type: "website" },
   }
 }
+
+// "other" = a different tool shown for comparison (an away message, a menu bot)
+const SPEAKER = { customer: "Customer", vesper: "Vesper", staff: "Staff", other: "Other tool" }
 
 const ALWAYS_LINKED = [
   { label: "What is Vesper?", href: "/what-is-vesper" },
@@ -60,10 +65,16 @@ export function LandingPage({ page }: { page: Landing }) {
                     className={
                       m.from === "customer"
                         ? "max-w-[85%] rounded-2xl rounded-bl-sm bg-canvas border border-line px-4 py-2 text-ink"
-                        : "max-w-[85%] rounded-2xl rounded-br-sm bg-ink px-4 py-2 text-canvas"
+                        : m.from === "vesper"
+                          ? "max-w-[85%] rounded-2xl rounded-br-sm bg-ink px-4 py-2 text-canvas"
+                          : "max-w-[85%] rounded-2xl rounded-br-sm bg-line px-4 py-2 text-ink"
                     }
                   >
-                    <span className="sr-only">{m.from === "customer" ? "Customer: " : "Vesper: "}</span>
+                    {m.from === "customer" || m.from === "vesper" ? (
+                      <span className="sr-only">{SPEAKER[m.from]}: </span>
+                    ) : (
+                      <span className="block text-[11px] font-bold uppercase tracking-wide text-muted">{SPEAKER[m.from]}</span>
+                    )}
                     {m.text}
                   </p>
                 </div>
@@ -72,6 +83,29 @@ export function LandingPage({ page }: { page: Landing }) {
             </figure>
           </section>
         ))}
+
+        {page.table && (
+          <section className="mb-12">
+            <h2 className="text-xl font-bold text-ink mb-4">{page.table.heading}</h2>
+            <div className="overflow-x-auto rounded-xl border border-line">
+              <table className="w-full text-left text-[14px]">
+                <thead className="bg-soft-canvas text-ink">
+                  <tr>
+                    {page.table.columns.map((c) => <th key={c} scope="col" className="p-3 font-bold">{c}</th>)}
+                  </tr>
+                </thead>
+                <tbody>
+                  {page.table.rows.map(([first, ...rest]) => (
+                    <tr key={first} className="border-t border-line align-top">
+                      <th scope="row" className="p-3 font-bold text-ink">{first}</th>
+                      {rest.map((cell, i) => <td key={i} className="p-3">{cell}</td>)}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
 
         <div className="space-y-10">
           {page.sections.map((s) => (
@@ -104,6 +138,19 @@ export function LandingPage({ page }: { page: Landing }) {
               ))}
             </div>
           </section>
+
+          {page.sources && (
+            <section>
+              <h2 className="text-xl font-bold text-ink mb-2">Sources</h2>
+              <ul className="list-disc pl-5 space-y-1.5">
+                {page.sources.map((s) => (
+                  <li key={s.href}>
+                    <a href={s.href} target="_blank" rel="noopener" className="underline">{s.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <nav aria-label="Related pages" className="border-t border-line pt-8">
             <h2 className="text-xl font-bold text-ink mb-3">Related</h2>

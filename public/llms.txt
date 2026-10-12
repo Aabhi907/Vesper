@@ -72,6 +72,13 @@ Vesper does not answer phone calls.
 - [Restaurants](https://vesper.codes/use-cases/restaurants): table and private room reservations
 - [Gyms](https://vesper.codes/use-cases/gyms): membership inquiries and session booking
 
+## Comparisons
+
+- [WhatsApp Business away message vs Vesper](https://vesper.codes/compare/vesper-vs-whatsapp-business-auto-reply)
+- [Vesper vs ManyChat](https://vesper.codes/compare/vesper-vs-manychat): factual comparison with links to ManyChat's own pages
+- [AI assistant vs human receptionist](https://vesper.codes/compare/ai-assistant-vs-human-receptionist): cost and coverage in NPR
+- [Rule-based chatbot vs AI front desk](https://vesper.codes/compare/chatbot-vs-ai-front-desk)
+
 ## Official profiles
 
 - [LinkedIn](https://www.linkedin.com/company/143977886)

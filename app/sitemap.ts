@@ -26,6 +26,13 @@ const PAGES: { path: string; lastModified: string; priority: number }[] = [
     lastModified: "2026-10-13",
     priority: 0.7,
   })),
+  // Comparisons
+  ...[
+    "vesper-vs-whatsapp-business-auto-reply",
+    "vesper-vs-manychat",
+    "ai-assistant-vs-human-receptionist",
+    "chatbot-vs-ai-front-desk",
+  ].map((slug) => ({ path: `/compare/${slug}`, lastModified: "2026-10-13", priority: 0.6 })),
   { path: "/team", lastModified: "2026-10-12", priority: 0.6 },
   { path: "/trust", lastModified: "2026-10-12", priority: 0.7 },
   { path: "/changelog", lastModified: "2026-09-30", priority: 0.5 },

@@ -16,7 +16,7 @@ const PAGE: Landing = {
       messages: [
         { from: "customer", text: "Can I talk to someone from the team? It's about a group discount" },
         { from: "vesper", text: "Of course. I've let the team know and someone will reply here shortly." },
-        { from: "vesper", text: "(Staff member Rina replies from the Vesper inbox) Hi, this is Rina. For groups of 5 or more we can do 10% off. How many people?" },
+        { from: "staff", text: "Hi, this is Rina. For groups of 5 or more we can do 10% off. How many people?" },
         { from: "customer", text: "6 people, next Saturday" },
       ],
     },
