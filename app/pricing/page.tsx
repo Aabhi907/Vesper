@@ -3,7 +3,7 @@ import { FinalCTA } from "@/components/marketing"
 import { PRICING_PLANS } from "@/models"
 
 export const metadata: Metadata = {
-  title: "Pricing",
+  title: { absolute: "Vesper Pricing – AI Front Desk Plans in NPR" },
   description:
     "Vesper plans in Nepali rupees: Starter Rs. 4,999, Pro Rs. 11,999 and Business Rs. 19,999 per month.",
   alternates: { canonical: "/pricing" },

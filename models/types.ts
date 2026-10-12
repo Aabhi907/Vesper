@@ -38,10 +38,13 @@ export interface FAQItem {
 
 export interface TeamMember {
   id: number
+  slug: string // JSON-LD @id fragment: /team#<slug>
   name: string
   role: string
+  bio: string
   image: string
   objectPosition?: string
+  sameAs: string[]
 }
 
 export interface NavLink {

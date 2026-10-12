@@ -285,9 +285,9 @@ export function ProductPage() {
           </div>
 
           {/* ── Main Apple-style Headline ── */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-ink mb-6 leading-[1.05] text-center">
-            AI understands.<br />
-            Real systems act.
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-ink mb-6 leading-[1.05] text-center">
+            How Vesper AI works:<br />
+            auto-reply &amp; booking on WhatsApp
           </h1>
 
           <p className="text-[17px] sm:text-[20px] text-muted leading-relaxed font-normal max-w-[680px] mx-auto mb-12 sm:mb-16 text-center">

@@ -30,6 +30,9 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false, // removes X-Powered-By: Next.js (Image 2: item 20 check prod settings)
+  async redirects() {
+    return [{ source: "/clinics", destination: "/use-cases/clinics", statusCode: 301 }];
+  },
   async headers() {
     return [
       {

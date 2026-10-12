@@ -1,6 +1,19 @@
 # Vesper
 
-> Vesper (vesper.codes) is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger 24/7, checks real calendar availability, and books appointments. It is built in Kathmandu, Nepal by founder Samrat Ghimire. Not to be confused with the Vesper cocktail or other companies named Vesper.
+> Vesper (vesper.codes) is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger 24/7, checks real calendar availability, and books appointments. It is built in Kathmandu, Nepal.
+
+## Key facts
+
+- Vesper was founded in Kathmandu, Nepal by Samrat Ghimire (Founder), with co-founders Aabishkar Shrestha and Kasam Thapa Magar.
+  - Samrat Ghimire: https://www.linkedin.com/in/samratghimire01/
+  - Aabishkar Shrestha: https://www.linkedin.com/in/aabishkar-shrestha-895492349/
+  - Kasam Thapa Magar: https://www.linkedin.com/in/kasamthapamagar/
+- Vesper answers written messages only; it does not answer phone calls.
+- Prices are in Nepali rupees, from Rs. 4,999 per month, with a 14-day free trial.
+
+## Is Vesper (vesper.codes) the same as other products named Vesper?
+
+No. Vesper at vesper.codes is built in Kathmandu, Nepal and works on WhatsApp, Instagram and Messenger messages with real calendar booking. It is not affiliated with Vesper AI by Lyfework (vesper.lyfework.io, a US voice-call receptionist), Vesper Code (vespercode.com, a coding assistant), or VesperOps.
 
 ## What it does
 
@@ -17,6 +30,9 @@
 - Instagram Direct Messages
 - Facebook Messenger
 - Website chat widget
+- TikTok messages: coming soon (not live yet)
+
+Vesper does not answer phone calls.
 
 ## Pricing (NPR, per month)
 
@@ -24,7 +40,7 @@
 - Pro: Rs. 11,999
 - Business: Rs. 19,999
 
-## Pages
+## Core pages
 
 - [Home](https://vesper.codes/): overview
 - [What is Vesper?](https://vesper.codes/what-is-vesper): plain definition, how it works, who uses it, cost
@@ -32,12 +48,45 @@
 - [Product](https://vesper.codes/product): how a message becomes a booking
 - [Features](https://vesper.codes/features): feature list
 - [Pricing](https://vesper.codes/pricing): plans and prices
-- [Clinics & service businesses](https://vesper.codes/clinics): who it is for
 - [Team](https://vesper.codes/team): who builds Vesper
 - [Trust](https://vesper.codes/trust): booking safety and data handling
 - [Changelog](https://vesper.codes/changelog): product updates
 - [Privacy Policy](https://vesper.codes/privacy)
 - [Terms of Service](https://vesper.codes/terms)
+
+## Channel pages
+
+- [WhatsApp auto reply](https://vesper.codes/whatsapp-auto-reply): WhatsApp chatbot and booking bot on the official Cloud API
+- [Instagram DM auto reply](https://vesper.codes/instagram-auto-reply): Instagram AI reply and booking bot
+- [Messenger chatbot](https://vesper.codes/messenger-auto-reply): Facebook Page auto reply on Messenger
+
+## Language and Nepal
+
+- [Nepali chatbot](https://vesper.codes/nepali-chatbot): Roman Nepali, Devanagari and Nepali-English mixed chat, with example conversations
+- [AI receptionist Nepal](https://vesper.codes/ai-receptionist-nepal): NPR pricing, eSewa and Khalti deposits, Nepal time
+
+## Problems and intents
+
+- [Appointment booking bot](https://vesper.codes/appointment-booking-bot): AI appointment scheduler with Google Calendar sync
+- [After-hours auto reply](https://vesper.codes/after-hours-auto-reply): 24/7 replies and night-time bookings
+- [Human handoff](https://vesper.codes/human-handoff): staff inbox with live chat takeover
+
+## Use cases
+
+- [Salons and beauty parlours](https://vesper.codes/use-cases/salons): salon booking chatbot
+- [Clinics and dental practices](https://vesper.codes/use-cases/clinics): appointment chatbot, no medical advice
+- [Hotels and homestays](https://vesper.codes/use-cases/hotels): reservation requests on WhatsApp
+- [Education consultancies](https://vesper.codes/use-cases/consultancies): abroad study inquiries, no visa promises
+- [Trekking and tour agencies](https://vesper.codes/use-cases/trekking): multi-day trek bookings by start date
+- [Restaurants](https://vesper.codes/use-cases/restaurants): table and private room reservations
+- [Gyms](https://vesper.codes/use-cases/gyms): membership inquiries and session booking
+
+## Comparisons
+
+- [WhatsApp Business away message vs Vesper](https://vesper.codes/compare/vesper-vs-whatsapp-business-auto-reply)
+- [Vesper vs ManyChat](https://vesper.codes/compare/vesper-vs-manychat): factual comparison with links to ManyChat's own pages
+- [AI assistant vs human receptionist](https://vesper.codes/compare/ai-assistant-vs-human-receptionist): cost and coverage in NPR
+- [Rule-based chatbot vs AI front desk](https://vesper.codes/compare/chatbot-vs-ai-front-desk)
 
 ## Official profiles
 
@@ -46,4 +95,4 @@
 - [GitHub](https://github.com/vespercodes)
 - [X](https://x.com/vespercodes)
 - [Wellfound](https://wellfound.com/onboarding/recruit/vesper-11/complete)
-- Founder Samrat Ghimire: [GitHub](https://github.com/SamratGhimire01), [LinkedIn](https://www.linkedin.com/in/samratghimire01)
+- Founder Samrat Ghimire: [GitHub](https://github.com/SamratGhimire01), [LinkedIn](https://www.linkedin.com/in/samratghimire01/)

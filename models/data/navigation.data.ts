@@ -23,10 +23,24 @@ export const FOOTER_PRODUCT_LINKS: NavLink[] = [
   { label: "Login", href: `${APP_URL}/login` },
 ]
 
+export const FOOTER_SOLUTIONS_LINKS: NavLink[] = [
+  { label: "WhatsApp Auto Reply", href: "/whatsapp-auto-reply" },
+  { label: "Instagram DM Auto Reply", href: "/instagram-auto-reply" },
+  { label: "Messenger Chatbot", href: "/messenger-auto-reply" },
+  { label: "Nepali Chatbot", href: "/nepali-chatbot" },
+  { label: "AI Receptionist Nepal", href: "/ai-receptionist-nepal" },
+  { label: "Salons", href: "/use-cases/salons" },
+  { label: "Clinics", href: "/use-cases/clinics" },
+  { label: "Hotels & Homestays", href: "/use-cases/hotels" },
+  { label: "Consultancies", href: "/use-cases/consultancies" },
+  { label: "Trekking Agencies", href: "/use-cases/trekking" },
+  { label: "Restaurants", href: "/use-cases/restaurants" },
+  { label: "Gyms", href: "/use-cases/gyms" },
+]
+
 export const FOOTER_COMPANY_LINKS: NavLink[] = [
   { label: "What is Vesper?", href: "/what-is-vesper" },
   { label: "Team & Founders", href: "/team" },
-  { label: "Industry Solutions", href: "/clinics" },
   { label: "Trust & Safety", href: "/trust" },
   { label: "Frequently Asked Questions", href: "/faq" },
   { label: "Changelog", href: "/changelog" },
