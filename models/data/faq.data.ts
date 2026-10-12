@@ -2,33 +2,28 @@ import type { FAQItem } from "../types"
 
 export const FAQS: FAQItem[] = [
   {
-    question: "what is vesper?",
+    question: "What is Vesper?",
     answer:
-      "an ai front desk for your business. it answers calls and messages across whatsapp, instagram, and web. checks live calendar availability in real-time, takes bookings, and alerts your team if someone asks for a human.",
+      "Vesper is an AI front desk for service businesses. It answers customer messages on WhatsApp, Instagram, Messenger and your website chat widget, checks your real calendar availability, books appointments, and alerts your team when a customer asks for a human.",
   },
   {
-    question: "is my data private?",
+    question: "Is my data private?",
     answer:
-      "yes, 100%. your customer conversations, phone numbers, and booking data are encrypted at rest and in transit. we never use your proprietary client records to train public models.",
+      "Vesper sends data over encrypted HTTPS connections and stores it in a managed Postgres database (Supabase) that is encrypted at rest. Vesper does not use your customer conversations, phone numbers or booking records to train AI models.",
   },
   {
-    question: "is vesper watching my screen all the time?",
+    question: "What can Vesper actually do?",
     answer:
-      "no. vesper only connects to your authorized business channels (whatsapp business api, instagram, or calendar). it never records your screen or accesses your private device.",
+      "Vesper answers customer questions 24/7 from your own services, prices and policies, checks open calendar slots, books, reschedules and cancels appointments, collects customer names and phone numbers, sends appointment reminders, and hands harder conversations to your staff.",
   },
   {
-    question: "what can vesper actually do?",
+    question: "What's the difference between a simple auto-reply and Vesper?",
     answer:
-      "answer customer inquiries instantly 24/7, check calendar slots, book appointments, collect client phone numbers and notes, send automated reminders, and hand off tough inquiries directly to your staff on whatsapp.",
+      "Vesper understands what the customer is asking, checks your real calendar before offering a time, suggests other open slots when the requested one is taken, and confirms a booking only after the slot is saved. A simple auto-reply sends the same canned text to everyone.",
   },
   {
-    question: "what's the difference between simple auto-reply and vesper?",
+    question: "Which apps does Vesper work with?",
     answer:
-      "auto-replies send dumb canned text. vesper understands intent, reads your real calendar in real-time, negotiates mutually available times with customers, and locks in appointments without human intervention.",
-  },
-  {
-    question: "which apps does it work with?",
-    answer:
-      "whatsapp business cloud api, instagram dms, facebook messenger, google calendar, and custom web chat widgets. we also support direct qr deposits via fonepay, esewa, and khalti.",
+      "Vesper works with the WhatsApp Business Cloud API, Instagram Direct Messages, Facebook Messenger, Google Calendar and a website chat widget. Customers can pay booking deposits through eSewa and Khalti.",
   },
 ]
