@@ -77,7 +77,7 @@ function generateVesperReply(query: string): { text: string; action?: { label: s
   if (q.includes("demo") || q.includes("trial") || q.includes("setup") || q.includes("start") || q.includes("contact")) {
     return {
       text: "You can test out our interactive platform simulator right on this page, or get our team to connect Vesper to your WhatsApp & Google Calendar in under 15 minutes!",
-      action: { label: "Schedule Setup with Team", href: "mailto:hello@vesper.ai?subject=Vesper%20Setup" },
+      action: { label: "Schedule Setup with Team", href: "mailto:hello@vesper.codes?subject=Vesper%20Setup" },
     }
   }
 
@@ -90,7 +90,7 @@ function generateVesperReply(query: string): { text: string; action?: { label: s
 
   return {
     text: "Thanks for asking! Vesper is an AI booking assistant that connects WhatsApp, Instagram, and Messenger to your live calendar. Would you like to explore our interactive demo, check pricing, or talk to our founders?",
-    action: { label: "Talk to Founders", href: "mailto:hello@vesper.ai" },
+    action: { label: "Talk to Founders", href: "mailto:hello@vesper.codes" },
   }
 }
 

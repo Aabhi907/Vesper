@@ -232,7 +232,7 @@ export function StudentDiscountTerminal() {
 
           <div className="flex items-center gap-5 sm:gap-6 self-end lg:self-center shrink-0">
             <a
-              href="mailto:founders@vesper.ai?subject=Student%20Discount%20Application"
+              href="mailto:hello@vesper.codes?subject=Student%20Discount%20Application"
               className="inline-flex items-center justify-center px-6 sm:px-7 py-3 rounded-full text-zinc-900 text-[14px] font-bold bg-gradient-to-b from-white via-zinc-100 to-zinc-200 shadow-[0_6px_16px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,1),inset_0_-2px_2px_rgba(0,0,0,0.12)] border border-white/90 hover:brightness-105 active:scale-95 transition-all cursor-pointer whitespace-nowrap"
             >
               reach out to us
@@ -317,7 +317,7 @@ export function FinalCTA() {
         <div className="text-center mt-6">
           <p className="text-[12px] text-muted/70">
             14-day free trial · Billed in NPR · Cancel anytime ·{" "}
-            <a href="mailto:hello@vesper.ai" className="underline hover:text-ink">Talk to our team</a>
+            <a href="mailto:hello@vesper.codes" className="underline hover:text-ink">Talk to our team</a>
           </p>
         </div>
       </div>
