@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { TeamTooltips } from "@/components/team-tooltip"
 
 export const metadata: Metadata = {
-  title: "Team",
+  title: { absolute: "Vesper Team – Founders of the AI Front Desk" },
   description:
     "The people building Vesper, an AI front desk for local service businesses, from Kathmandu, Nepal.",
   alternates: { canonical: "/team" },

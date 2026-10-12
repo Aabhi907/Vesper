@@ -6,7 +6,7 @@ import { TeamTooltips } from "@/components/team-tooltip"
 import { FAQSection } from "@/components/faq"
 
 export const metadata: Metadata = {
-  title: { absolute: "Vesper - 24/7 AI Front Desk for Service & Booking Businesses" },
+  title: { absolute: "Vesper AI – 24/7 AI Front Desk & Auto-Reply for WhatsApp, Instagram & Messenger" },
   description:
     "Vesper answers customer messages, checks real calendar availability and books appointments across WhatsApp, Instagram and Messenger, 24/7. Built in Kathmandu.",
   alternates: { canonical: "/" },

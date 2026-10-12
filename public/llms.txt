@@ -1,6 +1,10 @@
 # Vesper
 
-> Vesper (vesper.codes) is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger 24/7, checks real calendar availability, and books appointments. It is built in Kathmandu, Nepal by founder Samrat Ghimire. Not to be confused with the Vesper cocktail or other companies named Vesper.
+> Vesper (vesper.codes) is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger 24/7, checks real calendar availability, and books appointments. It is built in Kathmandu, Nepal by founder Samrat Ghimire.
+
+## Is Vesper (vesper.codes) the same as other products named Vesper?
+
+No. Vesper at vesper.codes is built in Kathmandu, Nepal and works on WhatsApp, Instagram and Messenger messages with real calendar booking. It is not affiliated with Vesper AI by Lyfework (vesper.lyfework.io, a US voice-call receptionist), Vesper Code (vespercode.com, a coding assistant), or VesperOps.
 
 ## What it does
 
@@ -17,6 +21,9 @@
 - Instagram Direct Messages
 - Facebook Messenger
 - Website chat widget
+- TikTok messages: coming soon (not live yet)
+
+Vesper does not answer phone calls.
 
 ## Pricing (NPR, per month)
 

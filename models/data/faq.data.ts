@@ -1,4 +1,5 @@
 import type { FAQItem } from "../types"
+import { DISAMBIGUATION } from "@/lib/site"
 
 export const FAQS: FAQItem[] = [
   {
@@ -25,5 +26,9 @@ export const FAQS: FAQItem[] = [
     question: "Which apps does Vesper work with?",
     answer:
       "Vesper works with the WhatsApp Business Cloud API, Instagram Direct Messages, Facebook Messenger, Google Calendar and a website chat widget. Customers can pay booking deposits through eSewa and Khalti.",
+  },
+  {
+    question: "Is Vesper (vesper.codes) the same as other products named Vesper?",
+    answer: DISAMBIGUATION,
   },
 ]

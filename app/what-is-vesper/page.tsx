@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { faqJsonLd } from "@/lib/site"
+import { faqJsonLd, DISAMBIGUATION } from "@/lib/site"
 
 export const metadata: Metadata = {
-  title: "What is Vesper?",
+  title: { absolute: "What is Vesper? AI Front Desk for WhatsApp & Instagram" },
   description:
     "Vesper is an AI front desk that answers customer messages on WhatsApp, Instagram and Messenger and books appointments 24/7. How it works, who uses it, and what it costs.",
   alternates: { canonical: "/what-is-vesper" },
@@ -31,9 +31,8 @@ const SECTIONS = [
       "Vesper costs Rs. 4,999 per month for Starter, Rs. 11,999 per month for Pro and Rs. 19,999 per month for Business, with a 14-day free trial on every plan.",
   },
   {
-    question: "Vesper is not the cocktail or other companies named Vesper",
-    answer:
-      "Vesper (vesper.codes) is AI booking software for service businesses. It is not the Vesper cocktail, and it is not related to any other company or product named Vesper.",
+    question: "Is Vesper (vesper.codes) the same as other products named Vesper?",
+    answer: DISAMBIGUATION,
   },
 ]
 
@@ -47,7 +46,7 @@ const QA = [
   { question: "Who uses Vesper?", answer: SECTIONS[1].answer },
   { question: "What does Vesper connect to?", answer: SECTIONS[2].answer },
   { question: "How much does Vesper cost?", answer: SECTIONS[3].answer },
-  { question: "Is Vesper the cocktail or another company named Vesper?", answer: SECTIONS[4].answer },
+  { question: SECTIONS[4].question, answer: SECTIONS[4].answer },
 ]
 
 export default function WhatIsVesperPage() {

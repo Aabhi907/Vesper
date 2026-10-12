@@ -5,7 +5,7 @@ import { ChatLauncher } from "@/components/ui/ChatLauncher"
 import "@/app/globals.css"
 import { Geist, Caveat } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { SITE_URL, SOCIAL_LINKS } from "@/lib/site";
+import { SITE_URL, SOCIAL_LINKS, DISAMBIGUATION } from "@/lib/site";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 const caveat = Caveat({ subsets: ['latin'], variable: '--font-handwriting', weight: ['400','500','600','700'] });
@@ -13,27 +13,17 @@ const caveat = Caveat({ subsets: ['latin'], variable: '--font-handwriting', weig
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Vesper - 24/7 AI Front Desk for Service & Booking Businesses",
+    default: "Vesper AI – 24/7 AI Front Desk & Auto-Reply for WhatsApp, Instagram & Messenger",
     template: "%s | Vesper",
   },
   description:
     "Answer customer inquiries, check real-time availability, and book appointments across WhatsApp, Instagram, Messenger and web - 24/7.",
-  keywords: [
-    "AI front desk",
-    "automated appointment booking",
-    "WhatsApp business automation",
-    "Instagram booking bot",
-    "Google calendar sync",
-    "salon booking software",
-    "hotel reservation AI",
-    "Vesper AI",
-  ],
   authors: [{ name: "Samrat Ghimire" }],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Vesper - 24/7 AI Front Desk for Service & Booking Businesses",
+    title: "Vesper AI – 24/7 AI Front Desk & Auto-Reply for WhatsApp, Instagram & Messenger",
     description:
       "Customer messages from WhatsApp, Instagram, and Messenger seamlessly converge into real confirmed bookings.",
     url: SITE_URL,
@@ -67,13 +57,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         "@type": "Organization",
         "@id": `${SITE_URL}/#organization`,
         name: "Vesper",
-        alternateName: ["Vesper AI", "vesper.codes"],
+        alternateName: ["Vesper AI", "Vesper AI Front Desk", "Vesper Nepal", "vesper.codes"],
         url: SITE_URL,
         logo: `${SITE_URL}/icon.svg`,
         description:
           "Vesper is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger and books appointments against real calendar availability, 24/7.",
-        disambiguatingDescription:
-          "Vesper (vesper.codes) is an AI booking assistant software company based in Kathmandu, Nepal; not the Vesper cocktail or any other company named Vesper.",
+        disambiguatingDescription: DISAMBIGUATION,
         founder: {
           "@type": "Person",
           name: "Samrat Ghimire",

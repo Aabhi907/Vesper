@@ -4,7 +4,7 @@ import { FAQS } from "@/models"
 import { faqJsonLd } from "@/lib/site"
 
 export const metadata: Metadata = {
-  title: "Vesper FAQ",
+  title: { absolute: "Vesper FAQ – AI Auto-Reply & Booking Questions" },
   description:
     "Answers to common questions about Vesper: what it does, data privacy, the channels and apps it works with, and how it differs from auto-replies.",
   alternates: { canonical: "/faq" },

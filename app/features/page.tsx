@@ -3,7 +3,7 @@ import { MessageSquare, Calendar, Zap, Shield, CheckCircle2, ArrowRight } from "
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Features",
+  title: { absolute: "Vesper Features – AI Booking on WhatsApp & Instagram" },
   description:
     "Omnichannel inbox, real availability engine, 24/7 replies, grounded answers from your own prices and policies, and human handoff.",
   alternates: { canonical: "/features" },
