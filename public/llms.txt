@@ -1,0 +1,38 @@
+# Vesper
+
+> Vesper (vesper.codes) is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger 24/7, checks real calendar availability, and books appointments. It is built in Kathmandu, Nepal by founder Samrat Ghimire. Not to be confused with the Vesper cocktail or other companies named Vesper.
+
+## What it does
+
+- Answers customer questions about services, prices and availability using the business's own approved information
+- Books, reschedules and cancels appointments against real availability, with Google Calendar sync
+- Understands English, Nepali and Romanized Nepali
+- Hands the conversation to a human staff member when needed
+- Supports eSewa and Khalti payments
+- Built for salons, clinics, hotels and guesthouses, garages, and other appointment-driven businesses
+
+## Channels
+
+- WhatsApp (official Meta Cloud API)
+- Instagram Direct Messages
+- Facebook Messenger
+- Website chat widget
+
+## Pricing (NPR, per month)
+
+- Starter: Rs. 4,999
+- Pro: Rs. 11,999
+- Business: Rs. 19,999
+
+## Pages
+
+- [Home](https://vesper.codes/): overview
+- [Product](https://vesper.codes/product): how a message becomes a booking
+- [Features](https://vesper.codes/features): feature list
+- [Pricing](https://vesper.codes/pricing): plans and prices
+- [Clinics & service businesses](https://vesper.codes/clinics): who it is for
+- [Team](https://vesper.codes/team): who builds Vesper
+- [Trust](https://vesper.codes/trust): booking safety and data handling
+- [Changelog](https://vesper.codes/changelog): product updates
+- [Privacy Policy](https://vesper.codes/privacy)
+- [Terms of Service](https://vesper.codes/terms)

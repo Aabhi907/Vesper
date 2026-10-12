@@ -1,5 +1,13 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft, Shield } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "How Vesper collects, uses and protects customer and business data.",
+  alternates: { canonical: "/privacy" },
+}
 
 export default function PrivacyPage() {
   return (
@@ -61,8 +69,8 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-bold text-ink mb-2">5. Contact</h2>
             <p>
               For data requests, deletion, or privacy inquiries, contact our founders directly at{" "}
-              <a href="mailto:privacy@vesper.ai" className="font-semibold text-ink underline">
-                privacy@vesper.ai
+              <a href="mailto:hello@vesper.codes" className="font-semibold text-ink underline">
+                hello@vesper.codes
               </a>.
             </p>
           </section>

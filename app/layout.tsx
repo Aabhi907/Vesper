@@ -5,12 +5,17 @@ import { ChatLauncher } from "@/components/ui/ChatLauncher"
 import "@/app/globals.css"
 import { Geist, Caveat } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { SITE_URL } from "@/lib/site";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 const caveat = Caveat({ subsets: ['latin'], variable: '--font-handwriting', weight: ['400','500','600','700'] });
 
 export const metadata: Metadata = {
-  title: "Vesper - 24/7 AI Front Desk for Service & Booking Businesses",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Vesper - 24/7 AI Front Desk for Service & Booking Businesses",
+    template: "%s | Vesper",
+  },
   description:
     "Answer customer inquiries, check real-time availability, and book appointments across WhatsApp, Instagram, Messenger and web - 24/7.",
   keywords: [
@@ -23,12 +28,15 @@ export const metadata: Metadata = {
     "hotel reservation AI",
     "Vesper AI",
   ],
-  authors: [{ name: "Vesper Team" }],
+  authors: [{ name: "Samrat Ghimire" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Vesper - 24/7 AI Front Desk for Service & Booking Businesses",
     description:
       "Customer messages from WhatsApp, Instagram, and Messenger seamlessly converge into real confirmed bookings.",
-    url: "https://vesper.ai",
+    url: SITE_URL,
     siteName: "Vesper",
     locale: "en_US",
     type: "website",
@@ -45,20 +53,59 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const offer = (name: string, price: string) => ({
+    "@type": "Offer",
+    name,
+    price,
+    priceCurrency: "NPR",
+    url: `${SITE_URL}/pricing`,
+  })
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "Vesper",
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Cloud",
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "NPR",
-      lowPrice: "4999",
-      highPrice: "19999",
-    },
-    description:
-      "24/7 AI front desk that connects WhatsApp, Instagram, Messenger, and web to real-time calendar availability.",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
+        name: "Vesper",
+        alternateName: ["Vesper AI", "vesper.codes"],
+        url: SITE_URL,
+        logo: `${SITE_URL}/icon.svg`,
+        description:
+          "Vesper is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger and books appointments against real calendar availability, 24/7.",
+        disambiguatingDescription:
+          "Vesper (vesper.codes) is an AI booking assistant software company based in Kathmandu, Nepal; not the Vesper cocktail or any other company named Vesper.",
+        founder: { "@type": "Person", name: "Samrat Ghimire" },
+        areaServed: { "@type": "Country", name: "Nepal" },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: "Vesper",
+        inLanguage: "en",
+        publisher: { "@id": `${SITE_URL}/#organization` },
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${SITE_URL}/#software`,
+        name: "Vesper",
+        url: SITE_URL,
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        description:
+          "24/7 AI front desk that answers WhatsApp, Instagram and Messenger messages, checks real-time calendar availability and books appointments.",
+        featureList: [
+          "WhatsApp",
+          "Instagram",
+          "Messenger",
+          "Google Calendar sync",
+          "Human handoff",
+          "eSewa/Khalti",
+        ],
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        offers: [offer("Starter", "4999"), offer("Pro", "11999"), offer("Business", "19999")],
+      },
+    ],
   }
 
   return (

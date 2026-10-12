@@ -1,4 +1,12 @@
+import type { Metadata } from "next"
 import { TeamTooltips } from "@/components/team-tooltip"
+
+export const metadata: Metadata = {
+  title: "Team",
+  description:
+    "The people building Vesper, an AI front desk for local service businesses, from Kathmandu, Nepal.",
+  alternates: { canonical: "/team" },
+}
 
 export default function TeamPage() {
   return (

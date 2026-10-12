@@ -1,16 +1,23 @@
 import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
+
+const AI_AND_SEARCH_BOTS = [
+  "GPTBot",
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "ClaudeBot",
+  "Claude-SearchBot",
+  "PerplexityBot",
+  "Google-Extended",
+  "Bingbot",
+];
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://vesper-ai.com";
-
   return {
     rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/api/", "/admin/"],
-      },
+      { userAgent: "*", allow: "/" },
+      ...AI_AND_SEARCH_BOTS.map((userAgent) => ({ userAgent, allow: "/" })),
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

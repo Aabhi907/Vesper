@@ -1,4 +1,12 @@
+import type { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Changelog",
+  description:
+    "What's new in Vesper: channel integrations, availability engine and bilingual Nepali/English updates.",
+  alternates: { canonical: "/changelog" },
+}
 
 export default function ChangelogPage() {
   const updates = [

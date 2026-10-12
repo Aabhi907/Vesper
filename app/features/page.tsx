@@ -1,5 +1,13 @@
+import type { Metadata } from "next"
 import { MessageSquare, Calendar, Zap, Shield, CheckCircle2, ArrowRight } from "lucide-react"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Features",
+  description:
+    "Omnichannel inbox, real availability engine, 24/7 replies, grounded answers from your own prices and policies, and human handoff.",
+  alternates: { canonical: "/features" },
+}
 
 export default function FeaturesPage() {
   const features = [
@@ -19,13 +27,13 @@ export default function FeaturesPage() {
       icon: Zap,
       title: "Instant 24/7 Midnight Responses",
       desc: "Captures high-value leads and answers inquiries while you sleep, ensuring customers don't go to competitors when you're closed.",
-      highlight: "< 2 second latency",
+      highlight: "Replies 24/7",
     },
     {
       icon: Shield,
       title: "Grounded Knowledge Base",
       desc: "Answers based strictly on your verified prices, staff list, policies, and catalog. Hallucination-free and reliable.",
-      highlight: "100% verified data",
+      highlight: "Answers from your own data",
     },
   ]
 
