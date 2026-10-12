@@ -51,6 +51,12 @@ const PAGE: Landing = {
         "A membership inquiry that gets an answer the next day often never comes back. Vesper replies within seconds, offers a trial, and books it. Your trainers see the bookings in the dashboard or Google Calendar, and any question about injuries or health is passed to your staff, not answered by the AI.",
       ],
     },
+    {
+      heading: "One inbox for every channel your members use",
+      paragraphs: [
+        "Gyms get messages on Instagram from people who saw a reel, on WhatsApp from existing members and on Facebook from people nearby. Vesper answers all of them and puts every conversation in one inbox, so your front desk can see who booked a trial, who asked about personal training and who still needs a call back.",
+      ],
+    },
   ],
   steps: {
     heading: "How to set up a gym membership inquiry bot",

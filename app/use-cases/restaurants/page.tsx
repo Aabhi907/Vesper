@@ -49,6 +49,12 @@ const PAGE: Landing = {
         "Restaurants get the most messages exactly when nobody can answer: during service. Vesper replies within seconds, and anything it cannot handle, such as a large event enquiry, is passed to your manager with an email alert.",
       ],
     },
+    {
+      heading: "Answers in English and Nepali",
+      paragraphs: [
+        "Guests write \"aaja beluka table cha?\" as often as \"table for tonight?\". Vesper understands both, plus Devanagari Nepali, and replies in the guest's own language. Tourists get clear English answers about the menu, prices and directions, at any hour.",
+      ],
+    },
   ],
   steps: {
     heading: "How to set up a restaurant reservation chatbot",

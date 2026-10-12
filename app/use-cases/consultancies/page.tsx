@@ -48,6 +48,12 @@ const PAGE: Landing = {
         "Add each counsellor as a staff member, with the countries or services they cover. Students can book, move or cancel a session by message, and Vesper checks the counsellor's real availability first. During intake season, when inquiries spike in the evenings, Vesper keeps every student answered and your counsellors' calendars full.",
       ],
     },
+    {
+      heading: "Follow up with every serious inquiry",
+      paragraphs: [
+        "Every student conversation is saved in the Vesper inbox with the student's name and phone number once they share it. Your counsellors can see which students asked about which country, which ones booked a session, and which ones asked for a person, and pick up where Vesper left off without asking the student to repeat themselves.",
+      ],
+    },
   ],
   steps: {
     heading: "How to set up an education consultancy chatbot",
