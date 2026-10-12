@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { faqJsonLd, DISAMBIGUATION } from "@/lib/site"
+import { FOUNDERS_LINE } from "@/models"
 
 export const metadata: Metadata = {
   title: { absolute: "What is Vesper? AI Front Desk for WhatsApp & Instagram" },
@@ -23,12 +24,16 @@ const SECTIONS = [
   {
     question: "What Vesper connects to",
     answer:
-      "Vesper connects to WhatsApp through the official WhatsApp Business Cloud API, Instagram Direct Messages, Facebook Messenger, a website chat widget, and Google Calendar. Customers can pay booking deposits through eSewa and Khalti.",
+      "Vesper connects to WhatsApp through the official WhatsApp Business Cloud API, Instagram Direct Messages, Facebook Messenger, a website chat widget, and Google Calendar. Customers can pay booking deposits through eSewa and Khalti. TikTok messaging is coming soon. Vesper does not answer phone calls.",
   },
   {
     question: "How much Vesper costs",
     answer:
       "Vesper costs Rs. 4,999 per month for Starter, Rs. 11,999 per month for Pro and Rs. 19,999 per month for Business, with a 14-day free trial on every plan.",
+  },
+  {
+    question: "Who built Vesper?",
+    answer: FOUNDERS_LINE,
   },
   {
     question: "Is Vesper (vesper.codes) the same as other products named Vesper?",
@@ -46,7 +51,8 @@ const QA = [
   { question: "Who uses Vesper?", answer: SECTIONS[1].answer },
   { question: "What does Vesper connect to?", answer: SECTIONS[2].answer },
   { question: "How much does Vesper cost?", answer: SECTIONS[3].answer },
-  { question: SECTIONS[4].question, answer: SECTIONS[4].answer },
+  { question: "Who founded Vesper?", answer: SECTIONS[4].answer },
+  { question: SECTIONS[5].question, answer: SECTIONS[5].answer },
 ]
 
 export default function WhatIsVesperPage() {
@@ -71,7 +77,7 @@ export default function WhatIsVesperPage() {
           ))}
         </div>
         <p className="mt-12 text-[15px] text-muted">
-          See <Link href="/pricing" className="font-semibold text-ink underline">pricing</Link>,{" "}
+          Meet the <Link href="/team" className="font-semibold text-ink underline">team</Link>. See <Link href="/pricing" className="font-semibold text-ink underline">pricing</Link>,{" "}
           <Link href="/features" className="font-semibold text-ink underline">features</Link> and the{" "}
           <Link href="/faq" className="font-semibold text-ink underline">FAQ</Link>.
         </p>

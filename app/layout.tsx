@@ -6,6 +6,7 @@ import "@/app/globals.css"
 import { Geist, Caveat } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { SITE_URL, SOCIAL_LINKS, DISAMBIGUATION } from "@/lib/site";
+import { TEAM_MEMBERS } from "@/models";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 const caveat = Caveat({ subsets: ['latin'], variable: '--font-handwriting', weight: ['400','500','600','700'] });
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   },
   description:
     "Answer customer inquiries, check real-time availability, and book appointments across WhatsApp, Instagram, Messenger and web - 24/7.",
-  authors: [{ name: "Samrat Ghimire" }],
+  authors: TEAM_MEMBERS.map((m) => ({ name: m.name })),
   alternates: {
     canonical: "/",
   },
@@ -63,11 +64,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         description:
           "Vesper is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger and books appointments against real calendar availability, 24/7.",
         disambiguatingDescription: DISAMBIGUATION,
-        founder: {
+        founder: TEAM_MEMBERS.map((m) => ({
           "@type": "Person",
-          name: "Samrat Ghimire",
-          sameAs: ["https://github.com/SamratGhimire01", "https://www.linkedin.com/in/samratghimire01"],
-        },
+          "@id": `${SITE_URL}/team#${m.slug}`,
+          name: m.name,
+          jobTitle: m.role,
+          worksFor: { "@id": `${SITE_URL}/#organization` },
+          sameAs: m.sameAs,
+        })),
         sameAs: Object.values(SOCIAL_LINKS),
         areaServed: { "@type": "Country", name: "Nepal" },
       },

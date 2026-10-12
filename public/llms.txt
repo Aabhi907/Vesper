@@ -1,6 +1,15 @@
 # Vesper
 
-> Vesper (vesper.codes) is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger 24/7, checks real calendar availability, and books appointments. It is built in Kathmandu, Nepal by founder Samrat Ghimire.
+> Vesper (vesper.codes) is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger 24/7, checks real calendar availability, and books appointments. It is built in Kathmandu, Nepal.
+
+## Key facts
+
+- Vesper was founded in Kathmandu, Nepal by Samrat Ghimire (Founder), with co-founders Aabishkar Shrestha and Kasam Thapa Magar.
+  - Samrat Ghimire: https://www.linkedin.com/in/samratghimire01/
+  - Aabishkar Shrestha: https://www.linkedin.com/in/aabishkar-shrestha-895492349/
+  - Kasam Thapa Magar: https://www.linkedin.com/in/kasamthapamagar/
+- Vesper answers written messages only; it does not answer phone calls.
+- Prices are in Nepali rupees, from Rs. 4,999 per month, with a 14-day free trial.
 
 ## Is Vesper (vesper.codes) the same as other products named Vesper?
 
@@ -86,4 +95,4 @@ Vesper does not answer phone calls.
 - [GitHub](https://github.com/vespercodes)
 - [X](https://x.com/vespercodes)
 - [Wellfound](https://wellfound.com/onboarding/recruit/vesper-11/complete)
-- Founder Samrat Ghimire: [GitHub](https://github.com/SamratGhimire01), [LinkedIn](https://www.linkedin.com/in/samratghimire01)
+- Founder Samrat Ghimire: [GitHub](https://github.com/SamratGhimire01), [LinkedIn](https://www.linkedin.com/in/samratghimire01/)

@@ -1,5 +1,6 @@
 import type { FAQItem } from "../types"
 import { DISAMBIGUATION } from "@/lib/site"
+import { FOUNDERS_LINE } from "./team.data"
 
 // The first HOME_FAQ_COUNT entries also show on the homepage; /faq shows all of them.
 export const HOME_FAQ_COUNT = 6
@@ -133,6 +134,10 @@ export const FAQS: FAQItem[] = [
     question: "Where is Vesper based?",
     answer:
       "Vesper is built in Kathmandu, Nepal, for businesses in Nepal. It uses Nepal time and prices in Nepali rupees.",
+  },
+  {
+    question: "Who founded Vesper?",
+    answer: FOUNDERS_LINE,
   },
   {
     question: "Is Vesper (vesper.codes) the same as other products named Vesper?",
