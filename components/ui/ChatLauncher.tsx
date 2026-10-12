@@ -70,7 +70,7 @@ function generateVesperReply(query: string): { text: string; action?: { label: s
 
   if (q.includes("2 am") || q.includes("night") || q.includes("midnight") || q.includes("sleep") || q.includes("awake")) {
     return {
-      text: "That's our entire superpower! Over 42% of appointment inquiries in service businesses come after 9:00 PM when your front desk is asleep. Vesper replies in < 2 seconds and closes the booking while you rest.",
+      text: "That's our entire superpower! Customers often message after your front desk has closed. Vesper replies around the clock, checks real availability, and books the appointment while you rest.",
     }
   }
 
