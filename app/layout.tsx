@@ -53,20 +53,59 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const offer = (name: string, price: string) => ({
+    "@type": "Offer",
+    name,
+    price,
+    priceCurrency: "NPR",
+    url: `${SITE_URL}/pricing`,
+  })
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "Vesper",
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Cloud",
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "NPR",
-      lowPrice: "4999",
-      highPrice: "19999",
-    },
-    description:
-      "24/7 AI front desk that connects WhatsApp, Instagram, Messenger, and web to real-time calendar availability.",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
+        name: "Vesper",
+        alternateName: ["Vesper AI", "vesper.codes"],
+        url: SITE_URL,
+        logo: `${SITE_URL}/icon.svg`,
+        description:
+          "Vesper is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger and books appointments against real calendar availability, 24/7.",
+        disambiguatingDescription:
+          "Vesper (vesper.codes) is an AI booking assistant software company based in Kathmandu, Nepal; not the Vesper cocktail or any other company named Vesper.",
+        founder: { "@type": "Person", name: "Samrat Ghimire" },
+        areaServed: { "@type": "Country", name: "Nepal" },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: "Vesper",
+        inLanguage: "en",
+        publisher: { "@id": `${SITE_URL}/#organization` },
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${SITE_URL}/#software`,
+        name: "Vesper",
+        url: SITE_URL,
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        description:
+          "24/7 AI front desk that answers WhatsApp, Instagram and Messenger messages, checks real-time calendar availability and books appointments.",
+        featureList: [
+          "WhatsApp",
+          "Instagram",
+          "Messenger",
+          "Google Calendar sync",
+          "Human handoff",
+          "eSewa/Khalti",
+        ],
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        offers: [offer("Starter", "4999"), offer("Pro", "11999"), offer("Business", "19999")],
+      },
+    ],
   }
 
   return (
