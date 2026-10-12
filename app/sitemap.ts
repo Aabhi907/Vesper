@@ -10,6 +10,10 @@ const PAGES: { path: string; lastModified: string; priority: number }[] = [
   { path: "/features", lastModified: "2026-10-12", priority: 0.8 },
   { path: "/pricing", lastModified: "2026-10-12", priority: 0.9 },
   { path: "/clinics", lastModified: "2026-10-12", priority: 0.7 },
+  // Channels
+  { path: "/whatsapp-auto-reply", lastModified: "2026-10-13", priority: 0.8 },
+  { path: "/instagram-auto-reply", lastModified: "2026-10-13", priority: 0.8 },
+  { path: "/messenger-auto-reply", lastModified: "2026-10-13", priority: 0.8 },
   { path: "/team", lastModified: "2026-10-12", priority: 0.6 },
   { path: "/trust", lastModified: "2026-10-12", priority: 0.7 },
   { path: "/changelog", lastModified: "2026-09-30", priority: 0.5 },

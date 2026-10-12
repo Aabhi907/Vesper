@@ -14,6 +14,7 @@ import {
   HEADER_NAV_LINKS,
   FOOTER_PRODUCT_LINKS,
   FOOTER_COMPANY_LINKS,
+  FOOTER_SOLUTIONS_LINKS,
   FOOTER_LEGAL_LINKS,
   CALENDLY_URL,
 } from "@/models"
@@ -195,6 +196,15 @@ export function Footer() {
             <div className="flex flex-col gap-2.5">
               <h4 className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-1">Product</h4>
               {FOOTER_PRODUCT_LINKS.map((l) => (
+                <Link key={l.label} href={l.href} className="text-[13px] text-white/70 hover:text-white transition-colors">
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+
+            <div className="flex flex-col gap-2.5">
+              <h4 className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-1">Solutions</h4>
+              {FOOTER_SOLUTIONS_LINKS.map((l) => (
                 <Link key={l.label} href={l.href} className="text-[13px] text-white/70 hover:text-white transition-colors">
                   {l.label}
                 </Link>

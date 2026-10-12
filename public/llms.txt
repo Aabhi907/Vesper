@@ -31,7 +31,7 @@ Vesper does not answer phone calls.
 - Pro: Rs. 11,999
 - Business: Rs. 19,999
 
-## Pages
+## Core pages
 
 - [Home](https://vesper.codes/): overview
 - [What is Vesper?](https://vesper.codes/what-is-vesper): plain definition, how it works, who uses it, cost
@@ -45,6 +45,12 @@ Vesper does not answer phone calls.
 - [Changelog](https://vesper.codes/changelog): product updates
 - [Privacy Policy](https://vesper.codes/privacy)
 - [Terms of Service](https://vesper.codes/terms)
+
+## Channels
+
+- [WhatsApp auto reply](https://vesper.codes/whatsapp-auto-reply): WhatsApp chatbot and booking bot on the official Cloud API
+- [Instagram DM auto reply](https://vesper.codes/instagram-auto-reply): Instagram AI reply and booking bot
+- [Messenger chatbot](https://vesper.codes/messenger-auto-reply): Facebook Page auto reply on Messenger
 
 ## Official profiles
 

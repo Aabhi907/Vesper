@@ -23,6 +23,12 @@ export const FOOTER_PRODUCT_LINKS: NavLink[] = [
   { label: "Login", href: `${APP_URL}/login` },
 ]
 
+export const FOOTER_SOLUTIONS_LINKS: NavLink[] = [
+  { label: "WhatsApp Auto Reply", href: "/whatsapp-auto-reply" },
+  { label: "Instagram DM Auto Reply", href: "/instagram-auto-reply" },
+  { label: "Messenger Chatbot", href: "/messenger-auto-reply" },
+]
+
 export const FOOTER_COMPANY_LINKS: NavLink[] = [
   { label: "What is Vesper?", href: "/what-is-vesper" },
   { label: "Team & Founders", href: "/team" },
