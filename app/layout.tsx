@@ -5,6 +5,7 @@ import { ChatLauncher } from "@/components/ui/ChatLauncher"
 import "@/app/globals.css"
 import { Geist, Caveat } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { SITE_URL } from "@/lib/site";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 const caveat = Caveat({ subsets: ['latin'], variable: '--font-handwriting', weight: ['400','500','600','700'] });
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     title: "Vesper - 24/7 AI Front Desk for Service & Booking Businesses",
     description:
       "Customer messages from WhatsApp, Instagram, and Messenger seamlessly converge into real confirmed bookings.",
-    url: "https://vesper.ai",
+    url: SITE_URL,
     siteName: "Vesper",
     locale: "en_US",
     type: "website",
