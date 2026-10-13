@@ -32,8 +32,8 @@ const nextConfig: NextConfig = {
   poweredByHeader: false, // removes X-Powered-By: Next.js (Image 2: item 20 check prod settings)
   async redirects() {
     return [
-      { source: "/:path*", has: [{ type: "host", value: "vesper.codes" }], destination: "https://bolnivo.me/:path*", permanent: true },
-      { source: "/:path*", has: [{ type: "host", value: "www.vesper.codes" }], destination: "https://bolnivo.me/:path*", permanent: true },
+      { source: "/:path*", has: [{ type: "host", value: "vesper.codes" }], destination: "https://www.bolnivo.me/:path*", permanent: true },
+      { source: "/:path*", has: [{ type: "host", value: "www.vesper.codes" }], destination: "https://www.bolnivo.me/:path*", permanent: true },
       { source: "/clinics", destination: "/use-cases/clinics", permanent: true },
     ];
   },
