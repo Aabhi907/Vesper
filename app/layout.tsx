@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   verification: {
     other: {
-      "msvalidate.01": "EDF2A1885B339B30D7E6B5E1019E2636",
+      "msvalidate.01": "EDF2A1885B339B30D7F6B5E1019F2636",
     },
   },
 }
