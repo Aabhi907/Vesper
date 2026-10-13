@@ -3,12 +3,12 @@ import { LandingPage, landingMetadata, type Landing } from "@/components/landing
 const PAGE: Landing = {
   path: "/use-cases/salons",
   crumb: "Salon booking chatbot",
-  title: "Vesper Salon Booking Chatbot for WhatsApp & Instagram",
+  title: "Bolnivo Salon Booking Chatbot for WhatsApp & Instagram",
   description:
-    "Vesper is a salon booking chatbot that answers price questions and books haircuts, colour, facials and bridal makeup on WhatsApp and Instagram, 24/7.",
-  h1: "Vesper salon booking chatbot for WhatsApp and Instagram",
+    "Bolnivo is a salon booking chatbot that answers price questions and books haircuts, colour, facials and bridal makeup on WhatsApp and Instagram, 24/7.",
+  h1: "Bolnivo salon booking chatbot for WhatsApp and Instagram",
   intro:
-    "Vesper answers salon and beauty parlour messages on WhatsApp and Instagram, quotes your real prices, and books clients with the right stylist, 24/7.",
+    "Bolnivo answers salon and beauty parlour messages on WhatsApp and Instagram, quotes your real prices, and books clients with the right stylist, 24/7.",
   chats: [
     {
       heading: "Example salon WhatsApp booking",
@@ -42,14 +42,14 @@ const PAGE: Landing = {
     {
       heading: "A beauty parlour appointment bot that knows your stylists",
       paragraphs: [
-        "Add each stylist or beautician as a staff member and Vesper books against their own calendar, so a client who asks for a particular person only sees that person's free times. Service durations matter too: Vesper will not squeeze a two-hour colour into a 45-minute gap.",
+        "Add each stylist or beautician as a staff member and Bolnivo books against their own calendar, so a client who asks for a particular person only sees that person's free times. Service durations matter too: Bolnivo will not squeeze a two-hour colour into a 45-minute gap.",
         "Bridal and event bookings can take a deposit through eSewa or Khalti, which cuts down on no-shows for your most valuable slots.",
       ],
     },
     {
       heading: "Why salons in Nepal use a booking chatbot",
       paragraphs: [
-        "Salon owners are usually busy with a client when the phone lights up. A DM that waits an hour often becomes a booking somewhere else. Vesper replies within seconds, including late at night when many clients scroll Instagram and plan their week, and the booking lands in your calendar before you finish the haircut you were doing.",
+        "Salon owners are usually busy with a client when the phone lights up. A DM that waits an hour often becomes a booking somewhere else. Bolnivo replies within seconds, including late at night when many clients scroll Instagram and plan their week, and the booking lands in your calendar before you finish the haircut you were doing.",
       ],
     },
   ],
@@ -64,10 +64,10 @@ const PAGE: Landing = {
     ],
   },
   faq: [
-    { question: "Can a salon chatbot book a specific stylist?", answer: "Vesper books clients with the stylist they ask for, showing only that stylist's free times." },
-    { question: "Does Vesper work for beauty parlours in Nepal?", answer: "Vesper is built in Kathmandu and handles Nepali, Romanized Nepali and English messages, NPR prices and eSewa or Khalti deposits." },
-    { question: "Can clients reschedule by message?", answer: "Vesper lets clients move or cancel their appointment in the chat and frees the old slot straight away." },
-    { question: "Which plan suits a small salon?", answer: "Vesper Starter at Rs. 4,999 a month covers one channel and up to 100 bookings; Pro adds all channels and unlimited bookings." },
+    { question: "Can a salon chatbot book a specific stylist?", answer: "Bolnivo books clients with the stylist they ask for, showing only that stylist's free times." },
+    { question: "Does Bolnivo work for beauty parlours in Nepal?", answer: "Bolnivo is built in Kathmandu and handles Nepali, Romanized Nepali and English messages, NPR prices and eSewa or Khalti deposits." },
+    { question: "Can clients reschedule by message?", answer: "Bolnivo lets clients move or cancel their appointment in the chat and frees the old slot straight away." },
+    { question: "Which plan suits a small salon?", answer: "Bolnivo Starter at Rs. 4,999 a month covers one channel and up to 100 bookings; Pro adds all channels and unlimited bookings." },
   ],
   related: [
     { label: "Instagram DM auto reply", href: "/instagram-auto-reply" },

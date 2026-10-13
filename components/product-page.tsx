@@ -20,7 +20,7 @@ const STEPS = [
   {
     num: "02",
     name: "Context",
-    summary: "Vesper understands who is asking and what they need.",
+    summary: "Bolnivo understands who is asking and what they need.",
     detail: "Identifies returning guests, preferred staff (e.g. 'with Anita if possible'), party size, and resolves relative dates like 'bholi 3 baje' or 'this Saturday morning'.",
     proof: "NLU Parse: 99.4% confidence · Intent: haircut_beard · Context: Returning Guest",
   },
@@ -28,7 +28,7 @@ const STEPS = [
     num: "03",
     name: "Knowledge",
     summary: "Consults your approved business rules, pricing, and service durations.",
-    detail: "Vesper only speaks from your verified business setup. It knows a haircut takes 45 minutes, a facial takes 60, and your shop closes on Mondays.",
+    detail: "Bolnivo only speaks from your verified business setup. It knows a haircut takes 45 minutes, a facial takes 60, and your shop closes on Mondays.",
     proof: "Policy Engine: Verified · Duration: 50m · Price: Verified · Buffer: 15m",
   },
   {
@@ -52,7 +52,7 @@ const PILLARS: { num: string; icon: React.ReactNode; title: string; desc: string
     num: "01",
     icon: <CalendarCheck className="w-6 h-6" strokeWidth={1.5} />,
     title: "Calendar is truth",
-    desc: "Vesper never invents an available hour. If you block out 2:00 PM on your personal Google Calendar, Vesper knows immediately.",
+    desc: "Bolnivo never invents an available hour. If you block out 2:00 PM on your personal Google Calendar, Bolnivo knows immediately.",
   },
   {
     num: "02",
@@ -64,7 +64,7 @@ const PILLARS: { num: string; icon: React.ReactNode; title: string; desc: string
     num: "03",
     icon: <PhoneCall className="w-6 h-6" strokeWidth={1.5} />,
     title: "Always human-accessible",
-    desc: "Reply directly from your phone at any time. Vesper senses your response and quietly steps aside for that conversation.",
+    desc: "Reply directly from your phone at any time. Bolnivo senses your response and quietly steps aside for that conversation.",
   },
 ]
 
@@ -183,7 +183,7 @@ function WorldMapCard() {
           />
         )}
 
-        <WinChrome title="vesper &middot; global live traffic">
+        <WinChrome title="bolnivo &middot; global live traffic">
           {/* Sheen sweep — inside WinChrome, clipped nicely by overflow:hidden */}
           {canTilt && (
             <motion.div
@@ -239,7 +239,7 @@ function WorldMapCard() {
               <div>
                 <p className="text-[13.5px] font-semibold text-ink">Your business in the US, Europe, or beyond.</p>
                 <p className="text-[12.5px] text-muted leading-relaxed mt-1 font-normal">
-                  Whether your salon, clinic, or service shop is based in New York, California, London, Sydney, or Kathmandu, Vesper syncs seamlessly to your local business timezone (EST, PST, GMT, AEST) with zero setup friction.
+                  Whether your salon, clinic, or service shop is based in New York, California, London, Sydney, or Kathmandu, Bolnivo syncs seamlessly to your local business timezone (EST, PST, GMT, AEST) with zero setup friction.
                 </p>
               </div>
               <div>
@@ -286,12 +286,12 @@ export function ProductPage() {
 
           {/* ── Main Apple-style Headline ── */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-ink mb-6 leading-[1.05] text-center">
-            How Vesper AI works:<br />
+            How Bolnivo AI works:<br />
             auto-reply &amp; booking on WhatsApp
           </h1>
 
           <p className="text-[17px] sm:text-[20px] text-muted leading-relaxed font-normal max-w-[680px] mx-auto mb-12 sm:mb-16 text-center">
-            Vesper is not a generic chatbot guessing answers. It is a quiet engineering pipeline: language models decode what your customer wants, but real database code checks and locks your actual calendar.
+            Bolnivo is not a generic chatbot guessing answers. It is a quiet engineering pipeline: language models decode what your customer wants, but real database code checks and locks your actual calendar.
           </p>
         </ScrollReveal>
 
@@ -381,7 +381,7 @@ export function ProductPage() {
                 </div>
               </div>
 
-              {/* Vesper Verification Pill (Zap icon, no emoji) */}
+              {/* Bolnivo Verification Pill (Zap icon, no emoji) */}
               <div className="flex justify-center my-3">
                 <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted/80 bg-soft-canvas border border-line px-3 py-1 rounded-full">
                   <Zap className="w-3 h-3 text-signal-blue shrink-0" />
@@ -389,10 +389,10 @@ export function ProductPage() {
                 </span>
               </div>
 
-              {/* Vesper Response */}
+              {/* Bolnivo Response */}
               <div className="flex justify-end">
                 <div className="bg-ink text-canvas p-4 rounded-2xl rounded-tr-sm max-w-[85%] sm:max-w-[70%] shadow-xs">
-                  <p className="text-[12px] font-mono text-canvas/60 mb-1">Vesper &middot; 11:42 PM</p>
+                  <p className="text-[12px] font-mono text-canvas/60 mb-1">Bolnivo &middot; 11:42 PM</p>
                   <p className="text-[14.5px] leading-relaxed font-normal">
                     Yes! Anita is open tomorrow (Sunday) at 3:00 PM. That covers haircut and beard trim (approx 50 mins). Shall I lock this slot for you?
                   </p>
@@ -409,10 +409,10 @@ export function ProductPage() {
                 </div>
               </div>
 
-              {/* Vesper Finalized (Clean typography, no checkmark emoji) */}
+              {/* Bolnivo Finalized (Clean typography, no checkmark emoji) */}
               <div className="flex justify-end">
                 <div className="bg-ink text-canvas p-4 rounded-2xl rounded-tr-sm max-w-[85%] sm:max-w-[70%] shadow-xs">
-                  <p className="text-[12px] font-mono text-canvas/60 mb-1">Vesper &middot; 11:43 PM</p>
+                  <p className="text-[12px] font-mono text-canvas/60 mb-1">Bolnivo &middot; 11:43 PM</p>
                   <p className="text-[14.5px] leading-relaxed font-normal">
                     Confirmed: You are booked with Anita for Sunday at 3:00 PM. Calendar invite sent, see you then!
                   </p>
@@ -432,7 +432,7 @@ export function ProductPage() {
               Built for businesses in the US and worldwide.
             </h2>
             <p className="text-[15px] sm:text-[16px] text-muted max-w-[680px] leading-relaxed mx-auto text-center font-normal">
-              Whether your business operates in the United States, Europe, Australia, or Asia, Vesper connects directly to your local calendar, supports your home currency, and talks to clients from any country around the clock.
+              Whether your business operates in the United States, Europe, Australia, or Asia, Bolnivo connects directly to your local calendar, supports your home currency, and talks to clients from any country around the clock.
             </p>
           </div>
 

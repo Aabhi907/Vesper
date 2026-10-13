@@ -3,12 +3,12 @@ import { LandingPage, landingMetadata, type Landing } from "@/components/landing
 const PAGE: Landing = {
   path: "/use-cases/trekking",
   crumb: "Trekking agency chatbot",
-  title: "Vesper Trekking Agency Chatbot – Tour Inquiry Auto Reply",
+  title: "Bolnivo Trekking Agency Chatbot – Tour Inquiry Auto Reply",
   description:
-    "Vesper is a trekking agency and travel agency WhatsApp bot that answers tour inquiries 24/7 and books treks by start date with group capacity and staff approval.",
-  h1: "Vesper trekking agency chatbot and tour inquiry auto reply",
+    "Bolnivo is a trekking agency and travel agency WhatsApp bot that answers tour inquiries 24/7 and books treks by start date with group capacity and staff approval.",
+  h1: "Bolnivo trekking agency chatbot and tour inquiry auto reply",
   intro:
-    "Vesper answers trekking and tour inquiries on WhatsApp, Instagram and Messenger 24/7 and books multi-day treks by start date, with your staff confirming each booking.",
+    "Bolnivo answers trekking and tour inquiries on WhatsApp, Instagram and Messenger 24/7 and books multi-day treks by start date, with your staff confirming each booking.",
   chats: [
     {
       heading: "Example tour inquiry on WhatsApp",
@@ -33,20 +33,20 @@ const PAGE: Landing = {
         "\"What's the best season?\"",
       ],
       paragraphs: [
-        "Most of these come from abroad, at night in Nepal. Vesper answers them from the itineraries, prices and inclusions you write, in the customer's own language.",
+        "Most of these come from abroad, at night in Nepal. Bolnivo answers them from the itineraries, prices and inclusions you write, in the customer's own language.",
       ],
     },
     {
       heading: "Treks booked by start date, with group capacity",
       paragraphs: [
-        "Multi-day trips work differently from appointments. In Vesper, a trek is a package booked by start date, such as a 12-day trek, and you set how many groups you accept per start date. Vesper offers dates that still have space and never overbooks a departure.",
+        "Multi-day trips work differently from appointments. In Bolnivo, a trek is a package booked by start date, such as a 12-day trek, and you set how many groups you accept per start date. Bolnivo offers dates that still have space and never overbooks a departure.",
         "Set treks as requests that need approval and your team checks permits, guides and flights before the customer is told the trip is confirmed. Deposits can be taken through eSewa or Khalti for Nepali customers.",
       ],
     },
     {
       heading: "Tour inquiry auto reply that stays accurate",
       paragraphs: [
-        "Vesper does not make up altitude advice, permit rules or prices. It answers from your information, and when a question goes beyond it, such as a medical concern about altitude, it hands the conversation to your team. You can take over any chat from the Vesper inbox.",
+        "Bolnivo does not make up altitude advice, permit rules or prices. It answers from your information, and when a question goes beyond it, such as a medical concern about altitude, it hands the conversation to your team. You can take over any chat from the Bolnivo inbox.",
       ],
     },
   ],
@@ -61,10 +61,10 @@ const PAGE: Landing = {
     ],
   },
   faq: [
-    { question: "Can Vesper book treks?", answer: "Vesper books multi-day treks by start date, limited by the capacity you set, and can send them to your team for approval first." },
-    { question: "Does Vesper answer international trekkers at night?", answer: "Vesper replies 24/7 in English, which suits trekkers messaging from other time zones." },
-    { question: "Will Vesper give altitude or medical advice?", answer: "Vesper answers only from your information and passes medical or safety questions to your team." },
-    { question: "Is Vesper a travel agency WhatsApp bot?", answer: "Vesper works for travel and tour agencies on WhatsApp, Instagram and Messenger, answering inquiries and taking trip bookings." },
+    { question: "Can Bolnivo book treks?", answer: "Bolnivo books multi-day treks by start date, limited by the capacity you set, and can send them to your team for approval first." },
+    { question: "Does Bolnivo answer international trekkers at night?", answer: "Bolnivo replies 24/7 in English, which suits trekkers messaging from other time zones." },
+    { question: "Will Bolnivo give altitude or medical advice?", answer: "Bolnivo answers only from your information and passes medical or safety questions to your team." },
+    { question: "Is Bolnivo a travel agency WhatsApp bot?", answer: "Bolnivo works for travel and tour agencies on WhatsApp, Instagram and Messenger, answering inquiries and taking trip bookings." },
   ],
   related: [
     { label: "WhatsApp auto reply", href: "/whatsapp-auto-reply" },

@@ -39,7 +39,7 @@ export const FOOTER_SOLUTIONS_LINKS: NavLink[] = [
 ]
 
 export const FOOTER_COMPANY_LINKS: NavLink[] = [
-  { label: "What is Vesper?", href: "/what-is-vesper" },
+  { label: "What is Bolnivo?", href: "/what-is-vesper" },
   { label: "Team & Founders", href: "/team" },
   { label: "Trust & Safety", href: "/trust" },
   { label: "Frequently Asked Questions", href: "/faq" },

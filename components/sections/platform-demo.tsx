@@ -292,13 +292,13 @@ export function PlatformDemo() {
           Real conversations. Across every platform.
         </h2>
         <p className="text-muted text-[15px] sm:text-[17px] max-w-[580px] mx-auto leading-relaxed text-center">
-          Switch platforms below to see how Vesper seamlessly connects to WhatsApp, Instagram DMs, and Messenger to check live availability and lock bookings 24/7.
+          Switch platforms below to see how Bolnivo seamlessly connects to WhatsApp, Instagram DMs, and Messenger to check live availability and lock bookings 24/7.
         </p>
       </ScrollReveal>
 
       {/* ── Platform Chatbox Demo Window ── */}
       <ScrollReveal delay={0.15} className="w-full max-w-[680px] mx-auto">
-        <WinChrome title="vesper-demo.mov">
+        <WinChrome title="bolnivo-demo.mov">
           {/* Platform tab bar */}
           <div className="flex items-center border-b border-[hsl(0_0%_84%)] dark:border-line bg-[hsl(0_0%_93%)] dark:bg-[hsl(var(--soft-canvas))]">
             <button

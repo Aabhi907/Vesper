@@ -217,7 +217,7 @@ export function BookDemoModal({
                   </span>
                   <h3 className="text-2xl font-black text-ink mt-2">Book a 1-on-1 walkthrough</h3>
                   <p className="text-[13px] text-muted mt-1">
-                    See Vesper connected to your business number and calendar in live action.
+                    See Bolnivo connected to your business number and calendar in live action.
                   </p>
                 </div>
 

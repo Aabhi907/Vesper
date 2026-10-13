@@ -429,7 +429,7 @@ export function CommandMenu({
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <span>Vesper Command Engine</span>
+                <span>Bolnivo Command Engine</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
               </div>
             </div>

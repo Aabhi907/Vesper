@@ -30,7 +30,7 @@ export function Manifesto() {
                   we believe <span className="text-ink font-semibold underline decoration-signal-blue decoration-2 underline-offset-2">the interface is the problem.</span>
                 </motion.p>
                 <motion.p style={{ opacity: o3 }}>
-                  vesper takes the same frontier AI everyone else uses, and makes it actually check your calendar before saying yes.
+                  Bolnivo gives businesses an AI assistant that understands their information and can take real actions across their website and customer channels.
                 </motion.p>
                 <motion.p style={{ opacity: o4 }}>
                   it&apos;s early! try it out and tell us what you think.
@@ -39,11 +39,11 @@ export function Manifesto() {
               </div>
               <div className="mt-10 flex items-center gap-4 border-t border-black/10 dark:border-white/10 pt-6">
                 <div className="w-8 h-8 rounded-full bg-[#0a0a0a] dark:bg-white flex items-center justify-center flex-shrink-0">
-                  <span className="text-white dark:text-[#0a0a0a] text-[14px] font-black tracking-tight leading-none">V</span>
+                  <span className="text-white dark:text-[#0a0a0a] text-[14px] font-black tracking-tight leading-none">B</span>
                 </div>
                 <div>
                   <p className="text-[13px] font-semibold text-ink">the team,</p>
-                  <p className="text-[12px] text-muted">vesper</p>
+                  <p className="text-[12px] text-muted">Bolnivo</p>
                 </div>
               </div>
             </div>

@@ -3,12 +3,12 @@ import { LandingPage, landingMetadata, type Landing } from "@/components/landing
 const PAGE: Landing = {
   path: "/use-cases/hotels",
   crumb: "Hotel booking chatbot",
-  title: "Vesper Hotel Booking Chatbot – WhatsApp Reservations",
+  title: "Bolnivo Hotel Booking Chatbot – WhatsApp Reservations",
   description:
-    "Vesper is a hotel and homestay booking chatbot that answers room, rate and facility questions on WhatsApp 24/7 and takes reservation requests your staff confirm.",
-  h1: "Vesper hotel booking chatbot for WhatsApp reservations and homestays",
+    "Bolnivo is a hotel and homestay booking chatbot that answers room, rate and facility questions on WhatsApp 24/7 and takes reservation requests your staff confirm.",
+  h1: "Bolnivo hotel booking chatbot for WhatsApp reservations and homestays",
   intro:
-    "Vesper answers hotel and homestay guests on WhatsApp, Instagram and Messenger 24/7, quotes your rates, and takes reservation requests that your staff confirm.",
+    "Bolnivo answers hotel and homestay guests on WhatsApp, Instagram and Messenger 24/7, quotes your rates, and takes reservation requests that your staff confirm.",
   chats: [
     {
       heading: "Example hotel WhatsApp reservation request",
@@ -33,20 +33,20 @@ const PAGE: Landing = {
         "\"How far are you from Lakeside / Thamel?\"",
       ],
       paragraphs: [
-        "Guests often message from another time zone, late at night in Nepal. Vesper answers immediately from the rates, facilities and policies you enter.",
+        "Guests often message from another time zone, late at night in Nepal. Bolnivo answers immediately from the rates, facilities and policies you enter.",
       ],
     },
     {
       heading: "Reservation requests your staff confirm",
       paragraphs: [
-        "Vesper books stays as packages by check-in date, such as a 2-night double or a 3-night homestay package, and you can set how many of each package you accept per day. For hotels, set these as requests that need approval: the guest is told their request has been received, your staff confirm it in the dashboard, and the guest is then told it is confirmed. This keeps room allocation in your hands while every enquiry gets an instant answer.",
-        "Vesper does not connect to channel managers or OTAs such as Booking.com, so your team stays in charge of final room inventory.",
+        "Bolnivo books stays as packages by check-in date, such as a 2-night double or a 3-night homestay package, and you can set how many of each package you accept per day. For hotels, set these as requests that need approval: the guest is told their request has been received, your staff confirm it in the dashboard, and the guest is then told it is confirmed. This keeps room allocation in your hands while every enquiry gets an instant answer.",
+        "Bolnivo does not connect to channel managers or OTAs such as Booking.com, so your team stays in charge of final room inventory.",
       ],
     },
     {
       heading: "Homestay booking without missed messages",
       paragraphs: [
-        "Homestay owners often run the house and the bookings at the same time. Vesper answers questions about meals, rooms and directions in English or Nepali, takes the request with the guest's name and phone, and can collect an eSewa or Khalti deposit once you set one for the package.",
+        "Homestay owners often run the house and the bookings at the same time. Bolnivo answers questions about meals, rooms and directions in English or Nepali, takes the request with the guest's name and phone, and can collect an eSewa or Khalti deposit once you set one for the package.",
       ],
     },
   ],
@@ -57,14 +57,14 @@ const PAGE: Landing = {
       "Set how many of each you can accept per check-in date, and mark them as requests that need approval.",
       "Add facilities, check-in times, directions and policies as answers.",
       "Connect WhatsApp, Instagram or Messenger.",
-      "Confirm incoming requests from the Vesper dashboard.",
+      "Confirm incoming requests from the Bolnivo dashboard.",
     ],
   },
   faq: [
-    { question: "Can Vesper take hotel reservations on WhatsApp?", answer: "Vesper takes reservation requests on WhatsApp, Instagram and Messenger and your staff confirm them in the dashboard before the guest is told the stay is booked." },
-    { question: "Does Vesper connect to Booking.com or a channel manager?", answer: "Vesper does not connect to OTAs or channel managers. It handles direct messages from guests." },
-    { question: "Can guests pay a deposit for a homestay?", answer: "Vesper can send an eSewa or Khalti deposit link for a stay package when you turn deposits on." },
-    { question: "Does Vesper answer guests at night?", answer: "Vesper replies to guests 24/7, which matters when they message from another time zone." },
+    { question: "Can Bolnivo take hotel reservations on WhatsApp?", answer: "Bolnivo takes reservation requests on WhatsApp, Instagram and Messenger and your staff confirm them in the dashboard before the guest is told the stay is booked." },
+    { question: "Does Bolnivo connect to Booking.com or a channel manager?", answer: "Bolnivo does not connect to OTAs or channel managers. It handles direct messages from guests." },
+    { question: "Can guests pay a deposit for a homestay?", answer: "Bolnivo can send an eSewa or Khalti deposit link for a stay package when you turn deposits on." },
+    { question: "Does Bolnivo answer guests at night?", answer: "Bolnivo replies to guests 24/7, which matters when they message from another time zone." },
   ],
   related: [
     { label: "WhatsApp auto reply", href: "/whatsapp-auto-reply" },

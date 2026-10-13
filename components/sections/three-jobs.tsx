@@ -91,7 +91,7 @@ const JOBS: (CoreJob & { tag?: string })[] = [
   {
     icon: HanddrawnMessageIcon,
     title: "Answer accurately",
-    copy: "Vesper reads from your approved business knowledge. No hallucinations about prices, staff, or availability.",
+    copy: "Bolnivo reads from your approved business knowledge. No hallucinations about prices, staff, or availability.",
     tag: "STRICT RAG",
   },
   {

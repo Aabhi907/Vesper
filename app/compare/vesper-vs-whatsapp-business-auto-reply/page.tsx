@@ -2,16 +2,16 @@ import { LandingPage, landingMetadata, type Landing } from "@/components/landing
 
 const PAGE: Landing = {
   path: "/compare/vesper-vs-whatsapp-business-auto-reply",
-  crumb: "WhatsApp away message vs Vesper",
-  title: "WhatsApp Business Away Message vs Vesper",
+  crumb: "WhatsApp away message vs Bolnivo",
+  title: "WhatsApp Business Away Message vs Bolnivo",
   description:
-    "WhatsApp Business away message vs Vesper: what the free WhatsApp Business app auto-reply does, what an AI front desk adds, and when each one is enough.",
-  h1: "WhatsApp Business away message vs Vesper",
+    "WhatsApp Business away message vs Bolnivo: what the free WhatsApp Business app auto-reply does, what an AI front desk adds, and when each one is enough.",
+  h1: "WhatsApp Business away message vs Bolnivo",
   intro:
-    "Vesper answers each customer's actual question and books them, while a WhatsApp Business away message sends the same fixed text to everyone.",
+    "Bolnivo answers each customer's actual question and books them, while a WhatsApp Business away message sends the same fixed text to everyone.",
   table: {
     heading: "Side-by-side comparison",
-    columns: ["", "WhatsApp Business app auto-reply", "Vesper"],
+    columns: ["", "WhatsApp Business app auto-reply", "Bolnivo"],
     rows: [
       ["Cost", "Free with the WhatsApp Business app", "Rs. 4,999 to Rs. 19,999 per month, 14-day free trial"],
       ["What it sends", "A fixed greeting or away message you write", "A reply to what the customer actually asked"],
@@ -26,7 +26,7 @@ const PAGE: Landing = {
   chats: [
     {
       heading: "The same message, two different replies",
-      label: "WhatsApp Business away message compared with a Vesper reply",
+      label: "WhatsApp Business away message compared with a Bolnivo reply",
       messages: [
         { from: "customer", text: "Hi, facial ko price kati ho? Bholi milcha?" },
         { from: "other", text: "WhatsApp away message: Thank you for your message. We are currently closed and will get back to you during business hours." },
@@ -45,11 +45,11 @@ const PAGE: Landing = {
       heading: "Where an away message stops",
       paragraphs: [
         "An away message cannot read the question. It says the same thing to someone asking a price, someone wanting to book tomorrow, and someone who wants to cancel. Each of them still has to wait for a person, and many will message another business that replies sooner.",
-        "Vesper reads each message, answers from your own information, checks your calendar, and books the slot in the same conversation, at any hour.",
+        "Bolnivo reads each message, answers from your own information, checks your calendar, and books the slot in the same conversation, at any hour.",
       ],
     },
     {
-      heading: "When to switch from an away message to Vesper",
+      heading: "When to switch from an away message to Bolnivo",
       bullets: [
         "You get the same price and availability questions many times a day",
         "Customers message at night and you lose them by morning",
@@ -59,19 +59,19 @@ const PAGE: Landing = {
     },
   ],
   steps: {
-    heading: "How to move from WhatsApp Business auto-reply to Vesper",
+    heading: "How to move from WhatsApp Business auto-reply to Bolnivo",
     items: [
-      "Write down the answers your quick replies give today; add them to Vesper as services, prices and FAQs.",
-      "Set your opening hours in Vesper.",
-      "Connect your WhatsApp Business number to Vesper through Meta's official sign-up flow.",
-      "Turn off the away message so customers get Vesper's real answers instead.",
+      "Write down the answers your quick replies give today; add them to Bolnivo as services, prices and FAQs.",
+      "Set your opening hours in Bolnivo.",
+      "Connect your WhatsApp Business number to Bolnivo through Meta's official sign-up flow.",
+      "Turn off the away message so customers get Bolnivo's real answers instead.",
     ],
   },
   faq: [
-    { question: "Is the WhatsApp Business away message free?", answer: "Yes. The greeting and away messages are free features of the WhatsApp Business app. Vesper is a paid service with a 14-day free trial." },
-    { question: "Can Vesper replace my WhatsApp away message?", answer: "Vesper replaces it with real replies: it answers the customer's question and books them, at any hour." },
-    { question: "Does Vesper need the WhatsApp Business app?", answer: "Vesper connects through Meta's official WhatsApp Business Cloud API, so it does not depend on the app running on your phone." },
-    { question: "Can I still reply myself?", answer: "Vesper has a shared inbox where you or your staff can reply on WhatsApp, and Vesper stays quiet while you do." },
+    { question: "Is the WhatsApp Business away message free?", answer: "Yes. The greeting and away messages are free features of the WhatsApp Business app. Bolnivo is a paid service with a 14-day free trial." },
+    { question: "Can Bolnivo replace my WhatsApp away message?", answer: "Bolnivo replaces it with real replies: it answers the customer's question and books them, at any hour." },
+    { question: "Does Bolnivo need the WhatsApp Business app?", answer: "Bolnivo connects through Meta's official WhatsApp Business Cloud API, so it does not depend on the app running on your phone." },
+    { question: "Can I still reply myself?", answer: "Bolnivo has a shared inbox where you or your staff can reply on WhatsApp, and Bolnivo stays quiet while you do." },
   ],
   sources: [{ label: "WhatsApp Business app features (WhatsApp)", href: "https://business.whatsapp.com/products/business-app" }],
   related: [

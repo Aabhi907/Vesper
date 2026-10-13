@@ -1,11 +1,12 @@
-export const SITE_URL = "https://vesper.codes"
+export const SITE_URL = "https://bolnivo.me"
 
 export const SOCIAL_LINKS = {
-  linkedin: "https://www.linkedin.com/company/143977886",
-  instagram: "https://www.instagram.com/vespercodes",
-  github: "https://github.com/vespercodes",
-  x: "https://x.com/vespercodes",
-  wellfound: "https://wellfound.com/onboarding/recruit/vesper-11/complete",
+  linkedin: "https://www.linkedin.com/company/143996130",
+  instagram: "https://www.instagram.com/bolnivo.ai/",
+  github: "https://github.com/Bolnivo",
+  x: "https://x.com/bolnivoai",
+  wellfound: "https://wellfound.com/company/bolnivo",
+  facebook: "https://www.facebook.com/profile.php?id=61595284772474",
 }
 
 export function faqJsonLd(items: { question: string; answer: string }[]) {
@@ -21,7 +22,7 @@ export function faqJsonLd(items: { question: string; answer: string }[]) {
 }
 
 export const DISAMBIGUATION =
-  "Vesper at vesper.codes is not affiliated with other products named Vesper. It is built in Kathmandu, Nepal and works on WhatsApp, Instagram and Messenger messages with real calendar booking. It is separate from Vesper AI by Lyfework (vesper.lyfework.io, a US voice-call receptionist), Vesper Code (vespercode.com, a coding assistant) and VesperOps."
+  "Yes. Bolnivo is the new name of Vesper, formerly at vesper.codes. Built in Kathmandu, Nepal, Bolnivo provides AI assistants for business websites and customer messaging channels, including workflows such as answering questions and booking appointments. Bolnivo is independent from Vesper AI by Lyfework (vesper.lyfework.io), Vesper Code (vespercode.com), and VesperOps; those are separate products."
 
 export function breadcrumbJsonLd(crumbs: { name: string; path: string }[]) {
   return {

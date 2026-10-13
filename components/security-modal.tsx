@@ -132,7 +132,7 @@ export function SecurityModal({ isOpen, onClose }: SecurityModalProps) {
                     <h3 className="text-[13.5px] font-bold">Least-Privilege OAuth 2.0</h3>
                   </div>
                   <p className="text-[12.5px] text-muted leading-relaxed">
-                    Vesper only requests granular <code className="px-1 py-0.5 rounded bg-black/5 dark:bg-white/10 text-[11px] font-mono">calendar.events.freebusy</code> and insert access. We never access emails, contacts, or files.
+                    Bolnivo only requests granular <code className="px-1 py-0.5 rounded bg-black/5 dark:bg-white/10 text-[11px] font-mono">calendar.events.freebusy</code> and insert access. We never access emails, contacts, or files.
                   </p>
                   <div className="flex items-center gap-1.5 pt-1 text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">
                     <CheckCircle2 className="w-3.5 h-3.5" />
@@ -180,7 +180,7 @@ export function SecurityModal({ isOpen, onClose }: SecurityModalProps) {
                   </div>
                   <span className="text-muted">──(TLS 1.3 HMAC)──▶</span>
                   <div className="px-3 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-semibold w-full sm:w-auto">
-                    Vesper Edge Engine
+                    Bolnivo Edge Engine
                   </div>
                   <span className="text-muted">──(OAuth2 Slot Lock)──▶</span>
                   <div className="px-3 py-2 rounded-lg bg-white dark:bg-black/40 border border-black/10 dark:border-white/10 w-full sm:w-auto">

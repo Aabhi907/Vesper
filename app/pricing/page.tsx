@@ -3,9 +3,9 @@ import { FinalCTA } from "@/components/marketing"
 import { PRICING_PLANS } from "@/models"
 
 export const metadata: Metadata = {
-  title: { absolute: "Vesper Pricing – AI Front Desk Plans in NPR" },
+  title: { absolute: "Bolnivo Pricing – AI Front Desk Plans in NPR" },
   description:
-    "Vesper plans in Nepali rupees: Starter Rs. 4,999, Pro Rs. 11,999 and Business Rs. 19,999 per month.",
+    "Bolnivo plans in Nepali rupees: Starter Rs. 4,999, Pro Rs. 11,999 and Business Rs. 19,999 per month.",
   alternates: { canonical: "/pricing" },
 }
 
@@ -13,9 +13,9 @@ export default function PricingPage() {
   return (
     <main className="w-full pt-32 min-h-screen bg-canvas">
       <div className="mx-auto max-w-[1080px] px-4 sm:px-6 mb-12">
-        <h1 className="text-3xl sm:text-5xl font-black text-ink tracking-tight mb-4">Vesper pricing</h1>
+        <h1 className="text-3xl sm:text-5xl font-black text-ink tracking-tight mb-4">Bolnivo pricing</h1>
         <p className="text-lead text-muted mb-8">
-          Vesper costs Rs. 4,999 to Rs. 19,999 per month, with a 14-day free trial on every plan.
+          Bolnivo costs Rs. 4,999 to Rs. 19,999 per month, with a 14-day free trial on every plan.
         </p>
         <div className="overflow-x-auto rounded-xl border border-line">
           <table className="w-full text-left text-[14px]">

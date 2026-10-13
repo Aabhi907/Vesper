@@ -2,7 +2,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
-import { ShieldCheck, Search, Linkedin, Instagram, Github } from "lucide-react"
+import { ShieldCheck, Search, Linkedin, Instagram, Github, Facebook } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { SOCIAL_LINKS } from "@/lib/site"
 import { ScrollProgress } from "@/components/interactive-utils"
@@ -85,7 +85,7 @@ export function Navbar() {
           {/* Left: brand + nav */}
           <nav className="flex items-center gap-6">
             <Link href="/" className="text-[13px] font-bold text-ink tracking-tight hover:opacity-80 transition-opacity">
-              vesper
+              Bolnivo
             </Link>
             {HEADER_NAV_LINKS.map((item) => (
               <Link
@@ -172,13 +172,13 @@ export function Footer() {
           <div className="max-w-sm">
             <div className="flex items-center gap-2 mb-3">
               <span className="w-6 h-6 rounded-md bg-white text-ink flex items-center justify-center text-[12px] font-black">
-                V
+                B
               </span>
-              <p className="text-[18px] font-extrabold tracking-tight text-white">vesper</p>
+              <p className="text-[18px] font-extrabold tracking-tight text-white">Bolnivo</p>
             </div>
 
             <p className="text-[13.5px] text-white/60 leading-relaxed font-normal">
-              The 24/7 AI front desk for service and reservation businesses. Instant calendar availability checks across WhatsApp, Instagram, Messenger, and web.
+              AI assistants for websites and customer channels. Answer questions, support customer workflows, and connect conversations across WhatsApp, Instagram, Messenger, and web.
             </p>
 
             {/* Clickable Status Pill (P5) */}
@@ -238,21 +238,22 @@ export function Footer() {
         </div>
 
         <div className="mx-auto max-w-[1240px] mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-white/40">
-          <p>© 2026 Vesper. All rights reserved.</p>
+          <p>© 2026 Bolnivo. All rights reserved.</p>
           <div className="flex items-center gap-4">
             {[
-              { href: SOCIAL_LINKS.linkedin, label: "Vesper on LinkedIn", icon: <Linkedin className="w-4 h-4" /> },
-              { href: SOCIAL_LINKS.instagram, label: "Vesper on Instagram", icon: <Instagram className="w-4 h-4" /> },
+              { href: SOCIAL_LINKS.linkedin, label: "Bolnivo on LinkedIn", icon: <Linkedin className="w-4 h-4" /> },
+              { href: SOCIAL_LINKS.instagram, label: "Bolnivo on Instagram", icon: <Instagram className="w-4 h-4" /> },
               {
                 href: SOCIAL_LINKS.x,
-                label: "Vesper on X",
+                label: "Bolnivo on X",
                 icon: (
                   <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="currentColor" aria-hidden="true">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
                 ),
               },
-              { href: SOCIAL_LINKS.github, label: "Vesper on GitHub", icon: <Github className="w-4 h-4" /> },
+              { href: SOCIAL_LINKS.github, label: "Bolnivo on GitHub", icon: <Github className="w-4 h-4" /> },
+              { href: SOCIAL_LINKS.facebook, label: "Bolnivo on Facebook", icon: <Facebook className="w-4 h-4" /> },
             ].map((s) => (
               <a key={s.href} href={s.href} target="_blank" rel="me noopener" aria-label={s.label} className="hover:text-white transition-colors">
                 {s.icon}

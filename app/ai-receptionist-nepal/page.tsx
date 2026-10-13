@@ -3,16 +3,16 @@ import { LandingPage, landingMetadata, type Landing } from "@/components/landing
 const PAGE: Landing = {
   path: "/ai-receptionist-nepal",
   crumb: "AI receptionist Nepal",
-  title: "Vesper AI Receptionist Nepal – AI Front Desk in NPR",
+  title: "Bolnivo AI Receptionist Nepal – AI Front Desk in NPR",
   description:
-    "Vesper is an AI receptionist built in Kathmandu for businesses in Nepal: 24/7 message replies, bookings in Nepal time, NPR pricing and eSewa or Khalti deposits.",
-  h1: "Vesper, the AI receptionist and front desk for businesses in Nepal",
+    "Bolnivo is an AI receptionist built in Kathmandu for businesses in Nepal: 24/7 message replies, bookings in Nepal time, NPR pricing and eSewa or Khalti deposits.",
+  h1: "Bolnivo, the AI receptionist and front desk for businesses in Nepal",
   intro:
-    "Vesper is an AI front desk built in Kathmandu that answers customer messages 24/7, books appointments in Nepal time, and is priced in Nepali rupees.",
+    "Bolnivo is an AI front desk built in Kathmandu that answers customer messages 24/7, books appointments in Nepal time, and is priced in Nepali rupees.",
   chats: [
     {
       heading: "Example: AI customer service in Nepal with an eSewa deposit",
-      label: "AI front desk Nepal: a customer books and pays a deposit through Vesper",
+      label: "AI front desk Nepal: a customer books and pays a deposit through Bolnivo",
       messages: [
         { from: "customer", text: "Hello, Saturday 11 baje hair colour garna milcha?" },
         { from: "vesper", text: "Namaste! Saturday 11 baje hair colour ko lagi slot khali cha. Price Rs. 3,500, ani booking pakka garna Rs. 1,000 advance lagcha." },
@@ -27,7 +27,7 @@ const PAGE: Landing = {
     {
       heading: "A chatbot for business in Nepal, not a translated foreign tool",
       paragraphs: [
-        "Most AI customer service tools are built for the US or Europe. They price in dollars, assume card payments, and stumble on Roman Nepali. Vesper is built in Kathmandu for how businesses in Nepal actually work: customers message on WhatsApp, Instagram and Facebook, write in Nepali or a Nepali-English mix, pay through eSewa and Khalti, and expect a reply at 10 PM.",
+        "Most AI customer service tools are built for the US or Europe. They price in dollars, assume card payments, and stumble on Roman Nepali. Bolnivo is built in Kathmandu for how businesses in Nepal actually work: customers message on WhatsApp, Instagram and Facebook, write in Nepali or a Nepali-English mix, pay through eSewa and Khalti, and expect a reply at 10 PM.",
       ],
     },
     {
@@ -41,22 +41,22 @@ const PAGE: Landing = {
       ],
     },
     {
-      heading: "Vesper pricing in NPR",
+      heading: "Bolnivo pricing in NPR",
       paragraphs: [
-        "Vesper Starter costs Rs. 4,999 per month for one channel and up to 100 automated bookings. Pro costs Rs. 11,999 per month with unlimited conversations and all three messaging channels. Business costs Rs. 19,999 per month for teams with several staff, calendars or branches. Every plan starts with a 14-day free trial, and paying yearly lowers the monthly price.",
+        "Bolnivo Starter costs Rs. 4,999 per month for one channel and up to 100 automated bookings. Pro costs Rs. 11,999 per month with unlimited conversations and all three messaging channels. Business costs Rs. 19,999 per month for teams with several staff, calendars or branches. Every plan starts with a 14-day free trial, and paying yearly lowers the monthly price.",
       ],
     },
     {
       heading: "एआई रिसेप्सनिस्ट: नेपाली व्यवसायका लागि",
       lang: "ne",
       paragraphs: [
-        "Vesper ले तपाईंको व्यवसायमा आउने सन्देशहरूको जवाफ दिन, नेपाल समय अनुसार बुकिङ गर्न र eSewa वा Khalti मार्फत अग्रिम भुक्तानी लिन मद्दत गर्छ। मूल्य नेपाली रुपैयाँमा छ, र सुरुमा १४ दिन निःशुल्क प्रयोग गर्न सकिन्छ।",
+        "Bolnivo ले तपाईंको व्यवसायमा आउने सन्देशहरूको जवाफ दिन, नेपाल समय अनुसार बुकिङ गर्न र eSewa वा Khalti मार्फत अग्रिम भुक्तानी लिन मद्दत गर्छ। मूल्य नेपाली रुपैयाँमा छ, र सुरुमा १४ दिन निःशुल्क प्रयोग गर्न सकिन्छ।",
       ],
     },
     {
-      heading: "What Vesper does not do",
+      heading: "What Bolnivo does not do",
       paragraphs: [
-        "Vesper answers written messages. It does not answer phone calls. When a customer needs a person, Vesper alerts your staff by email and hands over the conversation in the Vesper inbox.",
+        "Bolnivo answers written messages. It does not answer phone calls. When a customer needs a person, Bolnivo alerts your staff by email and hands over the conversation in the Bolnivo inbox.",
       ],
     },
   ],
@@ -71,11 +71,11 @@ const PAGE: Landing = {
     ],
   },
   faq: [
-    { question: "Is there an AI receptionist in Nepal?", answer: "Vesper is an AI receptionist built in Kathmandu that answers WhatsApp, Instagram and Messenger messages and books appointments for businesses in Nepal." },
-    { question: "How much does Vesper cost in Nepal?", answer: "Vesper costs Rs. 4,999, Rs. 11,999 or Rs. 19,999 per month depending on the plan, with a 14-day free trial." },
-    { question: "Can Vesper take eSewa or Khalti payment?", answer: "Vesper can send customers an eSewa or Khalti link for a booking deposit and confirms in the chat once the payment is verified." },
-    { question: "Does Vesper use Nepal time?", answer: "Vesper uses your business's time zone, Asia/Kathmandu for businesses in Nepal, for slots, opening hours and booking confirmations." },
-    { question: "Does Vesper answer phone calls?", answer: "Vesper does not answer phone calls. It replies to written messages on WhatsApp, Instagram, Messenger and your website chat." },
+    { question: "Is there an AI receptionist in Nepal?", answer: "Bolnivo is an AI receptionist built in Kathmandu that answers WhatsApp, Instagram and Messenger messages and books appointments for businesses in Nepal." },
+    { question: "How much does Bolnivo cost in Nepal?", answer: "Bolnivo costs Rs. 4,999, Rs. 11,999 or Rs. 19,999 per month depending on the plan, with a 14-day free trial." },
+    { question: "Can Bolnivo take eSewa or Khalti payment?", answer: "Bolnivo can send customers an eSewa or Khalti link for a booking deposit and confirms in the chat once the payment is verified." },
+    { question: "Does Bolnivo use Nepal time?", answer: "Bolnivo uses your business's time zone, Asia/Kathmandu for businesses in Nepal, for slots, opening hours and booking confirmations." },
+    { question: "Does Bolnivo answer phone calls?", answer: "Bolnivo does not answer phone calls. It replies to written messages on WhatsApp, Instagram, Messenger and your website chat." },
   ],
   related: [
     { label: "Nepali chatbot", href: "/nepali-chatbot" },

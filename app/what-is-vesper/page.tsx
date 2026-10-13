@@ -4,58 +4,58 @@ import { faqJsonLd, DISAMBIGUATION } from "@/lib/site"
 import { FOUNDERS_LINE } from "@/models"
 
 export const metadata: Metadata = {
-  title: { absolute: "What is Vesper? AI Front Desk for WhatsApp & Instagram" },
+  title: { absolute: "What is Bolnivo? AI assistants for websites and customer conversations" },
   description:
-    "Vesper is an AI front desk that answers customer messages on WhatsApp, Instagram and Messenger and books appointments 24/7. How it works, who uses it, and what it costs.",
+    "Bolnivo helps businesses add AI assistants to websites and customer channels. Learn how it answers questions and handles tasks such as booking appointments.",
   alternates: { canonical: "/what-is-vesper" },
 }
 
 const SECTIONS = [
   {
-    question: "How Vesper works",
+    question: "How Bolnivo works",
     answer:
-      "Vesper reads each customer message, works out what the customer wants, and answers from the services, prices and policies the business has approved. When a customer asks for a time, Vesper checks the business's real calendar, offers open slots, and confirms the booking only after the slot is saved. If a customer asks for a person, Vesper alerts the business's staff and hands the conversation over.",
+      "Bolnivo reads customer messages, understands what they need, and answers from information the business has approved. Businesses can configure assistants for their website and customer channels to answer common questions and carry out supported tasks, such as checking real calendar availability and confirming a booking. If a customer needs a person, Bolnivo alerts staff and hands the conversation over.",
   },
   {
-    question: "Who uses Vesper",
+    question: "Who uses Bolnivo",
     answer:
-      "Vesper is built for appointment-driven service businesses in Nepal, such as salons, clinics, hotels and guesthouses, and garages. It understands English, Nepali and Romanized Nepali. Vesper is built in Kathmandu.",
+      "Bolnivo is a platform for businesses that want to help customers across their website and messaging channels. It is built in Kathmandu, Nepal, and understands English, Nepali and Romanized Nepali. Booking is one supported workflow, alongside answering questions and handing conversations to staff.",
   },
   {
-    question: "What Vesper connects to",
+    question: "What Bolnivo connects to",
     answer:
-      "Vesper connects to WhatsApp through the official WhatsApp Business Cloud API, Instagram Direct Messages, Facebook Messenger, a website chat widget, and Google Calendar. Customers can pay booking deposits through eSewa and Khalti. TikTok messaging is coming soon. Vesper does not answer phone calls.",
+      "Bolnivo connects to WhatsApp through the official WhatsApp Business Cloud API, Instagram Direct Messages, Facebook Messenger, a website chat widget, and Google Calendar. Customers can pay booking deposits through eSewa and Khalti. TikTok messaging is coming soon. Bolnivo does not answer phone calls.",
   },
   {
-    question: "How much Vesper costs",
+    question: "How much Bolnivo costs",
     answer:
-      "Vesper costs Rs. 4,999 per month for Starter, Rs. 11,999 per month for Pro and Rs. 19,999 per month for Business, with a 14-day free trial on every plan.",
+      "Bolnivo costs Rs. 4,999 per month for Starter, Rs. 11,999 per month for Pro and Rs. 19,999 per month for Business, with a 14-day free trial on every plan.",
   },
   {
-    question: "Who built Vesper?",
+    question: "Who built Bolnivo?",
     answer: FOUNDERS_LINE,
   },
   {
-    question: "Is Vesper (vesper.codes) the same as other products named Vesper?",
+    question: "Was Bolnivo previously called Vesper?",
     answer: DISAMBIGUATION,
   },
 ]
 
 const QA = [
   {
-    question: "What is Vesper?",
+    question: "What is Bolnivo?",
     answer:
-      "Vesper is an AI front desk that answers customer messages on WhatsApp, Instagram and Messenger and books appointments 24/7.",
+      "Bolnivo is an AI assistant platform for business websites and customer channels. It answers questions from approved business information and can take actions such as checking availability and booking.",
   },
-  { question: "How does Vesper work?", answer: SECTIONS[0].answer },
-  { question: "Who uses Vesper?", answer: SECTIONS[1].answer },
-  { question: "What does Vesper connect to?", answer: SECTIONS[2].answer },
-  { question: "How much does Vesper cost?", answer: SECTIONS[3].answer },
-  { question: "Who founded Vesper?", answer: SECTIONS[4].answer },
+  { question: "How does Bolnivo work?", answer: SECTIONS[0].answer },
+  { question: "Who uses Bolnivo?", answer: SECTIONS[1].answer },
+  { question: "What does Bolnivo connect to?", answer: SECTIONS[2].answer },
+  { question: "How much does Bolnivo cost?", answer: SECTIONS[3].answer },
+  { question: "Who founded Bolnivo?", answer: SECTIONS[4].answer },
   { question: SECTIONS[5].question, answer: SECTIONS[5].answer },
 ]
 
-export default function WhatIsVesperPage() {
+export default function WhatIsBolnivoPage() {
   return (
     <main className="w-full pt-32 pb-24 px-4 sm:px-6 bg-canvas min-h-screen">
       <script
@@ -63,10 +63,9 @@ export default function WhatIsVesperPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(QA)) }}
       />
       <div className="mx-auto max-w-[840px]">
-        <h1 className="text-3xl sm:text-5xl font-black text-ink tracking-tight mb-6">What is Vesper?</h1>
+        <h1 className="text-3xl sm:text-5xl font-black text-ink tracking-tight mb-6">What is Bolnivo?</h1>
         <p className="text-lead text-ink/80 mb-12">
-          Vesper is an AI front desk that answers customer messages on WhatsApp, Instagram and Messenger and books
-          appointments 24/7.
+          Bolnivo helps businesses add AI assistants to websites and customer channels. Assistants answer questions using approved business information and can take actions such as checking availability and booking, 24/7.
         </p>
         <div className="space-y-10 text-[15px] text-ink/80 leading-relaxed">
           {SECTIONS.map((s) => (

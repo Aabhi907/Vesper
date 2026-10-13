@@ -4,9 +4,9 @@ import { Linkedin } from "lucide-react"
 import { TEAM_MEMBERS, FOUNDERS_LINE } from "@/models"
 
 export const metadata: Metadata = {
-  title: { absolute: "Vesper Team – Founders of the AI Front Desk" },
+  title: { absolute: "Bolnivo Team – Founders of the AI Front Desk" },
   description:
-    "Vesper was founded in Kathmandu by Samrat Ghimire, with co-founders Aabishkar Shrestha and Kasam Thapa Magar. Meet the team building the AI front desk.",
+    "Bolnivo was founded in Kathmandu by Samrat Ghimire, with co-founders Aabishkar Shrestha and Kasam Thapa Magar. Meet the team building the AI front desk.",
   alternates: { canonical: "/team" },
 }
 
@@ -15,10 +15,10 @@ export default function TeamPage() {
     <main className="w-full pt-32 pb-24 px-6 min-h-screen bg-soft-canvas">
       <div className="mx-auto max-w-[1000px]">
         <div className="max-w-2xl mb-12">
-          <h1 className="text-h1 text-ink mb-6">The Vesper team: built close to the businesses it serves.</h1>
+          <h1 className="text-h1 text-ink mb-6">The Bolnivo team: built close to the businesses it serves.</h1>
           <p className="text-lead text-ink/80 mb-4">{FOUNDERS_LINE}</p>
           <p className="text-lead text-muted">
-            We saw local service businesses (salons, hotels, auto garages, and clinics) losing hours to messaging back-and-forth about prices and availability, while existing AI tools were too unreliable to trust with an actual calendar. We built Vesper to bridge intent and reality.
+            We saw local service businesses (salons, hotels, auto garages, and clinics) losing hours to messaging back-and-forth about prices and availability, while existing AI tools were too unreliable to trust with an actual calendar. We built Bolnivo to bridge intent and reality.
           </p>
         </div>
         <ul className="grid gap-6 sm:grid-cols-3">
@@ -28,7 +28,7 @@ export default function TeamPage() {
               <li key={m.slug} id={m.slug} className="rounded-3xl border border-line bg-canvas p-6 flex flex-col">
                 <img
                   src={m.image}
-                  alt={`${m.name}, ${m.role} of Vesper`}
+                  alt={`${m.name}, ${m.role} of Bolnivo`}
                   className="w-24 h-24 rounded-full object-cover mb-4"
                   style={{ objectPosition: m.objectPosition }}
                 />
@@ -51,7 +51,7 @@ export default function TeamPage() {
           })}
         </ul>
         <p className="mt-12 text-[15px] text-muted">
-          Read <Link href="/what-is-vesper" className="font-semibold text-ink underline">what Vesper is</Link> or see{" "}
+          Read <Link href="/what-is-vesper" className="font-semibold text-ink underline">what Bolnivo is</Link> or see{" "}
           <Link href="/pricing" className="font-semibold text-ink underline">pricing</Link>.
         </p>
       </div>

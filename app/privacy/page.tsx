@@ -5,7 +5,7 @@ import { ArrowLeft, Shield } from "lucide-react"
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Vesper collects, uses and protects customer and business data.",
+    "How Bolnivo collects, uses and protects customer and business data.",
   alternates: { canonical: "/privacy" },
 }
 
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-xl font-bold text-ink mb-2">1. Introduction</h2>
             <p>
-              Vesper (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) respects your privacy and is committed to protecting the personal data of our users and their end customers. This Privacy Policy describes how we collect, store, and process data when you use our AI front desk services across WhatsApp, Instagram, Messenger, and web widgets.
+              Bolnivo (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) respects your privacy and is committed to protecting the personal data of our users and their end customers. This Privacy Policy describes how we collect, store, and process data when you use our AI front desk services across WhatsApp, Instagram, Messenger, and web widgets.
             </p>
           </section>
 
@@ -69,8 +69,8 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-bold text-ink mb-2">5. Contact</h2>
             <p>
               For data requests, deletion, or privacy inquiries, contact our founders directly at{" "}
-              <a href="mailto:hello@vesper.codes" className="font-semibold text-ink underline">
-                hello@vesper.codes
+              <a href="mailto:bolnivo.ai@gmail.com" className="font-semibold text-ink underline">
+                bolnivo.ai@gmail.com
               </a>.
             </p>
           </section>

@@ -5,7 +5,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Priya Tamang",
     handle: "@glamstudio_ktm",
     role: "Salon Owner",
-    quote: "Vesper books haircut slots at midnight while I sleep. My chair is always full now.",
+    quote: "Bolnivo books haircut slots at midnight while I sleep. My chair is always full now.",
     color: "#c13584",
   },
   {
@@ -40,7 +40,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Meera Pandey",
     handle: "@spicegardenktm",
     role: "Restaurant Owner",
-    quote: "Table reservations and takeaway slots: Vesper handles it all. Worth every paisa.",
+    quote: "Table reservations and takeaway slots: Bolnivo handles it all. Worth every paisa.",
     color: "#febc2e",
   },
 ]

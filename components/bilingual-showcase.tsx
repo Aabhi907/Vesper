@@ -18,7 +18,7 @@ const CONVERSATIONS: Record<TabKey, {
 }> = {
   codeswitch: {
     tabLabel: "Code-Switching",
-    subtitle: "Customer starts in Roman Nepali, then switches to English. Vesper adapts automatically.",
+    subtitle: "Customer starts in Roman Nepali, then switches to English. Bolnivo adapts automatically.",
     turns: [
       {
         guest: {
@@ -134,7 +134,7 @@ export function BilingualEngineSection() {
           </h2>
 
           <p className="text-[13.5px] sm:text-[14.5px] text-muted max-w-[520px] mx-auto leading-relaxed">
-            Whether your customers text <span className="font-semibold text-ink">&ldquo;Dai bholi slot cha?&rdquo;</span> or in English, Vesper understands the local dialect and books the calendar.
+            Whether your customers text <span className="font-semibold text-ink">&ldquo;Dai bholi slot cha?&rdquo;</span> or in English, Bolnivo understands the local dialect and books the calendar.
           </p>
 
           {/* ── Apple-Style Segmented Control (No Icons, Clean & Tactile) ── */}
@@ -174,7 +174,7 @@ export function BilingualEngineSection() {
               <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-[#E0443E]/50" />
               <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-[#DEA123]/50" />
               <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-[#1AAB29]/50" />
-              <span className="font-mono text-[11px] text-muted ml-2">vesper-bilingual</span>
+              <span className="font-mono text-[11px] text-muted ml-2">bolnivo-bilingual</span>
             </div>
 
             <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded-full border border-emerald-500/20">
@@ -204,10 +204,10 @@ export function BilingualEngineSection() {
                     </div>
                   </div>
 
-                  {/* Vesper AI Message: Handdrawn styled left bubble */}
+                  {/* Bolnivo AI Message: Handdrawn styled left bubble */}
                   <div className="flex flex-col items-start">
                     <span className="text-[10px] font-bold text-ink mb-1 px-1 flex items-center gap-1">
-                      <span>✨ Vesper AI ({turn.ai.lang})</span>
+                      <span>✨ Bolnivo AI ({turn.ai.lang})</span>
                     </span>
                     <div className="relative max-w-[88%] sm:max-w-[82%] px-4 py-2.5 rounded-2xl rounded-tl-xs border-2 border-ink dark:border-white/50 bg-white dark:bg-[#121316] text-ink text-[13px] sm:text-[13.5px] leading-relaxed shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)]">
                       {turn.ai.text}

@@ -1,10 +1,10 @@
-# Vesper
+# Bolnivo
 
-**Deterministic 24/7 AI Front Desk for Service & Booking Businesses**
+**AI assistants for websites and customer conversations**
 
-Live at **[vesper.codes](https://vesper.codes)**
+Live at **[bolnivo.me](https://bolnivo.me)**
 
-Vesper bridges WhatsApp, Instagram, Messenger, and web traffic into a unified booking pipeline. Built with a deterministic architecture: language models decode customer intent and context, but real database transactions verify and lock live calendar availability without hallucinations or double-bookings.
+Bolnivo gives businesses AI assistants for their websites and customer channels. Assistants answer questions from approved business information and can take actions such as checking real availability and booking appointments.
 
 ---
 
@@ -22,7 +22,7 @@ Vesper bridges WhatsApp, Instagram, Messenger, and web traffic into a unified bo
 
 - `/` — Main landing page, interactive multi-platform chat simulator, and service tiers.
 - `/product` — Full engineering pipeline architecture, interactive stepper, and real-time global timezone routing map.
-- `/trust` — Trust manifesto, non-negotiable engineering rules, the Vesper thesis memo, and the Anti-BS comparison matrix.
+- `/trust` — Trust manifesto, non-negotiable engineering rules, the Bolnivo thesis memo, and the Anti-BS comparison matrix.
 - `/pricing` — Transparent plans, interactive seat calculator, and student terminal tier.
 - `/team` — Founding engineering and operations team directory.
 - `/features` — Feature breakdown for front-desk operations.
@@ -116,5 +116,5 @@ npm run start
 
 ## License
 
-Proprietary © Vesper. All rights reserved.
+Proprietary © Bolnivo. All rights reserved.
 

@@ -6,10 +6,15 @@ import { TeamTooltips } from "@/components/team-tooltip"
 import { FAQSection } from "@/components/faq"
 
 export const metadata: Metadata = {
-  title: { absolute: "Vesper AI – 24/7 AI Front Desk & Auto-Reply for WhatsApp, Instagram & Messenger" },
+  title: { absolute: "Bolnivo – AI assistants for websites and customer conversations" },
   description:
-    "Vesper answers customer messages, checks real calendar availability and books appointments across WhatsApp, Instagram and Messenger, 24/7. Built in Kathmandu.",
+    "Bolnivo helps businesses add AI assistants to their websites and customer channels. Assistants answer questions and take actions such as checking real availability and booking. Built in Kathmandu, Nepal.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Bolnivo – AI assistants for websites and customer conversations",
+    description: "Bolnivo helps businesses add AI assistants to their websites and customer channels. Built in Kathmandu, Nepal.",
+    url: "/",
+  },
 }
 
 export default function HomePage() {

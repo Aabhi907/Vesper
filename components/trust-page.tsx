@@ -12,7 +12,7 @@ const PRINCIPLES: { num: string; icon: React.ReactNode; title: string; desc: str
     num: "01",
     icon: <ShieldCheck className="w-6 h-6" strokeWidth={1.5} />,
     title: "Zero hallucination writes",
-    desc: "Language models propose bookings; database code commits them. If 3:00 PM is taken or lacks buffer, Vesper cannot book it. There are no exceptions.",
+    desc: "Language models propose bookings; database code commits them. If 3:00 PM is taken or lacks buffer, Bolnivo cannot book it. There are no exceptions.",
   },
   {
     num: "02",
@@ -30,26 +30,26 @@ const PRINCIPLES: { num: string; icon: React.ReactNode; title: string; desc: str
     num: "04",
     icon: <UserCheck className="w-6 h-6" strokeWidth={1.5} />,
     title: "Always human-accessible",
-    desc: "You can intervene at any moment. If you reply to a client from your phone, Vesper senses the human presence and immediately pauses automation for that conversation.",
+    desc: "You can intervene at any moment. If you reply to a client from your phone, Bolnivo senses the human presence and immediately pauses automation for that conversation.",
   },
 ]
 
 const FAQS = [
   {
-    q: "Can Vesper accidentally double-book my calendar?",
-    a: "No. A double booking at a busy salon or clinic is a human tragedy, so we treat it like one. Language models propose bookings; database transactions lock them. If 3:00 PM is taken or lacks buffer, Vesper cannot book it. There are no exceptions.",
+    q: "Can Bolnivo accidentally double-book my calendar?",
+    a: "No. A double booking at a busy salon or clinic is a human tragedy, so we treat it like one. Language models propose bookings; database transactions lock them. If 3:00 PM is taken or lacks buffer, Bolnivo cannot book it. There are no exceptions.",
   },
   {
     q: "Will our WhatsApp business number get blocked or banned?",
-    a: "Never. Account bans happen when services run reverse-engineered WhatsApp Web scripts on an old laptop under someone's desk. Vesper connects strictly via official Meta Cloud APIs. Your account remains 100% compliant with Meta terms.",
+    a: "Never. Account bans happen when services run reverse-engineered WhatsApp Web scripts on an old laptop under someone's desk. Bolnivo connects strictly via official Meta Cloud APIs. Your account remains 100% compliant with Meta terms.",
   },
   {
     q: "Who owns our customer data and client lists?",
-    a: "You do. 100%. We do not sell, broker, or train AI on your customer records. If you ever leave Vesper, you take your data with you.",
+    a: "You do. 100%. We do not sell, broker, or train AI on your customer records. If you ever leave Bolnivo, you take your data with you.",
   },
   {
     q: "What happens if our shop's Wi-Fi or electricity goes down?",
-    a: "Vesper lives in redundant cloud data centers, not on your salon's router. Your router can catch fire; your 2 AM appointments will still be safely booked.",
+    a: "Bolnivo lives in redundant cloud data centers, not on your salon's router. Your router can catch fire; your 2 AM appointments will still be safely booked.",
   },
 ]
 
@@ -155,13 +155,13 @@ export function TrustPage() {
           </h1>
 
           <p className="text-[17px] sm:text-[20px] text-muted leading-relaxed font-normal max-w-[680px] mx-auto mb-12 sm:mb-16 text-center">
-            We do not rely on decorative certification seals. Security and reliability at Vesper come from strict engineering rules, tenant isolation, and transactional safety.
+            We do not rely on decorative certification seals. Security and reliability at Bolnivo come from strict engineering rules, tenant isolation, and transactional safety.
           </p>
         </ScrollReveal>
 
         {/* ── Apple-style Notes Memo Window (with Sticky Note & Handwriting Polish) ── */}
         <ScrollReveal delay={0.1} className="mb-32 sm:mb-36">
-          <WinChrome title="notes &middot; the vesper thesis">
+          <WinChrome title="notes &middot; the bolnivo thesis">
             <div
               className="bg-[#fdfbf7] dark:bg-[#131922] p-8 sm:p-14 text-ink/85 relative overflow-hidden"
               style={{ fontFamily: "var(--font-handwriting), cursive" }}
@@ -181,7 +181,7 @@ export function TrustPage() {
                   Rule #1
                 </span>
                 <p className="text-[13px] sm:text-[13.5px] font-medium leading-snug">
-                  If the calendar says no, Vesper says no. No exceptions.
+                  If the calendar says no, Bolnivo says no. No exceptions.
                 </p>
               </div>
 
@@ -200,7 +200,7 @@ export function TrustPage() {
                   But language models should never write to a calendar on their own.
                 </p>
                 <p>
-                  At Vesper, the AI only outputs a suggested action. Our backend verifies that suggestion against your real calendar, calculates buffers, and commits the booking atomically. If the slot is taken, Vesper cannot book it.
+                  At Bolnivo, the AI only outputs a suggested action. Our backend verifies that suggestion against your real calendar, calculates buffers, and commits the booking atomically. If the slot is taken, Bolnivo cannot book it.
                 </p>
                 <p className="text-muted">
                   That is the only way we would trust software with our own business reputation.
@@ -211,7 +211,7 @@ export function TrustPage() {
                 className="mt-10 pt-6 border-t border-black/10 dark:border-white/10 flex items-center justify-between relative z-10"
                 style={{ fontFamily: "var(--font-handwriting), cursive" }}
               >
-                <span className="text-[20px] text-ink font-bold">&mdash; The engineering team, Vesper</span>
+                <span className="text-[20px] text-ink font-bold">&mdash; The engineering team, Bolnivo</span>
                 <span className="text-[16px] text-muted">Kathmandu &middot; 2026</span>
               </div>
             </div>
@@ -243,7 +243,7 @@ export function TrustPage() {
               Two completely different philosophies.
             </h2>
             <p className="text-[15px] sm:text-[16px] text-muted max-w-[620px] leading-relaxed mx-auto text-center font-normal mt-2">
-              Most booking bots are thin wrappers around language models. Vesper is a hardened booking engine that happens to understand natural language.
+              Most booking bots are thin wrappers around language models. Bolnivo is a hardened booking engine that happens to understand natural language.
             </p>
           </div>
 
@@ -259,7 +259,7 @@ export function TrustPage() {
                       Generic AI Chatbots
                     </th>
                     <th className="py-4 px-5 sm:px-8 font-bold text-signal-blue w-[37.5%]">
-                      Vesper Architecture
+                      Bolnivo Architecture
                     </th>
                   </tr>
                 </thead>
@@ -335,7 +335,7 @@ export function TrustPage() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-ink tracking-tight">
-                Try Vesper today.
+                Try Bolnivo today.
               </h3>
               <p className="text-[14.5px] text-muted">
                 Experience how quiet, reliable front-desk automation feels.

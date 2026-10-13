@@ -3,7 +3,7 @@ import { MessageSquare, Calendar, Zap, Shield, CheckCircle2, ArrowRight } from "
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: { absolute: "Vesper Features – AI Booking on WhatsApp & Instagram" },
+  title: { absolute: "Bolnivo Features – AI Booking on WhatsApp & Instagram" },
   description:
     "Omnichannel inbox, real availability engine, 24/7 replies, grounded answers from your own prices and policies, and human handoff.",
   alternates: { canonical: "/features" },
@@ -44,7 +44,7 @@ export default function FeaturesPage() {
           <p className="text-eyebrow text-signal-blue uppercase tracking-widest mb-4">Core Features</p>
           <h1 className="text-h1 text-ink mb-6">Engineered for service businesses.</h1>
           <p className="text-lead text-muted">
-            Vesper handles the repetitive messaging, scheduling, and reservation flow so your team can focus on serving your customers.
+            Bolnivo handles the repetitive messaging, scheduling, and reservation flow so your team can focus on serving your customers.
           </p>
         </div>
 

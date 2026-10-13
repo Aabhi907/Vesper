@@ -5,7 +5,7 @@ import { ArrowLeft, FileText } from "lucide-react"
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "The terms that govern use of Vesper.",
+    "The terms that govern use of Bolnivo.",
   alternates: { canonical: "/terms" },
 }
 
@@ -37,14 +37,14 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-bold text-ink mb-2">1. Agreement to Terms</h2>
             <p>
-              By accessing or using Vesper, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using the platform.
+              By accessing or using Bolnivo, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using the platform.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-ink mb-2">2. Service Description</h2>
             <p>
-              Vesper provides autonomous front-desk messaging and appointment scheduling services for salons, hotels, auto repair shops, healthcare providers, and appointment-based businesses. We do not guarantee uninterrupted connectivity in the event of third-party platform downtime (e.g. Meta API or Google Calendar server disruptions).
+              Bolnivo provides autonomous front-desk messaging and appointment scheduling services for salons, hotels, auto repair shops, healthcare providers, and appointment-based businesses. We do not guarantee uninterrupted connectivity in the event of third-party platform downtime (e.g. Meta API or Google Calendar server disruptions).
             </p>
           </section>
 
@@ -58,7 +58,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-bold text-ink mb-2">4. Acceptable Use</h2>
             <p>
-              You agree not to use Vesper for spam, misleading marketing, or unlawful communications violating Meta Business policies or applicable telecommunications laws.
+              You agree not to use Bolnivo for spam, misleading marketing, or unlawful communications violating Meta Business policies or applicable telecommunications laws.
             </p>
           </section>
 
@@ -66,8 +66,8 @@ export default function TermsPage() {
             <h2 className="text-xl font-bold text-ink mb-2">5. Governing Law</h2>
             <p>
               These terms are governed by and construed in accordance with the laws of Nepal. For questions regarding our terms, email{" "}
-              <a href="mailto:hello@vesper.codes" className="font-semibold text-ink underline">
-                hello@vesper.codes
+              <a href="mailto:bolnivo.ai@gmail.com" className="font-semibold text-ink underline">
+                bolnivo.ai@gmail.com
               </a>.
             </p>
           </section>

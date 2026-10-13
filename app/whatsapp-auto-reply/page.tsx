@@ -3,16 +3,16 @@ import { LandingPage, landingMetadata, type Landing } from "@/components/landing
 const PAGE: Landing = {
   path: "/whatsapp-auto-reply",
   crumb: "WhatsApp auto reply",
-  title: "Vesper WhatsApp Auto Reply & AI Chatbot for Business",
+  title: "Bolnivo WhatsApp Auto Reply & AI Chatbot for Business",
   description:
-    "Vesper is a WhatsApp AI assistant that auto-replies to customers 24/7, answers prices and books real calendar slots. WhatsApp auto reply for businesses in Nepal.",
-  h1: "Vesper WhatsApp auto reply: an AI chatbot that books appointments",
+    "Bolnivo is a WhatsApp AI assistant that auto-replies to customers 24/7, answers prices and books real calendar slots. WhatsApp auto reply for businesses in Nepal.",
+  h1: "Bolnivo WhatsApp auto reply: an AI chatbot that books appointments",
   intro:
-    "Vesper auto-replies to your WhatsApp Business messages 24/7, answers questions from your own prices and policies, and books customers into real open slots.",
+    "Bolnivo auto-replies to your WhatsApp Business messages 24/7, answers questions from your own prices and policies, and books customers into real open slots.",
   chats: [
     {
       heading: "Example WhatsApp booking bot conversation",
-      label: "WhatsApp chatbot for business: a customer books a haircut through Vesper",
+      label: "WhatsApp chatbot for business: a customer books a haircut through Bolnivo",
       messages: [
         { from: "customer", text: "Hi, do you have a slot for a haircut tomorrow evening?" },
         { from: "vesper", text: "Hi! Tomorrow we have 5:00 PM and 6:30 PM open for a haircut (Rs. 600, about 45 minutes). Which one works for you?" },
@@ -25,9 +25,9 @@ const PAGE: Landing = {
   ],
   sections: [
     {
-      heading: "What the Vesper WhatsApp AI assistant does",
+      heading: "What the Bolnivo WhatsApp AI assistant does",
       paragraphs: [
-        "Most WhatsApp auto reply tools send the same canned text to everyone. Vesper reads what the customer actually asked and answers it. If someone asks the price of a facial, Vesper answers with the price you entered. If they ask for a time, Vesper checks your real calendar, offers slots that are actually free, and only says a booking is confirmed after it has been saved.",
+        "Most WhatsApp auto reply tools send the same canned text to everyone. Bolnivo reads what the customer actually asked and answers it. If someone asks the price of a facial, Bolnivo answers with the price you entered. If they ask for a time, Bolnivo checks your real calendar, offers slots that are actually free, and only says a booking is confirmed after it has been saved.",
       ],
       bullets: [
         "Answers questions about services, prices, opening hours and location from the information you approve",
@@ -41,44 +41,44 @@ const PAGE: Landing = {
     {
       heading: "WhatsApp business automation on the official API",
       paragraphs: [
-        "Vesper connects to WhatsApp through Meta's official WhatsApp Business Cloud API, not an unofficial app or a phone-scraping tool. Messages are handled on Meta's servers and Vesper's backend, so your phone does not need to stay switched on for the WhatsApp chatbot to keep replying.",
-        "Meta's rules still apply: a business can reply freely within 24 hours of the customer's last message. Vesper replies within seconds, so the window is never a problem for its own answers, and the staff inbox tells you when a conversation is outside the window.",
+        "Bolnivo connects to WhatsApp through Meta's official WhatsApp Business Cloud API, not an unofficial app or a phone-scraping tool. Messages are handled on Meta's servers and Bolnivo's backend, so your phone does not need to stay switched on for the WhatsApp chatbot to keep replying.",
+        "Meta's rules still apply: a business can reply freely within 24 hours of the customer's last message. Bolnivo replies within seconds, so the window is never a problem for its own answers, and the staff inbox tells you when a conversation is outside the window.",
       ],
     },
     {
       heading: "WhatsApp auto reply in Nepal",
       paragraphs: [
-        "Vesper is built in Kathmandu for businesses in Nepal. It understands the way people really type on WhatsApp here, including Romanized Nepali such as \"bholi 2 baje slot cha?\", prices in rupees, and Nepal time. Customers can pay booking deposits through eSewa or Khalti when you switch deposits on for a service.",
+        "Bolnivo is built in Kathmandu for businesses in Nepal. It understands the way people really type on WhatsApp here, including Romanized Nepali such as \"bholi 2 baje slot cha?\", prices in rupees, and Nepal time. Customers can pay booking deposits through eSewa or Khalti when you switch deposits on for a service.",
       ],
     },
     {
       heading: "Who uses a WhatsApp chatbot for business",
       paragraphs: [
-        "Vesper fits any business where customers message to ask a price or book a time: salons and beauty parlours, clinics and dental practices, hotels and homestays, trekking agencies, education consultancies and gyms. If your WhatsApp fills up with the same five questions every day, Vesper answers them so your staff can focus on the customers in front of them.",
+        "Bolnivo fits any business where customers message to ask a price or book a time: salons and beauty parlours, clinics and dental practices, hotels and homestays, trekking agencies, education consultancies and gyms. If your WhatsApp fills up with the same five questions every day, Bolnivo answers them so your staff can focus on the customers in front of them.",
       ],
     },
   ],
   steps: {
-    heading: "How to set up the Vesper WhatsApp chatbot",
+    heading: "How to set up the Bolnivo WhatsApp chatbot",
     items: [
-      "Create your Vesper account and add your services, prices, durations and opening hours.",
+      "Create your Bolnivo account and add your services, prices, durations and opening hours.",
       "Add the answers to the questions customers ask most: location, parking, payment, cancellation policy.",
-      "Connect your WhatsApp Business number through Meta's official sign-up flow in the Vesper dashboard.",
-      "Optionally connect Google Calendar so Vesper sees busy times and writes new bookings to it.",
-      "Send a test message from your own phone, then let Vesper answer real customers.",
+      "Connect your WhatsApp Business number through Meta's official sign-up flow in the Bolnivo dashboard.",
+      "Optionally connect Google Calendar so Bolnivo sees busy times and writes new bookings to it.",
+      "Send a test message from your own phone, then let Bolnivo answer real customers.",
     ],
   },
   faq: [
-    { question: "Can Vesper auto reply on WhatsApp?", answer: "Vesper auto-replies to every WhatsApp Business message within seconds, 24/7, answering questions and booking real open slots instead of sending a fixed away message." },
-    { question: "Does the WhatsApp chatbot need my phone to be on?", answer: "Vesper runs on the official WhatsApp Business Cloud API, so replies are sent from Meta's servers and your phone does not need to be switched on." },
-    { question: "Is Vesper a WhatsApp booking bot?", answer: "Vesper books, reschedules and cancels appointments in the WhatsApp chat, checking your real calendar first and confirming only after the slot is saved." },
-    { question: "Does Vesper's WhatsApp auto reply work in Nepali?", answer: "Vesper understands and replies in English, Nepali in Devanagari, and Romanized Nepali, including mixed Nepali-English messages." },
-    { question: "Which plan includes WhatsApp?", answer: "Vesper includes WhatsApp on every plan. Starter (Rs. 4,999 a month) covers one channel, and Pro and Business cover WhatsApp, Instagram and Messenger together." },
+    { question: "Can Bolnivo auto reply on WhatsApp?", answer: "Bolnivo auto-replies to every WhatsApp Business message within seconds, 24/7, answering questions and booking real open slots instead of sending a fixed away message." },
+    { question: "Does the WhatsApp chatbot need my phone to be on?", answer: "Bolnivo runs on the official WhatsApp Business Cloud API, so replies are sent from Meta's servers and your phone does not need to be switched on." },
+    { question: "Is Bolnivo a WhatsApp booking bot?", answer: "Bolnivo books, reschedules and cancels appointments in the WhatsApp chat, checking your real calendar first and confirming only after the slot is saved." },
+    { question: "Does Bolnivo's WhatsApp auto reply work in Nepali?", answer: "Bolnivo understands and replies in English, Nepali in Devanagari, and Romanized Nepali, including mixed Nepali-English messages." },
+    { question: "Which plan includes WhatsApp?", answer: "Bolnivo includes WhatsApp on every plan. Starter (Rs. 4,999 a month) covers one channel, and Pro and Business cover WhatsApp, Instagram and Messenger together." },
   ],
   related: [
     { label: "Instagram DM auto reply", href: "/instagram-auto-reply" },
     { label: "Appointment booking bot", href: "/appointment-booking-bot" },
-    { label: "WhatsApp away message vs Vesper", href: "/compare/vesper-vs-whatsapp-business-auto-reply" },
+    { label: "WhatsApp away message vs Bolnivo", href: "/compare/vesper-vs-whatsapp-business-auto-reply" },
   ],
 }
 

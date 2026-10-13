@@ -7,7 +7,7 @@ export default function NotFound() {
       {/* Header bar */}
       <header className="px-6 py-5 border-b border-[#E5E5E2] flex items-center justify-between max-w-5xl mx-auto w-full">
         <Link href="/" className="font-semibold text-lg tracking-tight hover:opacity-80 transition-opacity">
-          Vesper
+          Bolnivo
         </Link>
         <span className="text-xs font-mono uppercase tracking-widest text-[#737373] bg-[#EFEFEA] px-2.5 py-1 rounded-full border border-[#E5E5E2]">
           Error 404
@@ -37,7 +37,7 @@ export default function NotFound() {
             <ArrowLeft className="w-4 h-4" /> Return to Homepage
           </Link>
           <a
-            href="https://wa.me/9779800000000?text=Hi%20Vesper%2C%20I%20hit%20a%20404%20error"
+            href="https://wa.me/9779800000000?text=Hi%20Bolnivo%2C%20I%20hit%20a%20404%20error"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-[#E5E5E2] bg-white text-[#111111] px-5 py-3 rounded-full text-sm font-medium hover:bg-[#F5F5F0] transition-all"
@@ -49,7 +49,7 @@ export default function NotFound() {
 
       {/* Footer */}
       <footer className="px-6 py-6 border-t border-[#E5E5E2] text-center text-xs text-[#737373]">
-        <p>© {new Date().getFullYear()} Vesper AI. Kathmandu, Nepal. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Bolnivo AI. Kathmandu, Nepal. All rights reserved.</p>
       </footer>
     </div>
   );

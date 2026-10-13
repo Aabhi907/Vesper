@@ -3,12 +3,12 @@ import { LandingPage, landingMetadata, type Landing } from "@/components/landing
 const PAGE: Landing = {
   path: "/use-cases/gyms",
   crumb: "Gym membership inquiry bot",
-  title: "Vesper Gym Chatbot – Membership Inquiries & Class Booking",
+  title: "Bolnivo Gym Chatbot – Membership Inquiries & Class Booking",
   description:
-    "Vesper is a gym membership inquiry bot that answers fee and timing questions 24/7 and books personal training, trial sessions and small fitness classes.",
-  h1: "Vesper gym chatbot for membership inquiries and fitness class booking",
+    "Bolnivo is a gym membership inquiry bot that answers fee and timing questions 24/7 and books personal training, trial sessions and small fitness classes.",
+  h1: "Bolnivo gym chatbot for membership inquiries and fitness class booking",
   intro:
-    "Vesper answers gym membership inquiries on WhatsApp, Instagram and Messenger 24/7 and books trial sessions, personal training and small fitness classes.",
+    "Bolnivo answers gym membership inquiries on WhatsApp, Instagram and Messenger 24/7 and books trial sessions, personal training and small fitness classes.",
   chats: [
     {
       heading: "Example gym membership inquiry",
@@ -35,26 +35,26 @@ const PAGE: Landing = {
         "\"Is there a yoga or Zumba class?\"",
       ],
       paragraphs: [
-        "Most of these arrive in the evening, after people see a post or walk past. Vesper answers immediately from your fees, timings and class list.",
+        "Most of these arrive in the evening, after people see a post or walk past. Bolnivo answers immediately from your fees, timings and class list.",
       ],
     },
     {
       heading: "Fitness class booking and personal training",
       paragraphs: [
-        "Add each trainer as a staff member and Vesper books personal training and trial sessions against their own calendar. Small classes work the same way: one booking per class time on the instructor's calendar.",
-        "Vesper does not yet take many separate members into one class time, so large group classes with a headcount are best announced with their schedule, which Vesper can share, rather than booked one by one.",
+        "Add each trainer as a staff member and Bolnivo books personal training and trial sessions against their own calendar. Small classes work the same way: one booking per class time on the instructor's calendar.",
+        "Bolnivo does not yet take many separate members into one class time, so large group classes with a headcount are best announced with their schedule, which Bolnivo can share, rather than booked one by one.",
       ],
     },
     {
       heading: "Turn inquiries into members",
       paragraphs: [
-        "A membership inquiry that gets an answer the next day often never comes back. Vesper replies within seconds, offers a trial, and books it. Your trainers see the bookings in the dashboard or Google Calendar, and any question about injuries or health is passed to your staff, not answered by the AI.",
+        "A membership inquiry that gets an answer the next day often never comes back. Bolnivo replies within seconds, offers a trial, and books it. Your trainers see the bookings in the dashboard or Google Calendar, and any question about injuries or health is passed to your staff, not answered by the AI.",
       ],
     },
     {
       heading: "One inbox for every channel your members use",
       paragraphs: [
-        "Gyms get messages on Instagram from people who saw a reel, on WhatsApp from existing members and on Facebook from people nearby. Vesper answers all of them and puts every conversation in one inbox, so your front desk can see who booked a trial, who asked about personal training and who still needs a call back.",
+        "Gyms get messages on Instagram from people who saw a reel, on WhatsApp from existing members and on Facebook from people nearby. Bolnivo answers all of them and puts every conversation in one inbox, so your front desk can see who booked a trial, who asked about personal training and who still needs a call back.",
       ],
     },
   ],
@@ -69,10 +69,10 @@ const PAGE: Landing = {
     ],
   },
   faq: [
-    { question: "Can Vesper answer gym membership questions?", answer: "Vesper answers questions about fees, plans, timings and trainers from the information you add, 24/7." },
-    { question: "Can members book fitness classes?", answer: "Vesper books trial sessions, personal training and small classes on each trainer's calendar. Large group classes with many members per slot are not supported yet." },
-    { question: "Does Vesper work in Nepali for gyms?", answer: "Vesper understands English, Nepali and Romanized Nepali, such as \"monthly fee kati ho?\"." },
-    { question: "Will Vesper give fitness or injury advice?", answer: "Vesper does not give health advice. It passes those questions to your trainers." },
+    { question: "Can Bolnivo answer gym membership questions?", answer: "Bolnivo answers questions about fees, plans, timings and trainers from the information you add, 24/7." },
+    { question: "Can members book fitness classes?", answer: "Bolnivo books trial sessions, personal training and small classes on each trainer's calendar. Large group classes with many members per slot are not supported yet." },
+    { question: "Does Bolnivo work in Nepali for gyms?", answer: "Bolnivo understands English, Nepali and Romanized Nepali, such as \"monthly fee kati ho?\"." },
+    { question: "Will Bolnivo give fitness or injury advice?", answer: "Bolnivo does not give health advice. It passes those questions to your trainers." },
   ],
   related: [
     { label: "Instagram DM auto reply", href: "/instagram-auto-reply" },

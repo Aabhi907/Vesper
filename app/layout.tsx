@@ -14,28 +14,27 @@ const caveat = Caveat({ subsets: ['latin'], variable: '--font-handwriting', weig
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Vesper AI – 24/7 AI Front Desk & Auto-Reply for WhatsApp, Instagram & Messenger",
-    template: "%s | Vesper",
+    default: "Bolnivo – AI assistants for websites and customer conversations",
+    template: "%s | Bolnivo",
   },
   description:
-    "Answer customer inquiries, check real-time availability, and book appointments across WhatsApp, Instagram, Messenger and web - 24/7.",
+    "AI assistants that help businesses answer customer questions and take actions across websites and messaging channels, including booking.",
   authors: TEAM_MEMBERS.map((m) => ({ name: m.name })),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Vesper AI – 24/7 AI Front Desk & Auto-Reply for WhatsApp, Instagram & Messenger",
+    title: "Bolnivo – AI assistants for websites and customer conversations",
     description:
-      "Customer messages from WhatsApp, Instagram, and Messenger seamlessly converge into real confirmed bookings.",
-    url: SITE_URL,
-    siteName: "Vesper",
+      "Give your website and customer channels an AI assistant that understands your business and can help customers take the next step.",
+    siteName: "Bolnivo",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vesper - 24/7 AI Front Desk",
-    description: "Automated booking and calendar sync across WhatsApp, Instagram & Messenger.",
+    title: "Bolnivo – AI for websites and customer conversations",
+    description: "AI assistants for business websites and customer channels. Answer questions and support customer workflows.",
   },
   robots: {
     index: true,
@@ -57,12 +56,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {
         "@type": "Organization",
         "@id": `${SITE_URL}/#organization`,
-        name: "Vesper",
-        alternateName: ["Vesper AI", "Vesper AI Front Desk", "Vesper Nepal", "vesper.codes"],
+        name: "Bolnivo",
+        alternateName: ["Bolnivo AI", "Bolnivo (formerly Vesper)", "Vesper", "vesper.codes"],
         url: SITE_URL,
         logo: `${SITE_URL}/icon.svg`,
         description:
-          "Vesper is an AI front desk for service businesses in Nepal. It answers customer messages on WhatsApp, Instagram and Messenger and books appointments against real calendar availability, 24/7.",
+          "Bolnivo is an AI platform built in Kathmandu, Nepal. Businesses can use its assistants on websites and messaging channels to answer customer questions and take actions such as checking availability and booking.",
         disambiguatingDescription: DISAMBIGUATION,
         founder: TEAM_MEMBERS.map((m) => ({
           "@type": "Person",
@@ -73,25 +72,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           sameAs: m.sameAs,
         })),
         sameAs: Object.values(SOCIAL_LINKS),
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: "bolnivo.ai@gmail.com",
+          contactType: "customer support",
+          areaServed: { "@type": "Country", name: "Nepal" },
+          availableLanguage: ["English", "Nepali"],
+        },
         areaServed: { "@type": "Country", name: "Nepal" },
       },
       {
         "@type": "WebSite",
         "@id": `${SITE_URL}/#website`,
         url: SITE_URL,
-        name: "Vesper",
+        name: "Bolnivo",
         inLanguage: "en",
         publisher: { "@id": `${SITE_URL}/#organization` },
       },
       {
         "@type": "SoftwareApplication",
         "@id": `${SITE_URL}/#software`,
-        name: "Vesper",
+        name: "Bolnivo",
         url: SITE_URL,
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
         description:
-          "24/7 AI front desk that answers WhatsApp, Instagram and Messenger messages, checks real-time calendar availability and books appointments.",
+          "AI assistants for business websites and messaging channels that answer questions, use approved business knowledge, and take actions such as checking availability and booking.",
         featureList: [
           "WhatsApp",
           "Instagram",

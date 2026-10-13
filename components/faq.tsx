@@ -27,10 +27,10 @@ export function FAQSection() {
           </h2>
 
           <p className="text-[#666666] dark:text-muted text-[14px] sm:text-[15.5px] text-center">
-            what to know about vesper, privacy, and getting started.
+            what to know about Bolnivo, privacy, and getting started.
           </p>
           <p className="mt-3 text-[13.5px] text-[#666666] dark:text-muted">
-            <Link href="/what-is-vesper" className="font-semibold text-ink underline">What is Vesper?</Link>
+            <Link href="/what-is-vesper" className="font-semibold text-ink underline">What is Bolnivo?</Link>
             {" · "}
             <Link href="/faq" className="font-semibold text-ink underline">All FAQs</Link>
           </p>

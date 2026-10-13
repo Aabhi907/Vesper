@@ -36,21 +36,21 @@ function getFormattedTime() {
 }
 
 /**
- * Knowledge-based smart responder for Vesper
+ * Knowledge-based smart responder for Bolnivo
  */
-function generateVesperReply(query: string): { text: string; action?: { label: string; href: string } } {
+function generateBolnivoReply(query: string): { text: string; action?: { label: string; href: string } } {
   const q = query.toLowerCase()
 
   if (q.includes("calendar") || q.includes("slot") || q.includes("availability") || q.includes("double")) {
     return {
-      text: "Vesper integrates with Google Calendar (plus Outlook & Apple Calendar). When a customer asks for a slot, Vesper queries your calendar in real-time, finds genuine openings, reserves the slot instantly, and eliminates double-bookings 100%!",
+      text: "Bolnivo integrates with Google Calendar (plus Outlook & Apple Calendar). When a customer asks for a slot, Bolnivo queries your calendar in real-time, finds genuine openings, reserves the slot instantly, and eliminates double-bookings 100%!",
       action: { label: "See Calendar Demo", href: "/#demo" },
     }
   }
 
   if (q.includes("nepali") || q.includes("english") || q.includes("language") || q.includes("romanized") || q.includes("bilingual")) {
     return {
-      text: "Hajur! Vesper is natively bilingual. It fluidly understands Romanized Nepali (e.g. 'bholi Saturday 11 baje haircut slot khali cha?'), Devanagari script, and English. No awkward robotic translations.",
+      text: "Hajur! Bolnivo is natively bilingual. It fluidly understands Romanized Nepali (e.g. 'bholi Saturday 11 baje haircut slot khali cha?'), Devanagari script, and English. No awkward robotic translations.",
       action: { label: "Test Bilingual Engine", href: "/#demo" },
     }
   }
@@ -63,34 +63,34 @@ function generateVesperReply(query: string): { text: string; action?: { label: s
 
   if (q.includes("price") || q.includes("pricing") || q.includes("cost") || q.includes("plan") || q.includes("subscription")) {
     return {
-      text: "Vesper offers three simple tiers: Starter at Rs. 4,999/mo, Pro at Rs. 11,999/mo, and Business at Rs. 19,999/mo. All plans include a 14-day free trial with zero setup fees!",
+      text: "Bolnivo offers three simple tiers: Starter at Rs. 4,999/mo, Pro at Rs. 11,999/mo, and Business at Rs. 19,999/mo. All plans include a 14-day free trial with zero setup fees!",
       action: { label: "View Pricing Plans", href: "/pricing" },
     }
   }
 
   if (q.includes("2 am") || q.includes("night") || q.includes("midnight") || q.includes("sleep") || q.includes("awake")) {
     return {
-      text: "That's our entire superpower! Customers often message after your front desk has closed. Vesper replies around the clock, checks real availability, and books the appointment while you rest.",
+      text: "That's our entire superpower! Customers often message after your front desk has closed. Bolnivo replies around the clock, checks real availability, and books the appointment while you rest.",
     }
   }
 
   if (q.includes("demo") || q.includes("trial") || q.includes("setup") || q.includes("start") || q.includes("contact")) {
     return {
-      text: "You can test out our interactive platform simulator right on this page, or get our team to connect Vesper to your WhatsApp & Google Calendar in under 15 minutes!",
-      action: { label: "Schedule Setup with Team", href: "mailto:hello@vesper.codes?subject=Vesper%20Setup" },
+      text: "You can test out our interactive platform simulator right on this page, or get our team to connect Bolnivo to your WhatsApp & Google Calendar in under 15 minutes!",
+      action: { label: "Schedule Setup with Team", href: "mailto:bolnivo.ai@gmail.com?subject=Bolnivo%20Setup" },
     }
   }
 
   if (q.includes("team") || q.includes("founder") || q.includes("who made")) {
     return {
-      text: "Vesper was built by Aabishkar Shrestha (Co-founder & COO), Samrat Ghimere, and Kasam Thapa Magar in Kathmandu to modernize front desk operations for service businesses worldwide.",
+      text: "Bolnivo was built by Aabishkar Shrestha (Co-founder & COO), Samrat Ghimere, and Kasam Thapa Magar in Kathmandu to modernize front desk operations for service businesses worldwide.",
       action: { label: "Meet the Team", href: "/team" },
     }
   }
 
   return {
-    text: "Thanks for asking! Vesper is an AI booking assistant that connects WhatsApp, Instagram, and Messenger to your live calendar. Would you like to explore our interactive demo, check pricing, or talk to our founders?",
-    action: { label: "Talk to Founders", href: "mailto:hello@vesper.codes" },
+    text: "Thanks for asking! Bolnivo is an AI booking assistant that connects WhatsApp, Instagram, and Messenger to your live calendar. Would you like to explore our interactive demo, check pricing, or talk to our founders?",
+    action: { label: "Talk to Founders", href: "mailto:bolnivo.ai@gmail.com" },
   }
 }
 
@@ -205,7 +205,7 @@ export function ChatLauncher() {
       <button
         ref={button}
         type="button"
-        aria-label={open ? "Close chat" : "Chat with Vesper assistant"}
+        aria-label={open ? "Close chat" : "Chat with Bolnivo assistant"}
         aria-expanded={open}
         aria-controls="chat-panel"
         aria-haspopup="dialog"
@@ -215,7 +215,7 @@ export function ChatLauncher() {
         className="chat-launcher group fixed right-[calc(20px+env(safe-area-inset-right))] bottom-[calc(20px+env(safe-area-inset-bottom))] z-[140] size-[52px] rounded-full sm:right-[calc(24px+env(safe-area-inset-right))] sm:bottom-[calc(24px+env(safe-area-inset-bottom))] sm:size-14 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-blue"
       >
         <span aria-hidden className="chat-float absolute inset-0">
-          {/* Teardrop speech-bubble blob styled in Vesper's signature signal-blue gradient */}
+          {/* Teardrop speech-bubble blob styled in Bolnivo's signature signal-blue gradient */}
           <span className="absolute inset-0 rounded-[50%_50%_14%_50%] bg-gradient-to-tr from-[#1d4ed8] via-[#2563eb] to-[#3b82f6] dark:from-[#1e40af] dark:via-[#2563eb] dark:to-[#60a5fa] shadow-[0_10px_24px_-6px_rgba(37,99,235,0.55),inset_0_1px_1.5px_rgba(255,255,255,0.45)] transition-shadow duration-300 pointer-fine:group-hover:shadow-[0_14px_30px_-6px_rgba(37,99,235,0.7),inset_0_1px_2px_rgba(255,255,255,0.6)]" />
 
           {/* Interactive Following Eyes */}
@@ -255,7 +255,7 @@ function ChatPanel({
     {
       id: "m-0",
       from: "bot",
-      text: "Namaste! 🙏 I'm Vesper, your 24/7 AI front desk. I answer inquiries, check live calendar availability, and confirm bookings across WhatsApp, Instagram & Messenger. How can I help you today?",
+      text: "Namaste! 🙏 I'm Bolnivo, an AI assistant for business websites and customer channels. I can answer questions and help with tasks like checking availability and booking across WhatsApp, Instagram and Messenger. How can I help you today?",
       time: getFormattedTime(),
     },
   ])
@@ -307,7 +307,7 @@ function ChatPanel({
 
     // Simulate smart AI typing latency
     window.setTimeout(() => {
-      const { text: replyText, action } = generateVesperReply(clean)
+      const { text: replyText, action } = generateBolnivoReply(clean)
       const botMsg: Message = {
         id: `b-${Date.now()}`,
         from: "bot",
@@ -352,7 +352,7 @@ function ChatPanel({
 
           <div>
             <h2 id={titleId} className="text-[13.5px] font-bold text-ink leading-tight flex items-center gap-1.5">
-              Vesper Assistant
+              Bolnivo Assistant
               <Sparkles className="w-3 h-3 text-signal-blue" />
             </h2>
             <p className="text-[11px] text-muted flex items-center gap-1">
@@ -455,7 +455,7 @@ function ChatPanel({
           type="text"
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
-          placeholder="Ask Vesper anything about booking..."
+          placeholder="Ask Bolnivo anything about booking..."
           className="flex-1 bg-canvas border border-line rounded-full px-4 py-2.5 text-[13px] text-ink placeholder:text-muted/60 focus:outline-none focus:border-signal-blue transition-colors"
         />
         <button

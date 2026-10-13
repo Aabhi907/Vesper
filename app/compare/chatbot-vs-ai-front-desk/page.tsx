@@ -3,15 +3,15 @@ import { LandingPage, landingMetadata, type Landing } from "@/components/landing
 const PAGE: Landing = {
   path: "/compare/chatbot-vs-ai-front-desk",
   crumb: "Chatbot vs AI front desk",
-  title: "Rule-Based Chatbot vs Vesper AI Front Desk",
+  title: "Rule-Based Chatbot vs Bolnivo AI Front Desk",
   description:
-    "Rule-based chatbot vs AI front desk: how keyword and button bots work, where they break, and how Vesper answers free-text questions and books real slots.",
-  h1: "Rule-based chatbot vs Vesper AI front desk",
+    "Rule-based chatbot vs AI front desk: how keyword and button bots work, where they break, and how Bolnivo answers free-text questions and books real slots.",
+  h1: "Rule-based chatbot vs Bolnivo AI front desk",
   intro:
-    "Vesper understands free-text messages and books real calendar slots, while a rule-based chatbot only follows the buttons and keywords someone programmed in advance.",
+    "Bolnivo understands free-text messages and books real calendar slots, while a rule-based chatbot only follows the buttons and keywords someone programmed in advance.",
   table: {
     heading: "How they differ",
-    columns: ["", "Rule-based chatbot", "Vesper AI front desk"],
+    columns: ["", "Rule-based chatbot", "Bolnivo AI front desk"],
     rows: [
       ["How it understands", "Buttons, menus and exact keywords", "Reads free text in English, Nepali or Romanized Nepali"],
       ["Unexpected question", "Falls back to \"Sorry, I didn't understand\" or a menu", "Answers from your information, or hands over to staff"],
@@ -41,9 +41,9 @@ const PAGE: Landing = {
       ],
     },
     {
-      heading: "What makes Vesper an AI front desk",
+      heading: "What makes Bolnivo an AI front desk",
       paragraphs: [
-        "Vesper reads the whole message, works out what the customer wants, and answers from the services, prices and policies you approved. When the customer wants a time, it checks your real calendar, offers open slots and confirms only after the booking is saved. When something is outside its information, it says so and brings in your staff instead of inventing an answer.",
+        "Bolnivo reads the whole message, works out what the customer wants, and answers from the services, prices and policies you approved. When the customer wants a time, it checks your real calendar, offers open slots and confirms only after the booking is saved. When something is outside its information, it says so and brings in your staff instead of inventing an answer.",
       ],
       bullets: [
         "No flows to draw or maintain",
@@ -56,28 +56,28 @@ const PAGE: Landing = {
     {
       heading: "When a rule-based chatbot is enough",
       paragraphs: [
-        "If your customers only ever need a fixed menu, such as opening hours, a price list and one link, a simple rule-based bot or the free WhatsApp Business quick replies may be all you need. Vesper is worth it when messages turn into bookings and arrive faster than your team can answer.",
+        "If your customers only ever need a fixed menu, such as opening hours, a price list and one link, a simple rule-based bot or the free WhatsApp Business quick replies may be all you need. Bolnivo is worth it when messages turn into bookings and arrive faster than your team can answer.",
       ],
     },
   ],
   steps: {
-    heading: "How to move from a rule-based chatbot to Vesper",
+    heading: "How to move from a rule-based chatbot to Bolnivo",
     items: [
-      "Collect the answers inside your current bot's flows and add them to Vesper as FAQs.",
-      "Add your services, durations and opening hours so Vesper can book.",
-      "Disconnect the old bot from the channel, then connect the channel to Vesper.",
+      "Collect the answers inside your current bot's flows and add them to Bolnivo as FAQs.",
+      "Add your services, durations and opening hours so Bolnivo can book.",
+      "Disconnect the old bot from the channel, then connect the channel to Bolnivo.",
       "Test with the messages that used to break the old bot.",
     ],
   },
   faq: [
-    { question: "Is Vesper a chatbot?", answer: "Vesper is an AI front desk: it chats like a chatbot, but it understands free text and books real appointments instead of following fixed menus." },
-    { question: "Will Vesper make things up?", answer: "Vesper answers from the information you approve and hands over to staff when it doesn't know, instead of guessing." },
-    { question: "Do I need to build flows in Vesper?", answer: "Vesper needs no flows. You add services, prices, hours and FAQs, and it handles the conversation." },
-    { question: "Can I run a rule-based bot and Vesper on the same number?", answer: "Vesper should be the only automation answering a channel, so customers don't get two replies." },
+    { question: "Is Bolnivo a chatbot?", answer: "Bolnivo is an AI front desk: it chats like a chatbot, but it understands free text and books real appointments instead of following fixed menus." },
+    { question: "Will Bolnivo make things up?", answer: "Bolnivo answers from the information you approve and hands over to staff when it doesn't know, instead of guessing." },
+    { question: "Do I need to build flows in Bolnivo?", answer: "Bolnivo needs no flows. You add services, prices, hours and FAQs, and it handles the conversation." },
+    { question: "Can I run a rule-based bot and Bolnivo on the same number?", answer: "Bolnivo should be the only automation answering a channel, so customers don't get two replies." },
   ],
   related: [
-    { label: "Vesper vs ManyChat", href: "/compare/vesper-vs-manychat" },
-    { label: "WhatsApp away message vs Vesper", href: "/compare/vesper-vs-whatsapp-business-auto-reply" },
+    { label: "Bolnivo vs ManyChat", href: "/compare/vesper-vs-manychat" },
+    { label: "WhatsApp away message vs Bolnivo", href: "/compare/vesper-vs-whatsapp-business-auto-reply" },
     { label: "Human handoff", href: "/human-handoff" },
   ],
 }

@@ -144,7 +144,7 @@ export function TeamTooltips() {
         <div className="label">Meet the team</div>
 
         <h2 className="team-headline">
-          The people behind Vesper.
+          The people behind Bolnivo.
         </h2>
 
         <p className="team-subtext">

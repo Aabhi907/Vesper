@@ -4,7 +4,7 @@ import Link from "next/link"
 export const metadata: Metadata = {
   title: "Changelog",
   description:
-    "What's new in Vesper: channel integrations, availability engine and bilingual Nepali/English updates.",
+    "What's new in Bolnivo: channel integrations, availability engine and bilingual Nepali/English updates.",
   alternates: { canonical: "/changelog" },
 }
 
@@ -38,7 +38,7 @@ export default function ChangelogPage() {
       <div className="mx-auto max-w-[800px]">
         <div className="mb-14">
           <p className="text-eyebrow text-signal-blue uppercase tracking-widest mb-4">Changelog</p>
-          <h1 className="text-h1 text-ink mb-4">What's new in Vesper.</h1>
+          <h1 className="text-h1 text-ink mb-4">What's new in Bolnivo.</h1>
           <p className="text-lead text-muted">A chronicle of updates, releases, and platform enhancements.</p>
         </div>
 

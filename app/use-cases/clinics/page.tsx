@@ -3,12 +3,12 @@ import { LandingPage, landingMetadata, type Landing } from "@/components/landing
 const PAGE: Landing = {
   path: "/use-cases/clinics",
   crumb: "Clinic appointment chatbot",
-  title: "Vesper Clinic Appointment Chatbot & Dental Booking Bot",
+  title: "Bolnivo Clinic Appointment Chatbot & Dental Booking Bot",
   description:
-    "Vesper is a clinic appointment chatbot that books dental and clinic visits on WhatsApp, Instagram and Messenger, answers practical questions and escalates urgent messages.",
-  h1: "Vesper clinic appointment chatbot and dental booking bot",
+    "Bolnivo is a clinic appointment chatbot that books dental and clinic visits on WhatsApp, Instagram and Messenger, answers practical questions and escalates urgent messages.",
+  h1: "Bolnivo clinic appointment chatbot and dental booking bot",
   intro:
-    "Vesper books clinic and dental appointments over WhatsApp, Instagram and Messenger, answers practical questions like fees and timings, and never gives medical advice.",
+    "Bolnivo books clinic and dental appointments over WhatsApp, Instagram and Messenger, answers practical questions like fees and timings, and never gives medical advice.",
   chats: [
     {
       heading: "Example dental appointment booking",
@@ -41,19 +41,19 @@ const PAGE: Landing = {
         "\"Where is the clinic?\"",
       ],
       paragraphs: [
-        "These are practical questions with known answers, and Vesper answers them from the fees, timings and instructions your clinic enters.",
+        "These are practical questions with known answers, and Bolnivo answers them from the fees, timings and instructions your clinic enters.",
       ],
     },
     {
       heading: "No medical advice, and urgent messages go to people",
       paragraphs: [
-        "Vesper is a front desk, not a clinician. It answers from your clinic's own information and does not diagnose or recommend treatment. When a message describes an emergency, such as severe pain or heavy bleeding, Vesper tells the patient to call or visit directly and alerts your staff, instead of trying to book a routine slot.",
+        "Bolnivo is a front desk, not a clinician. It answers from your clinic's own information and does not diagnose or recommend treatment. When a message describes an emergency, such as severe pain or heavy bleeding, Bolnivo tells the patient to call or visit directly and alerts your staff, instead of trying to book a routine slot.",
       ],
     },
     {
       heading: "Bookings per doctor, with real availability",
       paragraphs: [
-        "Add each doctor, dentist or hygienist as a staff member and Vesper books against their individual calendar. It respects opening hours, holidays and the length of each procedure, and syncs with Google Calendar if your clinic already uses it. Patients can reschedule or cancel by message, and confirmations and reminders go out by email, with SMS available on supported plans.",
+        "Add each doctor, dentist or hygienist as a staff member and Bolnivo books against their individual calendar. It respects opening hours, holidays and the length of each procedure, and syncs with Google Calendar if your clinic already uses it. Patients can reschedule or cancel by message, and confirmations and reminders go out by email, with SMS available on supported plans.",
       ],
     },
   ],
@@ -68,10 +68,10 @@ const PAGE: Landing = {
     ],
   },
   faq: [
-    { question: "Does Vesper give medical advice?", answer: "Vesper does not give medical advice. It answers practical questions from your clinic's information and books appointments." },
-    { question: "What happens if a patient describes an emergency?", answer: "Vesper tells the patient to call or visit the clinic directly and alerts your staff straight away." },
-    { question: "Can patients book a specific doctor?", answer: "Vesper books patients with the doctor or dentist they ask for, using that person's own calendar." },
-    { question: "Where did the /clinics page go?", answer: "Vesper's clinics page moved here to /use-cases/clinics, alongside the other industry pages." },
+    { question: "Does Bolnivo give medical advice?", answer: "Bolnivo does not give medical advice. It answers practical questions from your clinic's information and books appointments." },
+    { question: "What happens if a patient describes an emergency?", answer: "Bolnivo tells the patient to call or visit the clinic directly and alerts your staff straight away." },
+    { question: "Can patients book a specific doctor?", answer: "Bolnivo books patients with the doctor or dentist they ask for, using that person's own calendar." },
+    { question: "Where did the /clinics page go?", answer: "Bolnivo's clinics page moved here to /use-cases/clinics, alongside the other industry pages." },
   ],
   related: [
     { label: "Appointment booking bot", href: "/appointment-booking-bot" },

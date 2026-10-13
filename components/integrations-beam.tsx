@@ -394,7 +394,7 @@ function DatabaseIcon() {
   );
 }
 
-function VesperHubIcon() {
+function BolnivoHubIcon() {
   return (
     <svg viewBox="0 0 64 64" className="w-full h-full">
       <rect
@@ -427,7 +427,7 @@ export function IntegrationsBeam() {
   const instagramRef = useRef<HTMLDivElement>(null);
   const messengerRef = useRef<HTMLDivElement>(null);
 
-  // Center node (Vesper AI Engine)
+  // Center node (Bolnivo AI Engine)
   const centerRef = useRef<HTMLDivElement>(null);
 
   // Right column nodes (Connected Systems & Web)
@@ -449,7 +449,7 @@ export function IntegrationsBeam() {
         </h2>
 
         <p className="text-[15px] sm:text-[17px] text-muted max-w-[560px] mx-auto leading-relaxed font-normal text-center">
-          Customers text where they already spend time. Vesper checks your real schedule, confirms open slots, and books them straight into your calendar, day or night.
+          Customers text where they already spend time. Bolnivo checks your real schedule, confirms open slots, and books them straight into your calendar, day or night.
         </p>
       </div>
 
@@ -479,12 +479,12 @@ export function IntegrationsBeam() {
           />
         </div>
 
-        {/* Center: Vesper Engine */}
+        {/* Center: Bolnivo Engine */}
         <div className="relative z-10 flex items-center justify-center">
           <IntegrationNode
             ref={centerRef}
-            name="Vesper"
-            icon={<VesperHubIcon />}
+            name="Bolnivo"
+            icon={<BolnivoHubIcon />}
             large
           />
         </div>

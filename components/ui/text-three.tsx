@@ -25,7 +25,7 @@ interface TextThreeProps {
 }
 
 export default function TextThree({
-  text = "Vesper",
+  text = "Bolnivo",
   words,
   typingSpeed = 220,
   deletingSpeed = 70,

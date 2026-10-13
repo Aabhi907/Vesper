@@ -31,7 +31,11 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false, // removes X-Powered-By: Next.js (Image 2: item 20 check prod settings)
   async redirects() {
-    return [{ source: "/clinics", destination: "/use-cases/clinics", statusCode: 301 }];
+    return [
+      { source: "/:path*", has: [{ type: "host", value: "vesper.codes" }], destination: "https://bolnivo.me/:path*", permanent: true },
+      { source: "/:path*", has: [{ type: "host", value: "www.vesper.codes" }], destination: "https://bolnivo.me/:path*", permanent: true },
+      { source: "/clinics", destination: "/use-cases/clinics", permanent: true },
+    ];
   },
   async headers() {
     return [

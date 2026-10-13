@@ -5,10 +5,10 @@ import { breadcrumbJsonLd, faqJsonLd, webPageJsonLd } from "@/lib/site"
 // One keyword cluster = one page. Every search landing page is this data shape rendered by <LandingPage>.
 export type Landing = {
   path: string
-  title: string // full <title>, includes "Vesper"
+  title: string // full <title>, includes "Bolnivo"
   description: string
-  h1: string // includes "Vesper"
-  intro: string // starts with "Vesper", answers the page's main question in <=25 words
+  h1: string // includes "Bolnivo"
+  intro: string // starts with "Bolnivo", answers the page's main question in <=25 words
   chats: { heading: string; label: string; lang?: string; messages: { from: keyof typeof SPEAKER; text: string }[] }[]
   sections: { heading: string; lang?: string; paragraphs?: string[]; bullets?: string[] }[]
   steps: { heading: string; items: string[] }
@@ -24,16 +24,16 @@ export function landingMetadata(page: Landing): Metadata {
     title: { absolute: page.title },
     description: page.description,
     alternates: { canonical: page.path },
-    openGraph: { title: page.title, description: page.description, url: page.path, siteName: "Vesper", type: "website" },
+    openGraph: { title: page.title, description: page.description, url: page.path, siteName: "Bolnivo", type: "website" },
   }
 }
 
 // "other" = a different tool shown for comparison (an away message, a menu bot)
-const SPEAKER = { customer: "Customer", vesper: "Vesper", staff: "Staff", other: "Other tool" }
+const SPEAKER = { customer: "Customer", vesper: "Bolnivo", staff: "Staff", other: "Other tool" }
 
 const ALWAYS_LINKED = [
-  { label: "What is Vesper?", href: "/what-is-vesper" },
-  { label: "Vesper pricing in NPR", href: "/pricing" },
+  { label: "What is Bolnivo?", href: "/what-is-vesper" },
+  { label: "Bolnivo pricing in NPR", href: "/pricing" },
 ]
 
 export function LandingPage({ page }: { page: Landing }) {

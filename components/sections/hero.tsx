@@ -229,7 +229,7 @@ export function Hero() {
     const container = scope.current
     if (!container) return
 
-    // ── STEP 1: Main Heading ("Vesper" + glass pill) begins de-blurring at 180ms
+    // ── STEP 1: Main Heading ("Bolnivo" + glass pill) begins de-blurring at 180ms
     animate(
       "#hero-main-heading",
       {
@@ -496,22 +496,22 @@ export function Hero() {
 
       {/* ── Central headline (always sharp & crisp, elevated z-30) ── */}
       <div className="relative z-30 flex flex-col items-center text-center max-w-[960px] mx-auto my-auto px-6 sm:px-10 md:px-12 pointer-events-auto">
-        {/* Step 1: Main heading (Vesper + glass pill) */}
+        {/* Step 1: Main heading (Bolnivo + glass pill) */}
         <div id="hero-main-heading" className="flex flex-col items-center" style={{ opacity: 0 }}>
           {/* ── Pure Clean Glass Pill (Colorless, Transparent Frost) ── */}
           <div className="relative inline-flex items-center px-5 py-2 rounded-full bg-white/50 dark:bg-white/[0.06] backdrop-blur-xl border border-white/80 dark:border-white/15 text-ink text-[12.5px] sm:text-[13.5px] font-medium tracking-tight mb-6 sm:mb-8 shadow-[inset_0_1px_1.5px_rgba(255,255,255,0.9),0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[inset_0_1px_1.5px_rgba(255,255,255,0.2),0_8px_24px_rgba(0,0,0,0.3)] select-none">
-            <span>AI Booking Assistant · Any Service Business</span>
+            <span>AI assistant for websites · Customer channels connected</span>
           </div>
 
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[96px] xl:text-[112px] font-black text-ink mb-6 sm:mb-8 tracking-[-0.04em] leading-[0.95]">
-            Vesper
+            Bolnivo
           </h1>
         </div>
 
         {/* Step 2: Subtitle copy + CTA buttons + Footnote */}
         <div id="hero-sub-content" className="flex flex-col items-center" style={{ opacity: 0 }}>
           <p className="text-[15px] sm:text-[18px] md:text-[20px] text-muted mb-8 sm:mb-10 max-w-[620px] mx-auto leading-relaxed font-normal">
-            Answer messages, check real availability, and book appointments across WhatsApp, Instagram &amp; Messenger for salons, hotels, garages, and any service business.
+            Give your website an AI assistant that understands your business. Answer customer questions across your site and messaging channels, and take actions such as checking availability and booking.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 justify-center w-full sm:w-auto">
