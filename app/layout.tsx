@@ -40,6 +40,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    other: {
+      "msvalidate.01": "EDF2A1885B339B30D7E6B5E1019E2636",
+    },
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
