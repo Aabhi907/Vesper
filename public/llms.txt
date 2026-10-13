@@ -42,51 +42,51 @@ Bolnivo does not answer phone calls.
 
 ## Core pages
 
-- [Home](https://bolnivo.me/): overview
-- [What is Bolnivo?](https://bolnivo.me/what-is-vesper): plain definition, how it works, who uses it, cost
-- [FAQ](https://bolnivo.me/faq): common questions answered
-- [Product](https://bolnivo.me/product): how a message becomes a booking
-- [Features](https://bolnivo.me/features): feature list
-- [Pricing](https://bolnivo.me/pricing): plans and prices
-- [Team](https://bolnivo.me/team): who builds Bolnivo
-- [Trust](https://bolnivo.me/trust): booking safety and data handling
-- [Changelog](https://bolnivo.me/changelog): product updates
-- [Privacy Policy](https://bolnivo.me/privacy)
-- [Terms of Service](https://bolnivo.me/terms)
+- [Home](https://www.bolnivo.me/): overview
+- [What is Bolnivo?](https://www.bolnivo.me/what-is-vesper): plain definition, how it works, who uses it, cost
+- [FAQ](https://www.bolnivo.me/faq): common questions answered
+- [Product](https://www.bolnivo.me/product): how a message becomes a booking
+- [Features](https://www.bolnivo.me/features): feature list
+- [Pricing](https://www.bolnivo.me/pricing): plans and prices
+- [Team](https://www.bolnivo.me/team): who builds Bolnivo
+- [Trust](https://www.bolnivo.me/trust): booking safety and data handling
+- [Changelog](https://www.bolnivo.me/changelog): product updates
+- [Privacy Policy](https://www.bolnivo.me/privacy)
+- [Terms of Service](https://www.bolnivo.me/terms)
 
 ## Channel pages
 
-- [WhatsApp auto reply](https://bolnivo.me/whatsapp-auto-reply): WhatsApp chatbot and booking bot on the official Cloud API
-- [Instagram DM auto reply](https://bolnivo.me/instagram-auto-reply): Instagram AI reply and booking bot
-- [Messenger chatbot](https://bolnivo.me/messenger-auto-reply): Facebook Page auto reply on Messenger
+- [WhatsApp auto reply](https://www.bolnivo.me/whatsapp-auto-reply): WhatsApp chatbot and booking bot on the official Cloud API
+- [Instagram DM auto reply](https://www.bolnivo.me/instagram-auto-reply): Instagram AI reply and booking bot
+- [Messenger chatbot](https://www.bolnivo.me/messenger-auto-reply): Facebook Page auto reply on Messenger
 
 ## Language and Nepal
 
-- [Nepali chatbot](https://bolnivo.me/nepali-chatbot): Roman Nepali, Devanagari and Nepali-English mixed chat, with example conversations
-- [AI receptionist Nepal](https://bolnivo.me/ai-receptionist-nepal): NPR pricing, eSewa and Khalti deposits, Nepal time
+- [Nepali chatbot](https://www.bolnivo.me/nepali-chatbot): Roman Nepali, Devanagari and Nepali-English mixed chat, with example conversations
+- [AI receptionist Nepal](https://www.bolnivo.me/ai-receptionist-nepal): NPR pricing, eSewa and Khalti deposits, Nepal time
 
 ## Problems and intents
 
-- [Appointment booking bot](https://bolnivo.me/appointment-booking-bot): AI appointment scheduler with Google Calendar sync
-- [After-hours auto reply](https://bolnivo.me/after-hours-auto-reply): 24/7 replies and night-time bookings
-- [Human handoff](https://bolnivo.me/human-handoff): staff inbox with live chat takeover
+- [Appointment booking bot](https://www.bolnivo.me/appointment-booking-bot): AI appointment scheduler with Google Calendar sync
+- [After-hours auto reply](https://www.bolnivo.me/after-hours-auto-reply): 24/7 replies and night-time bookings
+- [Human handoff](https://www.bolnivo.me/human-handoff): staff inbox with live chat takeover
 
 ## Use cases
 
-- [Salons and beauty parlours](https://bolnivo.me/use-cases/salons): salon booking chatbot
-- [Clinics and dental practices](https://bolnivo.me/use-cases/clinics): appointment chatbot, no medical advice
-- [Hotels and homestays](https://bolnivo.me/use-cases/hotels): reservation requests on WhatsApp
-- [Education consultancies](https://bolnivo.me/use-cases/consultancies): abroad study inquiries, no visa promises
-- [Trekking and tour agencies](https://bolnivo.me/use-cases/trekking): multi-day trek bookings by start date
-- [Restaurants](https://bolnivo.me/use-cases/restaurants): table and private room reservations
-- [Gyms](https://bolnivo.me/use-cases/gyms): membership inquiries and session booking
+- [Salons and beauty parlours](https://www.bolnivo.me/use-cases/salons): salon booking chatbot
+- [Clinics and dental practices](https://www.bolnivo.me/use-cases/clinics): appointment chatbot, no medical advice
+- [Hotels and homestays](https://www.bolnivo.me/use-cases/hotels): reservation requests on WhatsApp
+- [Education consultancies](https://www.bolnivo.me/use-cases/consultancies): abroad study inquiries, no visa promises
+- [Trekking and tour agencies](https://www.bolnivo.me/use-cases/trekking): multi-day trek bookings by start date
+- [Restaurants](https://www.bolnivo.me/use-cases/restaurants): table and private room reservations
+- [Gyms](https://www.bolnivo.me/use-cases/gyms): membership inquiries and session booking
 
 ## Comparisons
 
-- [WhatsApp Business away message vs Bolnivo](https://bolnivo.me/compare/vesper-vs-whatsapp-business-auto-reply)
-- [Bolnivo vs ManyChat](https://bolnivo.me/compare/vesper-vs-manychat): factual comparison with links to ManyChat's own pages
-- [AI assistant vs human receptionist](https://bolnivo.me/compare/ai-assistant-vs-human-receptionist): cost and coverage in NPR
-- [Rule-based chatbot vs AI front desk](https://bolnivo.me/compare/chatbot-vs-ai-front-desk)
+- [WhatsApp Business away message vs Bolnivo](https://www.bolnivo.me/compare/vesper-vs-whatsapp-business-auto-reply)
+- [Bolnivo vs ManyChat](https://www.bolnivo.me/compare/vesper-vs-manychat): factual comparison with links to ManyChat's own pages
+- [AI assistant vs human receptionist](https://www.bolnivo.me/compare/ai-assistant-vs-human-receptionist): cost and coverage in NPR
+- [Rule-based chatbot vs AI front desk](https://www.bolnivo.me/compare/chatbot-vs-ai-front-desk)
 
 ## Contact
 

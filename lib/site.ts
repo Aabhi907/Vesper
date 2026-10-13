@@ -1,4 +1,5 @@
-export const SITE_URL = "https://bolnivo.me"
+// Vercel redirects the apex to www, so canonical URLs and schema IDs use the final URL.
+export const SITE_URL = "https://www.bolnivo.me"
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/company/143996130",
